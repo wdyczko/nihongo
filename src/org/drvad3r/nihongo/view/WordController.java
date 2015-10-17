@@ -52,6 +52,7 @@ public class WordController
         file = new File(filePath);
         wordTableView.setItems(storageManager.loadWordDataFromFile(file).getWords());
         wordTableView.getSelectionModel().selectedItemProperty().addListener(((observable, oldValue, newValue) -> showWordDetails(newValue)));
+        wordTableView.getSelectionModel().select(0);
     }
 
     public void setNihongo(Nihongo nihongo)
