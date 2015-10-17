@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import org.drvad3r.nihongo.view.WordController;
 
 import java.io.IOException;
 
@@ -56,6 +57,8 @@ public class Nihongo extends Application
             loader.setLocation(Nihongo.class.getResource("view/WordView.fxml"));
             AnchorPane wordView = loader.load();
             rootLayout.setCenter(wordView);
+            WordController controller = loader.getController();
+            controller.setNihongo(this);
         } catch (IOException e)
         {
             e.printStackTrace();

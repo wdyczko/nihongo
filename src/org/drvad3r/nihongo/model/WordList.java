@@ -1,5 +1,8 @@
 package org.drvad3r.nihongo.model;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.ArrayList;
@@ -13,12 +16,12 @@ import java.util.List;
 @XmlRootElement(name = "words")
 public class WordList
 {
-    private List<Word> words;
+    private ObservableList<Word> words;
     private String description;
 
     public WordList()
     {
-        words = new ArrayList<>();
+        words = FXCollections.observableArrayList();
     }
 
     @XmlElement(name = "description")
@@ -30,12 +33,12 @@ public class WordList
     }
 
     @XmlElement(name = "word")
-    public List<Word> getWords()
+    public ObservableList<Word> getWords()
     {
         return words;
     }
 
-    public void setWords(List<Word> words)
+    public void setWords(ObservableList<Word> words)
     {
         this.words = words;
     }
