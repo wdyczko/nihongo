@@ -41,8 +41,8 @@
             </GridPane>
             <ButtonBar layoutX="203.0" layoutY="335.0" prefHeight="40.0" prefWidth="200.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
                 <buttons>
-                    <Button mnemonicParsing="false" text="Add" />
-                    <Button mnemonicParsing="false" text="Edit" />
+                    <Button mnemonicParsing="false" onAction="#onNewWord" text="Add" />
+                    <Button mnemonicParsing="false" onAction="#onEditWord" text="Edit" />
                     <Button mnemonicParsing="false" onAction="#onDeleteWord" text="Delete" />
                 </buttons>
             </ButtonBar>

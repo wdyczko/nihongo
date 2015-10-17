@@ -81,4 +81,29 @@ public class WordController
             wordTableView.getItems().remove(selectedIndex);
         }
     }
+
+    @FXML
+    private void onNewWord()
+    {
+        Word word = new Word();
+        boolean okClicked = nihongo.showWordEditDialog(word);
+        if (okClicked)
+        {
+            wordTableView.getItems().add(word);
+        }
+    }
+
+    @FXML
+    private void onEditWord()
+    {
+        Word word = wordTableView.getSelectionModel().getSelectedItem();
+        if (word != null)
+        {
+            boolean okClicked = nihongo.showWordEditDialog(word);
+            if(okClicked)
+            {
+                showWordDetails(word);
+            }
+        }
+    }
 }
