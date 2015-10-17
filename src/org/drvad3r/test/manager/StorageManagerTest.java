@@ -16,6 +16,7 @@ import static org.junit.Assert.*;
  * Author: Wiktor
  * Creation: 2015-10-17
  */
+@SuppressWarnings("FieldCanBeLocal")
 public class StorageManagerTest
 {
     private StorageManager storageManager;
