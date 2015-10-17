@@ -1,0 +1,10 @@
+@startuml
+
+class Word {
+    - original : String
+    - pronounce : String
+    - english : String
+    - polish : String
+}
+
+@enduml
