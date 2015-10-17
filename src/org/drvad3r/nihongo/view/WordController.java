@@ -46,10 +46,29 @@ public class WordController
         StorageManager storageManager = new StorageManager();
         File file = new File(System.getProperty("user.dir") + "\\resources\\data\\simple.xml");
         wordTableView.setItems(storageManager.loadWordDataFromFile(file).getWords());
+        wordTableView.getSelectionModel().selectedItemProperty().addListener(((observable, oldValue, newValue) -> showWordDetails(newValue)));
     }
 
     public void setNihongo(Nihongo nihongo)
     {
         this.nihongo = nihongo;
+    }
+
+    public void showWordDetails(Word word)
+    {
+        if (word != null)
+        {
+            originalLabel.setText(word.getOriginal());
+            pronounceLabel.setText(word.getPronounce());
+            englishLabel.setText(word.getEnglish());
+            polishLabel.setText(word.getPolish());
+        }
+        else
+        {
+            originalLabel.setText("");
+            pronounceLabel.setText("");
+            englishLabel.setText("");
+            polishLabel.setText("");
+        }
     }
 }
