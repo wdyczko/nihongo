@@ -7,6 +7,7 @@ import javafx.scene.control.TableView;
 import org.drvad3r.nihongo.Nihongo;
 import org.drvad3r.nihongo.manager.StorageManager;
 import org.drvad3r.nihongo.model.Word;
+import org.drvad3r.nihongo.model.WordList;
 
 import java.io.File;
 
@@ -33,9 +34,13 @@ public class WordController
     private Label polishLabel;
 
     private Nihongo nihongo;
+    private String filePath;
+    private File file;
+    private StorageManager storageManager;
 
     public WordController()
     {
+        filePath = System.getProperty("user.dir") + "\\resources\\data\\simple.xml";
     }
 
     @FXML
@@ -43,8 +48,8 @@ public class WordController
     {
         originalColumn.setCellValueFactory(cellData -> cellData.getValue().originalProperty());
         englishColumn.setCellValueFactory(cellData -> cellData.getValue().englishProperty());
-        StorageManager storageManager = new StorageManager();
-        File file = new File(System.getProperty("user.dir") + "\\resources\\data\\simple.xml");
+        storageManager = new StorageManager();
+        file = new File(filePath);
         wordTableView.setItems(storageManager.loadWordDataFromFile(file).getWords());
         wordTableView.getSelectionModel().selectedItemProperty().addListener(((observable, oldValue, newValue) -> showWordDetails(newValue)));
     }
@@ -72,6 +77,13 @@ public class WordController
         }
     }
 
+    private void save()
+    {
+        WordList wordList = new WordList();
+        wordList.setWords(wordTableView.getItems());
+        storageManager.saveWordDataToFile(file, wordList);
+    }
+
     @FXML
     private void onDeleteWord()
     {
@@ -79,6 +91,7 @@ public class WordController
         if(selectedIndex >= 0)
         {
             wordTableView.getItems().remove(selectedIndex);
+            save();
         }
     }
 
@@ -90,6 +103,7 @@ public class WordController
         if (okClicked)
         {
             wordTableView.getItems().add(word);
+            save();
         }
     }
 
@@ -103,6 +117,7 @@ public class WordController
             if(okClicked)
             {
                 showWordDetails(word);
+                save();
             }
         }
     }
