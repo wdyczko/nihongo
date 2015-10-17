@@ -71,4 +71,14 @@ public class WordController
             polishLabel.setText("");
         }
     }
+
+    @FXML
+    private void onDeleteWord()
+    {
+        int selectedIndex = wordTableView.getSelectionModel().getSelectedIndex();
+        if(selectedIndex >= 0)
+        {
+            wordTableView.getItems().remove(selectedIndex);
+        }
+    }
 }
