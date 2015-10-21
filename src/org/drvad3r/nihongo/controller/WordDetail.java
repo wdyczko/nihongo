@@ -3,6 +3,8 @@ package org.drvad3r.nihongo.controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import org.drvad3r.nihongo.Nihongo;
 import org.drvad3r.nihongo.define.Path;
 import org.drvad3r.nihongo.manager.StorageManager;
@@ -61,6 +63,7 @@ public class WordDetail
         wordTableView.setItems(storageManager.loadWordDataFromFile(file).getWords());
         wordTableView.getSelectionModel().selectedItemProperty().addListener(((observable, oldValue, newValue) -> showWordDetails(newValue)));
         wordTableView.getSelectionModel().select(0);
+        wordTableView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
         moduleChoiceBox.setItems(moduleList.getModuleList());
         moduleChoiceBox.selectionModelProperty();
         moduleChoiceBox.getSelectionModel().select(0);
@@ -98,7 +101,7 @@ public class WordDetail
 
     private void load()
     {
-        File file = new File(System.getProperty("user.dir") + Path.MODULE_RESOURCE_PATH + nihongo.getCurrentModule().getFile());
+        file = new File(System.getProperty("user.dir") + Path.MODULE_RESOURCE_PATH + nihongo.getCurrentModule().getFile());
         wordTableView.setItems(storageManager.loadWordDataFromFile(file).getWords());
     }
 
@@ -149,6 +152,23 @@ public class WordDetail
         {
             nihongo.setCurrentModule(module);
             load();
+        }
+    }
+
+    @FXML
+    private void onTableViewKeyEvent(KeyEvent keyEvent)
+    {
+        if(keyEvent.getCode() == KeyCode.E)
+        {
+            onEditWord();
+        }
+        else if (keyEvent.getCode() == KeyCode.A)
+        {
+            onNewWord();
+        }
+        else if (keyEvent.getCode() == KeyCode.D || keyEvent.getCode() == KeyCode.DELETE)
+        {
+            onDeleteWord();
         }
     }
 }

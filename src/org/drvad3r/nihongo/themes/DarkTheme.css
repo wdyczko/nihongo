@@ -10,7 +10,7 @@
 }
 
 .label-bright {
-    -fx-font-size: 11pt;
+    -fx-font-size: 22pt;
     -fx-font-family: "Segoe UI Semibold";
     -fx-text-fill: white;
     -fx-opacity: 1;
@@ -21,6 +21,10 @@
     -fx-font-family: "Segoe UI Light";
     -fx-text-fill: white;
     -fx-opacity: 1;
+}
+
+.label-big {
+    -fx-font-size: 22pt;
 }
 
 .table-view {

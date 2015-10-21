@@ -32,6 +32,7 @@ public class Nihongo extends Application
     Stage primaryStage;
     static BorderPane rootLayout;
     static Module currentModule;
+    static ArrayList<Integer> partials;
 
     public static void main(String[] args)
     {
@@ -135,6 +136,16 @@ public class Nihongo extends Application
     public Module getCurrentModule()
     {
         return currentModule;
+    }
+
+    public static ArrayList<Integer> getPartials()
+    {
+        return partials;
+    }
+
+    public static void setPartials(ArrayList<Integer> partials)
+    {
+        Nihongo.partials = partials;
     }
 
     public void setCurrentModule(Module currentModule)
