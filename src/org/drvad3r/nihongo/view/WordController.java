@@ -40,7 +40,7 @@ public class WordController
 
     public WordController()
     {
-        filePath = System.getProperty("user.dir") + "\\resources\\data\\simple.xml";
+        filePath = System.getProperty("user.dir") + "\\resources\\data\\human_body.xml";
     }
 
     @FXML
