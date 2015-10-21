@@ -1,11 +1,13 @@
 package org.drvad3r.nihongo.controller;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import org.drvad3r.nihongo.Nihongo;
+import org.drvad3r.nihongo.define.Path;
 import org.drvad3r.nihongo.manager.StorageManager;
+import org.drvad3r.nihongo.model.Module;
+import org.drvad3r.nihongo.model.ModuleList;
 import org.drvad3r.nihongo.model.Word;
 import org.drvad3r.nihongo.model.WordList;
 
@@ -32,15 +34,21 @@ public class WordDetail
     private Label pronounceLabel;
     @FXML
     private Label polishLabel;
+    @FXML
+    private ChoiceBox<Module> moduleChoiceBox;
 
     private Nihongo nihongo;
     private String filePath;
     private File file;
     private StorageManager storageManager;
+    private ModuleList moduleList;
 
     public WordDetail()
     {
-        filePath = System.getProperty("user.dir") + "\\resources\\data\\human_body.xml";
+        storageManager = new StorageManager();
+        moduleList = storageManager.loadModulesDataFromFile(new File(System.getProperty("user.dir") + Path.MODULE_FILE));
+        Module module = moduleList.getModuleList().get(0);
+        filePath = System.getProperty("user.dir") + Path.MODULE_RESOURCE_PATH + module.getFile();
     }
 
     @FXML
@@ -53,6 +61,9 @@ public class WordDetail
         wordTableView.setItems(storageManager.loadWordDataFromFile(file).getWords());
         wordTableView.getSelectionModel().selectedItemProperty().addListener(((observable, oldValue, newValue) -> showWordDetails(newValue)));
         wordTableView.getSelectionModel().select(0);
+        moduleChoiceBox.setItems(moduleList.getModuleList());
+        moduleChoiceBox.selectionModelProperty();
+        moduleChoiceBox.getSelectionModel().select(0);
     }
 
     public void setNihongo(Nihongo nihongo)
@@ -83,6 +94,12 @@ public class WordDetail
         WordList wordList = new WordList();
         wordList.setWords(wordTableView.getItems());
         storageManager.saveWordDataToFile(file, wordList);
+    }
+
+    private void load()
+    {
+        File file = new File(System.getProperty("user.dir") + Path.MODULE_RESOURCE_PATH + nihongo.getCurrentModule().getFile());
+        wordTableView.setItems(storageManager.loadWordDataFromFile(file).getWords());
     }
 
     @FXML
@@ -120,6 +137,18 @@ public class WordDetail
                 showWordDetails(word);
                 save();
             }
+        }
+    }
+
+    @FXML
+    private void onModuleSelect(ActionEvent actionEvent)
+    {
+        ChoiceBox<Module> choice = (ChoiceBox<Module>) actionEvent.getSource();
+        Module module = choice.getSelectionModel().getSelectedItem();
+        if(nihongo != null)
+        {
+            nihongo.setCurrentModule(module);
+            load();
         }
     }
 }
