@@ -8,6 +8,8 @@
    <top>
       <MenuBar BorderPane.alignment="CENTER">
           <Menu mnemonicParsing="false" text="File">
+            <MenuItem mnemonicParsing="false" onAction="#onWordView" text="Detail" />
+            <MenuItem mnemonicParsing="false" onAction="#onWordLearn" text="Learn" />
               <MenuItem mnemonicParsing="false" onAction="#onClose" text="Exit" />
           </Menu>
       </MenuBar>

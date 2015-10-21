@@ -1,4 +1,4 @@
-package org.drvad3r.nihongo.view;
+package org.drvad3r.nihongo.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
@@ -9,7 +9,7 @@ import org.drvad3r.nihongo.model.Word;
  * Author: Wiktor
  * Creation: 2015-10-17
  */
-public class WordEditController
+public class WordEdit
 {
     @FXML
     private TextField originalTextField;

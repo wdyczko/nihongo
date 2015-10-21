@@ -1,4 +1,4 @@
-package org.drvad3r.nihongo.view;
+package org.drvad3r.nihongo.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -15,14 +15,14 @@ import java.io.File;
  * Author: Wiktor
  * Creation: 2015-10-17
  */
-public class WordController
+public class WordDetail
 {
     @FXML
-    private TableView<Word> wordTableView;
+    private TableView<org.drvad3r.nihongo.model.Word> wordTableView;
     @FXML
-    private TableColumn<Word, String> originalColumn;
+    private TableColumn<org.drvad3r.nihongo.model.Word, String> originalColumn;
     @FXML
-    private TableColumn<Word, String> englishColumn;
+    private TableColumn<org.drvad3r.nihongo.model.Word, String> englishColumn;
 
     @FXML
     private Label originalLabel;
@@ -38,7 +38,7 @@ public class WordController
     private File file;
     private StorageManager storageManager;
 
-    public WordController()
+    public WordDetail()
     {
         filePath = System.getProperty("user.dir") + "\\resources\\data\\human_body.xml";
     }
@@ -60,7 +60,7 @@ public class WordController
         this.nihongo = nihongo;
     }
 
-    public void showWordDetails(Word word)
+    public void showWordDetails(org.drvad3r.nihongo.model.Word word)
     {
         if (word != null)
         {
@@ -99,7 +99,7 @@ public class WordController
     @FXML
     private void onNewWord()
     {
-        Word word = new Word();
+        org.drvad3r.nihongo.model.Word word = new org.drvad3r.nihongo.model.Word();
         boolean okClicked = nihongo.showWordEditDialog(word);
         if (okClicked)
         {
@@ -111,7 +111,7 @@ public class WordController
     @FXML
     private void onEditWord()
     {
-        Word word = wordTableView.getSelectionModel().getSelectedItem();
+        org.drvad3r.nihongo.model.Word word = wordTableView.getSelectionModel().getSelectedItem();
         if (word != null)
         {
             boolean okClicked = nihongo.showWordEditDialog(word);
