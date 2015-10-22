@@ -2,6 +2,8 @@ package org.drvad3r.nihongo.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 import org.drvad3r.nihongo.model.Word;
 
@@ -72,5 +74,18 @@ public class WordEdit
     private boolean isInputValid()
     {
         return (!originalTextField.getText().isEmpty() && !pronounceTextField.getText().isEmpty() && !englishTextField.getText().isEmpty() && !polishTextField.getText().isEmpty());
+    }
+
+    @FXML
+    private void onKeyInput(KeyEvent keyEvent)
+    {
+        if(keyEvent.getCode() == KeyCode.ENTER)
+        {
+            onOk();
+        }
+        else if (keyEvent.getCode() == KeyCode.ESCAPE)
+        {
+            onCancel();
+        }
     }
 }
