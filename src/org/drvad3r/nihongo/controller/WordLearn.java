@@ -36,6 +36,7 @@ public class WordLearn
     private WordList wordList;
     private Word current;
     private ArrayList<Integer> passed;
+    private int value;
 
     public void setNihongo(Nihongo nihongo)
     {
@@ -57,7 +58,7 @@ public class WordLearn
     private Word randomizeWord()
     {
         Random random = new Random();
-        int value = -1;
+        value = -1;
         do
         {
             value = random.nextInt(wordList.getWords().size());
@@ -180,6 +181,7 @@ public class WordLearn
             }
             else
             {
+                passed.remove(new Integer(value));
                 showAnswer();
             }
         }

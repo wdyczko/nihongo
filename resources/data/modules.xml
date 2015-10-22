@@ -5,11 +5,15 @@
         <name>Human Body</name>
     </module>
     <module>
-        <file>module\adjective1-1.xml</file>
+        <file>module\adjectives\adjective1-1.xml</file>
         <name>Adjectives I - part I</name>
     </module>
     <module>
-        <file>module\adjective1-2.xml</file>
+        <file>module\adjectives\adjective1-2.xml</file>
         <name>Adjectives I - part II</name>
+    </module>
+    <module>
+        <file>module\verbs\verbs1.xml</file>
+        <name>Verbs I - part I</name>
     </module>
 </modules>
