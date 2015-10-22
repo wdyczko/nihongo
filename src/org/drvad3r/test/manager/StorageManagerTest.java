@@ -31,7 +31,7 @@ public class StorageManagerTest
     {
         storageManager = new StorageManager();
         resourceDataPath = System.getProperty("user.dir") + "\\resources\\data\\";
-        resourceFileName = "simple.xml";
+        resourceFileName = "template\\template.xml";
         fileWithPath = resourceDataPath + resourceFileName;
         tempDataPath = System.getProperty("user.dir") + "\\out\\test\\";
         File file = new File(tempDataPath);

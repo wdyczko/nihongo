@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <modules>
     <module>
-        <file>human_body.xml</file>
+        <file>module\human_body.xml</file>
         <name>Human Body</name>
     </module>
     <module>
-        <file>simple.xml</file>
-        <name>Simple</name>
-    </module>
-    <module>
-        <file>test.xml</file>
-        <name>Test</name>
+        <file>module\adjective1.xml</file>
+        <name>Adjectives I</name>
     </module>
 </modules>
