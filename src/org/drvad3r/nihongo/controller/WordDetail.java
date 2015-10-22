@@ -40,6 +40,8 @@ public class WordDetail
     private Label polishLabel;
     @FXML
     private ChoiceBox<Module> moduleChoiceBox;
+    @FXML
+    private Label amountLabel;
 
     private Nihongo nihongo;
     private String filePath;
@@ -75,6 +77,7 @@ public class WordDetail
         moduleChoiceBox.setItems(moduleList.getModuleList());
         moduleChoiceBox.selectionModelProperty();
         moduleChoiceBox.getSelectionModel().select(0);
+        amountLabel.setText("Words: " + wordTableView.getItems().size());
     }
 
     public void setNihongo(Nihongo nihongo)
@@ -105,12 +108,14 @@ public class WordDetail
         WordList wordList = new WordList();
         wordList.setWords(wordTableView.getItems());
         storageManager.saveWordDataToFile(file, wordList);
+        amountLabel.setText("Words: " + wordTableView.getItems().size());
     }
 
     private void load()
     {
         file = new File(System.getProperty("user.dir") + Path.MODULE_RESOURCE_PATH + nihongo.getCurrentModule().getFile());
         wordTableView.setItems(storageManager.loadWordDataFromFile(file).getWords());
+        amountLabel.setText("Words: " + wordTableView.getItems().size());
     }
 
     @FXML

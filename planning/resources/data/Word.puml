@@ -1,10 +1,27 @@
 @startuml
 
 class Word {
-    - original : String
-    - pronounce : String
-    - english : String
-    - polish : String
+    - original : StringProperty
+    - pronounce : StringProperty
+    - english : StringProperty
+    - polish : StringProperty
+
+    + Word()
+    + Word(String original, String english)
+    ..
+    Getters and setters for properties...
+    ..
+    + {static} print(Word word)
 }
+
+class WordList {
+    - words : ObservableList<Word>
+    - description : String
+    ..
+    Setters for words and description
+    ..
+}
+
+WordList o-- Word
 
 @enduml
