@@ -156,7 +156,7 @@ public class WordDetail
     {
         ChoiceBox<Module> choice = (ChoiceBox<Module>) actionEvent.getSource();
         Module module = choice.getSelectionModel().getSelectedItem();
-        if(nihongo != null)
+        if(nihongo != null && module != null)
         {
             nihongo.setCurrentModule(module);
             load();
@@ -178,9 +178,27 @@ public class WordDetail
         {
             onDeleteWord();
         }
+        else if (keyEvent.getCode() == KeyCode.J && keyEvent.isControlDown())
+        {
+            int index = moduleChoiceBox.getSelectionModel().getSelectedIndex();
+            if( index < moduleChoiceBox.getItems().size() - 1 )
+            {
+                moduleChoiceBox.getSelectionModel().clearSelection(index);
+                moduleChoiceBox.getSelectionModel().select(index + 1);
+            }
+        }
         else if (keyEvent.getCode() == KeyCode.J)
         {
             robot.keyPress(java.awt.event.KeyEvent.VK_DOWN);
+        }
+        else if (keyEvent.getCode() == KeyCode.K && keyEvent.isControlDown())
+        {
+            int index = moduleChoiceBox.getSelectionModel().getSelectedIndex();
+            if( index > 0 )
+            {
+                moduleChoiceBox.getSelectionModel().clearSelection(index);
+                moduleChoiceBox.getSelectionModel().select(index - 1);
+            }
         }
         else if (keyEvent.getCode() == KeyCode.K)
         {
