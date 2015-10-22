@@ -3,6 +3,7 @@ package org.drvad3r.nihongo.controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.control.Label;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import org.drvad3r.nihongo.Nihongo;
@@ -13,6 +14,7 @@ import org.drvad3r.nihongo.model.ModuleList;
 import org.drvad3r.nihongo.model.Word;
 import org.drvad3r.nihongo.model.WordList;
 
+import java.awt.*;
 import java.io.File;
 
 /**
@@ -44,6 +46,7 @@ public class WordDetail
     private File file;
     private StorageManager storageManager;
     private ModuleList moduleList;
+    private static Robot robot;
 
     public WordDetail()
     {
@@ -51,6 +54,11 @@ public class WordDetail
         moduleList = storageManager.loadModulesDataFromFile(new File(System.getProperty("user.dir") + Path.MODULE_FILE));
         Module module = moduleList.getModuleList().get(0);
         filePath = System.getProperty("user.dir") + Path.MODULE_RESOURCE_PATH + module.getFile();
+        try {
+            robot = new Robot();
+        } catch (AWTException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
@@ -169,6 +177,14 @@ public class WordDetail
         else if (keyEvent.getCode() == KeyCode.D || keyEvent.getCode() == KeyCode.DELETE)
         {
             onDeleteWord();
+        }
+        else if (keyEvent.getCode() == KeyCode.J)
+        {
+            robot.keyPress(java.awt.event.KeyEvent.VK_DOWN);
+        }
+        else if (keyEvent.getCode() == KeyCode.K)
+        {
+            robot.keyPress(java.awt.event.KeyEvent.VK_UP);
         }
     }
 }
