@@ -1,5 +1,6 @@
 package org.drvad3r.nihongo.controller;
 
+import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
@@ -7,9 +8,14 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import org.drvad3r.nihongo.Nihongo;
+import org.drvad3r.nihongo.define.Path;
+import org.drvad3r.nihongo.define.SessionKeys;
+import org.drvad3r.nihongo.manager.SessionManager;
+import org.drvad3r.nihongo.manager.StorageManager;
 import org.drvad3r.nihongo.model.Word;
 import org.drvad3r.nihongo.model.WordList;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -45,7 +51,35 @@ public class WordLearn
 
     public void setWordList(WordList wordList)
     {
-        this.wordList = wordList;
+//        this.wordList = wordList;
+        StorageManager storageManager = new StorageManager();
+        String indices = SessionManager.getInstance().getSessionItem(SessionKeys.CURRENT_MODULE_INDICES);
+        String moduleName = SessionManager.getInstance().getSessionItem(SessionKeys.CURRENT_MODULE_PATH);
+
+        File file = new File(System.getProperty("user.dir") + Path.MODULE_RESOURCE_PATH + moduleName);
+        if (indices != null)
+        {
+            WordList list = storageManager.loadWordDataFromFile(file);
+            indices = indices.replaceAll("\\[|\\]", "");
+            String[] splitted = indices.split(", ");
+            if(splitted.length > 1)
+            {
+                WordList rangeList = new WordList();
+                for(String s : splitted)
+                {
+                    rangeList.getWords().add(list.getWords().get(Integer.parseInt(s)));
+                }
+                this.wordList = rangeList;
+            }
+            else
+            {
+                this.wordList = list;
+            }
+        }
+        else
+        {
+            this.wordList = storageManager.loadWordDataFromFile(file);
+        }
     }
 
     public void init()
