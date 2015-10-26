@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
@@ -20,7 +21,6 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label fx:id="englishLabel" styleClass="label-header" text="English" GridPane.columnSpan="2" GridPane.halignment="CENTER" />
             <TextField fx:id="pronounceTextField" onKeyPressed="#onPronounceKeyEvent" promptText="Pronounce" style="-fx-font-size: 30px;" GridPane.rowIndex="1" />
             <TextField fx:id="originalTextField" onKeyPressed="#onPronounceKeyEvent" promptText="Original" style="-fx-font-size: 30px;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <Label fx:id="pronounceLabel" styleClass="label-header" GridPane.rowIndex="2" />
@@ -31,6 +31,13 @@
                </children>
             </AnchorPane>
             <Label fx:id="statusLabel" text="Label" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+            <TextArea fx:id="englishTextArea" editable="false" focusTraversable="false" prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnSpan="2">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="10.0" />
+               </GridPane.margin></TextArea>
          </children>
       </GridPane>
    </children>

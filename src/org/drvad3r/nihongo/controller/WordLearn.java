@@ -1,12 +1,17 @@
 package org.drvad3r.nihongo.controller;
 
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.util.Duration;
 import org.drvad3r.nihongo.Nihongo;
 import org.drvad3r.nihongo.define.Path;
 import org.drvad3r.nihongo.define.SessionKeys;
@@ -26,8 +31,6 @@ import java.util.Random;
 public class WordLearn
 {
     @FXML
-    private Label englishLabel;
-    @FXML
     private TextField pronounceTextField;
     @FXML
     private TextField originalTextField;
@@ -39,6 +42,8 @@ public class WordLearn
     private ProgressBar learnProgressBar;
     @FXML
     private Label statusLabel;
+    @FXML
+    private TextArea englishTextArea;
 
     private Nihongo nihongo;
     private WordList wordList;
@@ -51,7 +56,7 @@ public class WordLearn
         this.nihongo = nihongo;
     }
 
-    public void setWordList(WordList wordList)
+    private void setWordList()
     {
         StorageManager storageManager = new StorageManager();
         String indices = SessionManager.getInstance().getSessionItem(SessionKeys.CURRENT_MODULE_INDICES);
@@ -85,6 +90,7 @@ public class WordLearn
 
     public void init()
     {
+        setWordList();
         this.passed = new ArrayList<>();
         statusLabel.setText(String.format("%d/%d", passed.size(), wordList.getWords().size()));
         this.current = randomizeWord();
@@ -105,7 +111,7 @@ public class WordLearn
 
     private void presentWord(Word word)
     {
-        this.englishLabel.setText(word.getEnglish());
+        this.englishTextArea.setText(word.getEnglish());
     }
 
     private void resetTextFieldStyle(TextField textField)
@@ -221,6 +227,15 @@ public class WordLearn
                 passed.remove(new Integer(value));
                 showAnswer();
             }
+        }
+        else if(keyEvent.isControlDown() && keyEvent.getCode() == KeyCode.P)
+        {
+            statusLabel.setText(current.getPolish());
+            Timeline timeline = new Timeline(new KeyFrame(
+                    Duration.seconds(4),
+                    actionEvent -> statusLabel.setText(String.format("%d/%d", (passed.size() - 1 < 0) ? 0 : passed.size() - 1, wordList.getWords().size()))
+            ));
+            timeline.play();
         }
     }
 }

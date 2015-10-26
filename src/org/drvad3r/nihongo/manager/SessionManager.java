@@ -37,6 +37,12 @@ public class SessionManager {
         return instance;
     }
 
+    public static boolean sessionExists()
+    {
+        File file = new File(Path.SESSION_FILE);
+        return file.exists();
+    }
+
     public static boolean loadSession()
     {
         try {

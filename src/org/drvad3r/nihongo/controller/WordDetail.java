@@ -6,6 +6,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.Label;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.util.Pair;
 import org.drvad3r.nihongo.Nihongo;
 import org.drvad3r.nihongo.define.Path;
 import org.drvad3r.nihongo.define.SessionKeys;
@@ -53,10 +54,17 @@ public class WordDetail
     {
         storageManager = new StorageManager();
         moduleList = storageManager.loadModulesDataFromFile(new File(System.getProperty("user.dir") + Path.MODULE_FILE));
-        Module module = moduleList.getModuleList().get(0);
-        SessionManager.getInstance().setSessionItem(SessionKeys.CURRENT_MODULE_NAME, module.getName());
-        SessionManager.getInstance().setSessionItem(SessionKeys.CURRENT_MODULE_PATH, module.getFile());
-        filePath = System.getProperty("user.dir") + Path.MODULE_RESOURCE_PATH + module.getFile();
+        if (SessionManager.getInstance().sessionExists())
+        {
+            String modulePath = SessionManager.getInstance().getSessionItem(SessionKeys.CURRENT_MODULE_PATH);
+            filePath = System.getProperty("user.dir") + Path.MODULE_RESOURCE_PATH + modulePath;
+        } else
+        {
+            Module module = moduleList.getModuleList().get(0);
+            SessionManager.getInstance().setSessionItem(SessionKeys.CURRENT_MODULE_NAME, module.getName());
+            SessionManager.getInstance().setSessionItem(SessionKeys.CURRENT_MODULE_PATH, module.getFile());
+            filePath = System.getProperty("user.dir") + Path.MODULE_RESOURCE_PATH + module.getFile();
+        }
         try {
             robot = new Robot();
         } catch (AWTException e) {
@@ -77,11 +85,42 @@ public class WordDetail
         {
             SessionManager.getInstance().setSessionItem(SessionKeys.CURRENT_MODULE_INDICES, wordTableView.getSelectionModel().getSelectedIndices().toString());
         }));
-        wordTableView.getSelectionModel().select(0);
         wordTableView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+        if(SessionManager.getInstance().sessionExists())
+        {
+            String indicies = SessionManager.getInstance().getSessionItem(SessionKeys.CURRENT_MODULE_INDICES);
+            indicies = indicies.replaceAll("\\[|\\]", "");
+            String[] splitted = indicies.split(", ");
+            if(splitted != null)
+            {
+                for(String s : splitted)
+                {
+                    wordTableView.getSelectionModel().select(Integer.parseInt(s));
+                }
+            }
+            else
+            {
+                wordTableView.getSelectionModel().select(0);
+            }
+        }
+        else
+        {
+            wordTableView.getSelectionModel().select(0);
+        }
         moduleChoiceBox.setItems(moduleList.getModuleList());
         moduleChoiceBox.selectionModelProperty();
-        moduleChoiceBox.getSelectionModel().select(0);
+        if (SessionManager.getInstance().sessionExists())
+        {
+            String modulePath = SessionManager.getInstance().getSessionItem(SessionKeys.CURRENT_MODULE_PATH);
+            String moduleName = SessionManager.getInstance().getSessionItem(SessionKeys.CURRENT_MODULE_NAME);
+            moduleList.getModuleList().stream().filter(m -> m.getName().equals(moduleName) && m.getFile().equals(modulePath)).forEach(m -> {
+                moduleChoiceBox.getSelectionModel().select(moduleList.getModuleList().indexOf(m));
+            });
+        }
+        else
+        {
+            moduleChoiceBox.getSelectionModel().select(0);
+        }
         amountLabel.setText("Words: " + wordTableView.getItems().size());
     }
 
@@ -202,6 +241,10 @@ public class WordDetail
         else if (keyEvent.getCode() == KeyCode.J)
         {
             robot.keyPress(java.awt.event.KeyEvent.VK_DOWN);
+        }
+        else if (keyEvent.getCode() == KeyCode.L)
+        {
+            nihongo.showLearnView();
         }
         else if (keyEvent.getCode() == KeyCode.K && keyEvent.isControlDown())
         {

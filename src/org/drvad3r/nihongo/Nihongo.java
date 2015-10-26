@@ -87,7 +87,7 @@ public class Nihongo extends Application
         }
     }
 
-    private void showLearnView(WordList wordList)
+    public void showLearnView()
     {
         try
         {
@@ -97,7 +97,6 @@ public class Nihongo extends Application
             rootLayout.setCenter(wordLearnView);
             WordLearn controller = loader.getController();
             controller.setNihongo(this);
-            controller.setWordList(wordList);
             controller.init();
         } catch (IOException e)
         {
@@ -160,7 +159,7 @@ public class Nihongo extends Application
     {
         StorageManager storageManager = new StorageManager();
         WordList list = storageManager.loadWordDataFromFile(new File(System.getProperty("user.dir") + Path.MODULE_RESOURCE_PATH + currentModule.getFile()));
-        showLearnView(list);
+        showLearnView();
     }
 
     @FXML
