@@ -9,6 +9,8 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.*;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
@@ -25,7 +27,10 @@ import org.drvad3r.nihongo.controller.WordDetail;
 import org.drvad3r.nihongo.controller.WordEdit;
 import org.drvad3r.nihongo.controller.WordLearn;
 
+import javax.imageio.ImageIO;
+import java.awt.*;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -46,6 +51,14 @@ public class Nihongo extends Application
     {
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("Nihongo");
+        try
+        {
+            Image image = new Image(new FileInputStream(new File(System.getProperty("user.dir") + Path.ICON)));
+            this.primaryStage.getIcons().add(image);
+        } catch (IOException e)
+        {
+            e.printStackTrace();
+        }
 
         StorageManager storageManager = new StorageManager();
         ModuleList moduleList = storageManager.loadModulesDataFromFile(new File(System.getProperty("user.dir") + Path.MODULE_FILE));
