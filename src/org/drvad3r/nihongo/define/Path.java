@@ -8,4 +8,5 @@ public interface Path
 {
     String MODULE_FILE = "\\resources\\data\\modules.xml";
     String MODULE_RESOURCE_PATH = "\\resources\\data\\";
+    String SESSION_FILE = "session.sess";
 }

@@ -8,11 +8,10 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import org.drvad3r.nihongo.Nihongo;
 import org.drvad3r.nihongo.define.Path;
+import org.drvad3r.nihongo.define.SessionKeys;
+import org.drvad3r.nihongo.manager.SessionManager;
 import org.drvad3r.nihongo.manager.StorageManager;
-import org.drvad3r.nihongo.model.Module;
-import org.drvad3r.nihongo.model.ModuleList;
-import org.drvad3r.nihongo.model.Word;
-import org.drvad3r.nihongo.model.WordList;
+import org.drvad3r.nihongo.model.*;
 
 import java.awt.*;
 import java.io.File;
@@ -55,6 +54,8 @@ public class WordDetail
         storageManager = new StorageManager();
         moduleList = storageManager.loadModulesDataFromFile(new File(System.getProperty("user.dir") + Path.MODULE_FILE));
         Module module = moduleList.getModuleList().get(0);
+        SessionManager.getInstance().setSessionItem(SessionKeys.CURRENT_MODULE_NAME, module.getName());
+        SessionManager.getInstance().setSessionItem(SessionKeys.CURRENT_MODULE_PATH, module.getFile());
         filePath = System.getProperty("user.dir") + Path.MODULE_RESOURCE_PATH + module.getFile();
         try {
             robot = new Robot();
@@ -72,6 +73,10 @@ public class WordDetail
         file = new File(filePath);
         wordTableView.setItems(storageManager.loadWordDataFromFile(file).getWords());
         wordTableView.getSelectionModel().selectedItemProperty().addListener(((observable, oldValue, newValue) -> showWordDetails(newValue)));
+        wordTableView.getSelectionModel().selectedItemProperty().addListener(((observable, oldValue, newValue) ->
+        {
+            SessionManager.getInstance().setSessionItem(SessionKeys.CURRENT_MODULE_INDICES, wordTableView.getSelectionModel().getSelectedIndices().toString());
+        }));
         wordTableView.getSelectionModel().select(0);
         wordTableView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
         moduleChoiceBox.setItems(moduleList.getModuleList());
@@ -164,6 +169,8 @@ public class WordDetail
         if(nihongo != null && module != null)
         {
             nihongo.setCurrentModule(module);
+            SessionManager.getInstance().setSessionItem(SessionKeys.CURRENT_MODULE_NAME, module.getName());
+            SessionManager.getInstance().setSessionItem(SessionKeys.CURRENT_MODULE_PATH, module.getFile());
             load();
         }
     }

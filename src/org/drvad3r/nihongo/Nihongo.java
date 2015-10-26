@@ -15,9 +15,11 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.Pair;
 import org.drvad3r.nihongo.define.Path;
+import org.drvad3r.nihongo.manager.SessionManager;
 import org.drvad3r.nihongo.manager.StorageManager;
 import org.drvad3r.nihongo.model.Module;
 import org.drvad3r.nihongo.model.ModuleList;
+import org.drvad3r.nihongo.model.Session;
 import org.drvad3r.nihongo.model.WordList;
 import org.drvad3r.nihongo.controller.WordDetail;
 import org.drvad3r.nihongo.controller.WordEdit;
@@ -170,6 +172,7 @@ public class Nihongo extends Application
     @FXML
     private void onClose()
     {
+        SessionManager.getInstance().destroySession();
         System.exit(0);
     }
 }
