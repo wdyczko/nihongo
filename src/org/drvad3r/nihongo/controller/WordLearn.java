@@ -37,6 +37,8 @@ public class WordLearn
     private Label originalLabel;
     @FXML
     private ProgressBar learnProgressBar;
+    @FXML
+    private Label statusLabel;
 
     private Nihongo nihongo;
     private WordList wordList;
@@ -51,7 +53,6 @@ public class WordLearn
 
     public void setWordList(WordList wordList)
     {
-//        this.wordList = wordList;
         StorageManager storageManager = new StorageManager();
         String indices = SessionManager.getInstance().getSessionItem(SessionKeys.CURRENT_MODULE_INDICES);
         String moduleName = SessionManager.getInstance().getSessionItem(SessionKeys.CURRENT_MODULE_PATH);
@@ -85,6 +86,7 @@ public class WordLearn
     public void init()
     {
         this.passed = new ArrayList<>();
+        statusLabel.setText(String.format("%d/%d", passed.size(), wordList.getWords().size()));
         this.current = randomizeWord();
         presentWord(this.current);
     }
@@ -198,6 +200,7 @@ public class WordLearn
             if(isPassCondition())
             {
                 learnProgressBar.setProgress(( (double) passed.size()/ ((double) wordList.getWords().size() )));
+                statusLabel.setText(String.format("%d/%d", passed.size(), wordList.getWords().size()));
                 if(isEndingCondition())
                 {
                     nihongo.showWordView();
