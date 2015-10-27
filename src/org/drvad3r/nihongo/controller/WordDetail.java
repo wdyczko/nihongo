@@ -242,7 +242,7 @@ public class WordDetail
         {
             robot.keyPress(java.awt.event.KeyEvent.VK_DOWN);
         }
-        else if (keyEvent.getCode() == KeyCode.L)
+        else if (keyEvent.getCode() == KeyCode.L && keyEvent.isControlDown())
         {
             nihongo.showLearnView();
         }
