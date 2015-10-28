@@ -11,17 +11,11 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.util.Duration;
 import org.drvad3r.nihongo.Nihongo;
-import org.drvad3r.nihongo.define.Path;
-import org.drvad3r.nihongo.define.SessionKeys;
+import org.drvad3r.nihongo.define.Style;
 import org.drvad3r.nihongo.manager.SessionManager;
-import org.drvad3r.nihongo.manager.StorageManager;
 import org.drvad3r.nihongo.manager.WordManager;
 import org.drvad3r.nihongo.model.Word;
 import org.drvad3r.nihongo.model.WordList;
-
-import java.io.File;
-import java.util.ArrayList;
-import java.util.Random;
 
 /**
  * Author: Wiktor
@@ -61,7 +55,7 @@ public class PronunciationAndKanji
     public void init()
     {
         setWordList();
-        statusLabel.setText(String.format("%d/%d", wordManager.getPassedSize(), wordManager.getWordsListSize()));
+        statusLabel.setText(String.format(Style.STATUS_FORMATTER, wordManager.getPassedSize(), wordManager.getWordsListSize()));
         presentWord(wordManager.randWord());
     }
 
@@ -72,20 +66,20 @@ public class PronunciationAndKanji
 
     private void resetTextFieldStyle(TextField textField)
     {
-        textField.getStyleClass().removeAll("text-field-incorrect");
-        textField.getStyleClass().removeAll("text-field-correct");
+        textField.getStyleClass().removeAll(Style.Class.TextField.INCORRECT);
+        textField.getStyleClass().removeAll(Style.Class.TextField.CORRECT);
         textField.requestLayout();
     }
 
     private void correctTextFieldStyle(TextField textField)
     {
-        textField.getStyleClass().add("text-field-correct");
+        textField.getStyleClass().add(Style.Class.TextField.CORRECT);
         textField.requestLayout();
     }
 
     private void incorrectTextFieldStyle(TextField textField)
     {
-        textField.getStyleClass().add("text-field-incorrect");
+        textField.getStyleClass().add(Style.Class.TextField.INCORRECT);
         textField.requestLayout();
     }
 
@@ -162,7 +156,7 @@ public class PronunciationAndKanji
             if(isPassCondition())
             {
                 learnProgressBar.setProgress(( (double) wordManager.getPassedSize()/ ((double) wordManager.getWordsListSize() )));
-                statusLabel.setText(String.format("%d/%d", wordManager.getPassedSize(), wordManager.getWordsListSize()));
+                statusLabel.setText(String.format(Style.STATUS_FORMATTER, wordManager.getPassedSize(), wordManager.getWordsListSize()));
                 if(isEndingCondition())
                 {
                     nihongo.showManageLists();
@@ -188,7 +182,7 @@ public class PronunciationAndKanji
             statusLabel.setText(wordManager.getCurrent().getPolish());
             Timeline timeline = new Timeline(new KeyFrame(
                     Duration.seconds(4),
-                    actionEvent -> statusLabel.setText(String.format("%d/%d", (wordManager.getPassedSize() - 1 < 0) ? 0 : wordManager.getPassedSize() - 1, wordManager.getWordsListSize()))
+                    actionEvent -> statusLabel.setText(String.format(Style.STATUS_FORMATTER, (wordManager.getPassedSize() - 1 < 0) ? 0 : wordManager.getPassedSize() - 1, wordManager.getWordsListSize()))
             ));
             timeline.play();
         }
