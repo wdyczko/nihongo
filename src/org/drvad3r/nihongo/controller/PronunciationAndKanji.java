@@ -170,7 +170,7 @@ public class PronunciationAndKanji
                 showAnswer();
             }
         }
-        else if(keyEvent.isControlDown() && keyEvent.getCode() == KeyCode.P)
+        else if(keyEvent.getCode() == KeyCode.F1)
         {
             statusLabel.setText(wordManager.getCurrent().getPolish());
             Timeline timeline = new Timeline(new KeyFrame(
