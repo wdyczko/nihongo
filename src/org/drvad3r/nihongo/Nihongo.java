@@ -112,7 +112,7 @@ public class Nihongo extends Application
         }
     }
 
-    public void showPronunciationView()
+    public void showPronunciation()
     {
         try
         {
@@ -195,7 +195,7 @@ public class Nihongo extends Application
     @FXML
     private void onPronunciation()
     {
-        showPronunciationView();
+        showPronunciation();
     }
 
     @FXML

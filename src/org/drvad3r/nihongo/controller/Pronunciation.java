@@ -113,7 +113,7 @@ public class Pronunciation {
                 showAnswer();
             }
         }
-        else if(keyEvent.getCode() == KeyCode.P && keyEvent.isControlDown())
+        else if(keyEvent.getCode() == KeyCode.F1)
         {
             statusLabel.setText(wordManager.getCurrent().getPolish());
             Timeline timeline = new Timeline(new KeyFrame(
@@ -122,7 +122,7 @@ public class Pronunciation {
             ));
             timeline.play();
         }
-        else if(keyEvent.getCode() == KeyCode.E && keyEvent.isControlDown())
+        else if(keyEvent.getCode() == KeyCode.F2)
         {
             statusLabel.setText(wordManager.getCurrent().getEnglish());
             Timeline timeline = new Timeline(new KeyFrame(

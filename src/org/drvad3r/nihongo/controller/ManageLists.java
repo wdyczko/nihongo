@@ -241,9 +241,13 @@ public class ManageLists
         {
             robot.keyPress(java.awt.event.KeyEvent.VK_DOWN);
         }
-        else if (keyEvent.getCode() == KeyCode.L && keyEvent.isControlDown())
+        else if (keyEvent.getCode() == KeyCode.DIGIT1 && keyEvent.isShiftDown())
         {
             nihongo.showPronunciationAndKanji();
+        }
+        else if (keyEvent.getCode() == KeyCode.DIGIT2 && keyEvent.isShiftDown())
+        {
+            nihongo.showPronunciation();
         }
         else if (keyEvent.getCode() == KeyCode.K && keyEvent.isControlDown())
         {
