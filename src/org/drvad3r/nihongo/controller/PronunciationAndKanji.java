@@ -2,8 +2,6 @@ package org.drvad3r.nihongo.controller;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-import javafx.application.Platform;
-import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
@@ -28,7 +26,7 @@ import java.util.Random;
  * Author: Wiktor
  * Creation: 2015-10-21
  */
-public class WordLearn
+public class PronunciationAndKanji
 {
     @FXML
     private TextField pronounceTextField;
@@ -209,7 +207,7 @@ public class WordLearn
                 statusLabel.setText(String.format("%d/%d", passed.size(), wordList.getWords().size()));
                 if(isEndingCondition())
                 {
-                    nihongo.showWordView();
+                    nihongo.showManageLists();
                     return;
                 }
                 this.current = randomizeWord();

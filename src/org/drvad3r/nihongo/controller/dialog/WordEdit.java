@@ -1,4 +1,4 @@
-package org.drvad3r.nihongo.controller;
+package org.drvad3r.nihongo.controller.dialog;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;

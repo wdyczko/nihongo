@@ -6,7 +6,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane styleClass="background" stylesheets="@../themes/DarkTheme.css" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.drvad3r.nihongo.controller.WordLearn">
+<AnchorPane styleClass="background" stylesheets="@../themes/DarkTheme.css" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.drvad3r.nihongo.controller.PronunciationAndKanji">
    <children>
       <GridPane hgap="20.0" layoutX="5.0" layoutY="5.0" minHeight="200.0" minWidth="300.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
         <columnConstraints>

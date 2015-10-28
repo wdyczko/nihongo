@@ -4,31 +4,26 @@ package org.drvad3r.nihongo;/**
  */
 
 import javafx.application.Application;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.image.*;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.util.Pair;
+import org.drvad3r.nihongo.controller.Pronunciation;
 import org.drvad3r.nihongo.define.Path;
 import org.drvad3r.nihongo.manager.SessionManager;
 import org.drvad3r.nihongo.manager.StorageManager;
 import org.drvad3r.nihongo.model.Module;
 import org.drvad3r.nihongo.model.ModuleList;
-import org.drvad3r.nihongo.model.Session;
+import org.drvad3r.nihongo.model.Word;
 import org.drvad3r.nihongo.model.WordList;
-import org.drvad3r.nihongo.controller.WordDetail;
-import org.drvad3r.nihongo.controller.WordEdit;
-import org.drvad3r.nihongo.controller.WordLearn;
+import org.drvad3r.nihongo.controller.ManageLists;
+import org.drvad3r.nihongo.controller.dialog.WordEdit;
+import org.drvad3r.nihongo.controller.PronunciationAndKanji;
 
-import javax.imageio.ImageIO;
-import java.awt.*;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -65,7 +60,7 @@ public class Nihongo extends Application
         currentModule = moduleList.getModuleList().get(0);
 
         initializeRootLayout();
-        showWordView();
+        showManageLists();
     }
 
     private void initializeRootLayout()
@@ -84,15 +79,15 @@ public class Nihongo extends Application
         }
     }
 
-    public void showWordView()
+    public void showManageLists()
     {
         try
         {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Nihongo.class.getResource("view/WordDetail.fxml"));
-            AnchorPane wordView = loader.load();
-            rootLayout.setCenter(wordView);
-            WordDetail controller = loader.getController();
+            loader.setLocation(Nihongo.class.getResource("view/ManageLists.fxml"));
+            AnchorPane manageListsRoot = loader.load();
+            rootLayout.setCenter(manageListsRoot);
+            ManageLists controller = loader.getController();
             controller.setNihongo(this);
         } catch (IOException e)
         {
@@ -100,30 +95,46 @@ public class Nihongo extends Application
         }
     }
 
-    public void showLearnView()
+    public void showPronunciationAndKanji()
     {
         try
         {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Nihongo.class.getResource("view/WordLearn.fxml"));
-            AnchorPane wordLearnView = loader.load();
-            rootLayout.setCenter(wordLearnView);
-            WordLearn controller = loader.getController();
+            loader.setLocation(Nihongo.class.getResource("view/PronunciationAndKanji.fxml"));
+            AnchorPane pronunciationAndKanjiRoot = loader.load();
+            rootLayout.setCenter(pronunciationAndKanjiRoot);
+            PronunciationAndKanji controller = loader.getController();
             controller.setNihongo(this);
             controller.init();
         } catch (IOException e)
         {
             e.printStackTrace();
         }
-
     }
 
-    public boolean showWordEditDialog(org.drvad3r.nihongo.model.Word word)
+    public void showPronunciationView()
     {
         try
         {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Nihongo.class.getResource("view/WordEdit.fxml"));
+            loader.setLocation(Nihongo.class.getResource("view/Pronunciation.fxml"));
+            AnchorPane pronunciationRoot = loader.load();
+            rootLayout.setCenter(pronunciationRoot);
+            Pronunciation controller = loader.getController();
+            controller.setNihongo(this);
+            controller.init();
+        } catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+    }
+
+    public boolean showWordEditDialog(Word word)
+    {
+        try
+        {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Nihongo.class.getResource("view/dialog/WordEdit.fxml"));
             AnchorPane page = loader.load();
 
             Stage dialogStage = new Stage();
@@ -172,13 +183,19 @@ public class Nihongo extends Application
     {
         StorageManager storageManager = new StorageManager();
         WordList list = storageManager.loadWordDataFromFile(new File(System.getProperty("user.dir") + Path.MODULE_RESOURCE_PATH + currentModule.getFile()));
-        showLearnView();
+        showPronunciationAndKanji();
     }
 
     @FXML
     private void onWordView()
     {
-        showWordView();
+        showManageLists();
+    }
+
+    @FXML
+    private void onPronunciation()
+    {
+        showPronunciationView();
     }
 
     @FXML

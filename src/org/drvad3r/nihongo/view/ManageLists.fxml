@@ -4,7 +4,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane minHeight="300.0" minWidth="600.0" styleClass="background" stylesheets="@../themes/DarkTheme.css" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.drvad3r.nihongo.controller.WordDetail">
+<AnchorPane minHeight="300.0" minWidth="600.0" styleClass="background" stylesheets="@../themes/DarkTheme.css" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.drvad3r.nihongo.controller.ManageLists">
    <SplitPane dividerPositions="1.0" orientation="VERTICAL" styleClass="background" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
      <items>
        <AnchorPane>

@@ -6,7 +6,6 @@ import javafx.scene.control.*;
 import javafx.scene.control.Label;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.util.Pair;
 import org.drvad3r.nihongo.Nihongo;
 import org.drvad3r.nihongo.define.Path;
 import org.drvad3r.nihongo.define.SessionKeys;
@@ -21,7 +20,7 @@ import java.io.File;
  * Author: Wiktor
  * Creation: 2015-10-17
  */
-public class WordDetail
+public class ManageLists
 {
     @FXML
     private TableView<org.drvad3r.nihongo.model.Word> wordTableView;
@@ -50,7 +49,7 @@ public class WordDetail
     private ModuleList moduleList;
     private static Robot robot;
 
-    public WordDetail()
+    public ManageLists()
     {
         storageManager = new StorageManager();
         moduleList = storageManager.loadModulesDataFromFile(new File(System.getProperty("user.dir") + Path.MODULE_FILE));
@@ -91,7 +90,7 @@ public class WordDetail
             String indicies = SessionManager.getInstance().getSessionItem(SessionKeys.CURRENT_MODULE_INDICES);
             indicies = indicies.replaceAll("\\[|\\]", "");
             String[] splitted = indicies.split(", ");
-            if(splitted != null)
+            if(splitted != null && splitted.length > 1)
             {
                 for(String s : splitted)
                 {
@@ -244,7 +243,7 @@ public class WordDetail
         }
         else if (keyEvent.getCode() == KeyCode.L && keyEvent.isControlDown())
         {
-            nihongo.showLearnView();
+            nihongo.showPronunciationAndKanji();
         }
         else if (keyEvent.getCode() == KeyCode.K && keyEvent.isControlDown())
         {
