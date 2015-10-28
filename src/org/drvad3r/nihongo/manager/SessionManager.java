@@ -2,8 +2,10 @@ package org.drvad3r.nihongo.manager;
 
 import javafx.collections.ObservableList;
 import org.drvad3r.nihongo.define.Path;
+import org.drvad3r.nihongo.define.SessionKeys;
 import org.drvad3r.nihongo.model.Session;
 import org.drvad3r.nihongo.model.SessionItem;
+import org.drvad3r.nihongo.model.WordList;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -141,5 +143,39 @@ public class SessionManager {
         else {
             return false;
         }
+    }
+
+    public static WordList loadWordList()
+    {
+        StorageManager storageManager = new StorageManager();
+        String indices = SessionManager.getInstance().getSessionItem(SessionKeys.CURRENT_MODULE_INDICES);
+        String moduleName = SessionManager.getInstance().getSessionItem(SessionKeys.CURRENT_MODULE_PATH);
+        WordList wordList;
+
+        File file = new File(System.getProperty("user.dir") + Path.MODULE_RESOURCE_PATH + moduleName);
+        if (indices != null)
+        {
+            WordList list = storageManager.loadWordDataFromFile(file);
+            indices = indices.replaceAll("\\[|\\]", "");
+            String[] splitted = indices.split(", ");
+            if(splitted.length > 1)
+            {
+                WordList rangeList = new WordList();
+                for(String s : splitted)
+                {
+                    rangeList.getWords().add(list.getWords().get(Integer.parseInt(s)));
+                }
+                wordList = rangeList;
+            }
+            else
+            {
+                wordList = list;
+            }
+        }
+        else
+        {
+            wordList = storageManager.loadWordDataFromFile(file);
+        }
+        return wordList;
     }
 }

@@ -56,34 +56,7 @@ public class PronunciationAndKanji
 
     private void setWordList()
     {
-        StorageManager storageManager = new StorageManager();
-        String indices = SessionManager.getInstance().getSessionItem(SessionKeys.CURRENT_MODULE_INDICES);
-        String moduleName = SessionManager.getInstance().getSessionItem(SessionKeys.CURRENT_MODULE_PATH);
-
-        File file = new File(System.getProperty("user.dir") + Path.MODULE_RESOURCE_PATH + moduleName);
-        if (indices != null)
-        {
-            WordList list = storageManager.loadWordDataFromFile(file);
-            indices = indices.replaceAll("\\[|\\]", "");
-            String[] splitted = indices.split(", ");
-            if(splitted.length > 1)
-            {
-                WordList rangeList = new WordList();
-                for(String s : splitted)
-                {
-                    rangeList.getWords().add(list.getWords().get(Integer.parseInt(s)));
-                }
-                this.wordList = rangeList;
-            }
-            else
-            {
-                this.wordList = list;
-            }
-        }
-        else
-        {
-            this.wordList = storageManager.loadWordDataFromFile(file);
-        }
+        this.wordList = SessionManager.getInstance().loadWordList();
     }
 
     public void init()
