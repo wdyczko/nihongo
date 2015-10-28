@@ -5,6 +5,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextField;
 import org.drvad3r.nihongo.Nihongo;
+import org.drvad3r.nihongo.manager.SessionManager;
+import org.drvad3r.nihongo.manager.WordManager;
+import org.drvad3r.nihongo.model.Word;
 
 /**
  * Author: Wiktor
@@ -23,6 +26,7 @@ public class Pronunciation {
     private Label statusLabel;
 
     private Nihongo nihongo;
+    private WordManager wordManager;
 
     public void setNihongo(Nihongo nihongo)
     {
@@ -30,6 +34,17 @@ public class Pronunciation {
     }
 
     public void init()
+    {
+        this.wordManager = new WordManager(SessionManager.getInstance().loadWordList());
+        presentWord(wordManager.randWord());
+    }
+
+    private void presentWord(Word word)
+    {
+        originalLabel.setText(word.getOriginal());
+    }
+
+    private void showAnswer()
     {
 
     }

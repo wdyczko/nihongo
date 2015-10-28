@@ -19,7 +19,7 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label fx:id="originalLabel" text="Question" GridPane.halignment="CENTER" />
+            <Label fx:id="originalLabel" styleClass="label-header" text="Question" GridPane.halignment="CENTER" />
             <TextField fx:id="pronounceTextField" alignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
             <Label fx:id="pronounceLabel" text="Answer" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
             <Label fx:id="statusLabel" text="Status" GridPane.halignment="CENTER" GridPane.rowIndex="4" />

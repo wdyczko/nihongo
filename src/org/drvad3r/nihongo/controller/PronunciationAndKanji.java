@@ -15,7 +15,6 @@ import org.drvad3r.nihongo.define.Style;
 import org.drvad3r.nihongo.manager.SessionManager;
 import org.drvad3r.nihongo.manager.WordManager;
 import org.drvad3r.nihongo.model.Word;
-import org.drvad3r.nihongo.model.WordList;
 
 /**
  * Author: Wiktor
@@ -46,15 +45,9 @@ public class PronunciationAndKanji
         this.nihongo = nihongo;
     }
 
-    private void setWordList()
-    {
-        WordList wordList = SessionManager.getInstance().loadWordList();
-        this.wordManager = new WordManager(wordList);
-    }
-
     public void init()
     {
-        setWordList();
+        this.wordManager = new WordManager(SessionManager.getInstance().loadWordList());
         statusLabel.setText(String.format(Style.STATUS_FORMATTER, wordManager.getPassedSize(), wordManager.getWordsListSize()));
         presentWord(wordManager.randWord());
     }
