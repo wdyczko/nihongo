@@ -5,7 +5,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane styleClass="background" stylesheets="@../themes/DarkTheme.css" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.drvad3r.nihongo.controller.Pronunciation">
+<AnchorPane styleClass="background" stylesheets="@../themes/DarkTheme.css" xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.drvad3r.nihongo.controller.Pronunciation">
    <children>
       <GridPane layoutX="67.0" layoutY="102.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
         <columnConstraints>
@@ -20,8 +20,8 @@
         </rowConstraints>
          <children>
             <Label fx:id="originalLabel" styleClass="label-header" text="Question" GridPane.halignment="CENTER" />
-            <TextField fx:id="pronounceTextField" alignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-            <Label fx:id="pronounceLabel" text="Answer" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+            <TextField fx:id="pronounceTextField" alignment="CENTER" onKeyPressed="#onPronounceKeyInput" style="-fx-font-size: 30px;" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+            <Label fx:id="pronounceLabel" styleClass="label-header" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
             <Label fx:id="statusLabel" text="Status" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
             <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
                <children>
