@@ -15,6 +15,7 @@ import org.drvad3r.nihongo.define.Path;
 import org.drvad3r.nihongo.define.SessionKeys;
 import org.drvad3r.nihongo.manager.SessionManager;
 import org.drvad3r.nihongo.manager.StorageManager;
+import org.drvad3r.nihongo.manager.WordManager;
 import org.drvad3r.nihongo.model.Word;
 import org.drvad3r.nihongo.model.WordList;
 
@@ -44,10 +45,7 @@ public class PronunciationAndKanji
     private TextArea englishTextArea;
 
     private Nihongo nihongo;
-    private WordList wordList;
-    private Word current;
-    private ArrayList<Integer> passed;
-    private int value;
+    private WordManager wordManager;
 
     public void setNihongo(Nihongo nihongo)
     {
@@ -56,28 +54,15 @@ public class PronunciationAndKanji
 
     private void setWordList()
     {
-        this.wordList = SessionManager.getInstance().loadWordList();
+        WordList wordList = SessionManager.getInstance().loadWordList();
+        this.wordManager = new WordManager(wordList);
     }
 
     public void init()
     {
         setWordList();
-        this.passed = new ArrayList<>();
-        statusLabel.setText(String.format("%d/%d", passed.size(), wordList.getWords().size()));
-        this.current = randomizeWord();
-        presentWord(this.current);
-    }
-
-    private Word randomizeWord()
-    {
-        Random random = new Random();
-        value = -1;
-        do
-        {
-            value = random.nextInt(wordList.getWords().size());
-        } while (passed.contains(value));
-        passed.add(value);
-        return wordList.getWords().get(value);
+        statusLabel.setText(String.format("%d/%d", wordManager.getPassedSize(), wordManager.getWordsListSize()));
+        presentWord(wordManager.randWord());
     }
 
     private void presentWord(Word word)
@@ -108,7 +93,7 @@ public class PronunciationAndKanji
     {
         String originalTextFieldString = originalTextField.getText().trim();
         String pronounceTextFieldString = pronounceTextField.getText().trim();
-        if(originalTextFieldString.equals(this.current.getOriginal()) && pronounceTextFieldString.equals(this.current.getPronounce()))
+        if(originalTextFieldString.equals(wordManager.getCurrent().getOriginal()) && pronounceTextFieldString.equals(wordManager.getCurrent().getPronounce()))
         {
             return true;
         }
@@ -118,7 +103,7 @@ public class PronunciationAndKanji
     private boolean isOriginalCorrect()
     {
         String originalTextFieldString = originalTextField.getText().trim();
-        if(originalTextFieldString.equals(this.current.getOriginal()))
+        if(originalTextFieldString.equals(wordManager.getCurrent().getOriginal()))
         {
             return true;
         }
@@ -128,7 +113,7 @@ public class PronunciationAndKanji
     private boolean isPronounceCorrect()
     {
         String pronounceTextFieldString = pronounceTextField.getText().trim();
-        if(pronounceTextFieldString.equals(this.current.getPronounce()))
+        if(pronounceTextFieldString.equals(wordManager.getCurrent().getPronounce()))
         {
             return true;
         }
@@ -137,7 +122,7 @@ public class PronunciationAndKanji
 
     private boolean isEndingCondition()
     {
-        if(passed.size() == wordList.getWords().size())
+        if(wordManager.getPassedSize() == wordManager.getWordsListSize())
         {
             return true;
         }
@@ -149,8 +134,8 @@ public class PronunciationAndKanji
 
     private void showAnswer()
     {
-        pronounceLabel.setText(this.current.getPronounce());
-        originalLabel.setText(this.current.getOriginal());
+        pronounceLabel.setText(wordManager.getCurrent().getPronounce());
+        originalLabel.setText(wordManager.getCurrent().getOriginal());
     }
 
     @FXML
@@ -176,15 +161,14 @@ public class PronunciationAndKanji
             }
             if(isPassCondition())
             {
-                learnProgressBar.setProgress(( (double) passed.size()/ ((double) wordList.getWords().size() )));
-                statusLabel.setText(String.format("%d/%d", passed.size(), wordList.getWords().size()));
+                learnProgressBar.setProgress(( (double) wordManager.getPassedSize()/ ((double) wordManager.getWordsListSize() )));
+                statusLabel.setText(String.format("%d/%d", wordManager.getPassedSize(), wordManager.getWordsListSize()));
                 if(isEndingCondition())
                 {
                     nihongo.showManageLists();
                     return;
                 }
-                this.current = randomizeWord();
-                presentWord(this.current);
+                presentWord(wordManager.randWord());
                 resetTextFieldStyle(pronounceTextField);
                 resetTextFieldStyle(originalTextField);
                 pronounceTextField.setText("");
@@ -195,16 +179,16 @@ public class PronunciationAndKanji
             }
             else
             {
-                passed.remove(new Integer(value));
+                wordManager.unpassLastIndex();
                 showAnswer();
             }
         }
         else if(keyEvent.isControlDown() && keyEvent.getCode() == KeyCode.P)
         {
-            statusLabel.setText(current.getPolish());
+            statusLabel.setText(wordManager.getCurrent().getPolish());
             Timeline timeline = new Timeline(new KeyFrame(
                     Duration.seconds(4),
-                    actionEvent -> statusLabel.setText(String.format("%d/%d", (passed.size() - 1 < 0) ? 0 : passed.size() - 1, wordList.getWords().size()))
+                    actionEvent -> statusLabel.setText(String.format("%d/%d", (wordManager.getPassedSize() - 1 < 0) ? 0 : wordManager.getPassedSize() - 1, wordManager.getWordsListSize()))
             ));
             timeline.play();
         }
