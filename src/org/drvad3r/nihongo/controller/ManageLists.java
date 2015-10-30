@@ -262,5 +262,9 @@ public class ManageLists
         {
             robot.keyPress(java.awt.event.KeyEvent.VK_UP);
         }
+        else if (keyEvent.getCode() == KeyCode.R)
+        {
+            nihongo.showCommandDialog(wordTableView);
+        }
     }
 }

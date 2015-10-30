@@ -7,12 +7,15 @@ import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.TableView;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import org.drvad3r.nihongo.controller.Pronunciation;
+import org.drvad3r.nihongo.controller.dialog.Command;
 import org.drvad3r.nihongo.define.Path;
 import org.drvad3r.nihongo.manager.SessionManager;
 import org.drvad3r.nihongo.manager.StorageManager;
@@ -151,6 +154,39 @@ public class Nihongo extends Application
             dialogStage.showAndWait();
 
             return controller.isOkClicked();
+        } catch (IOException e)
+        {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public boolean showCommandDialog(TableView tableView)
+    {
+        try
+        {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Nihongo.class.getResource("view/dialog/Command.fxml"));
+            AnchorPane page = loader.load();
+
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("Command");
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.initOwner(primaryStage);
+            dialogStage.initStyle(StageStyle.UNDECORATED);
+            dialogStage.setX(primaryStage.getX() + tableView.getLayoutX() + 20);
+            dialogStage.setY(primaryStage.getY() + tableView.getLayoutY() + 120);
+            dialogStage.setWidth(tableView.getWidth() - 40);
+            Scene scene = new Scene(page);
+            dialogStage.setScene(scene);
+
+            Command controller = loader.getController();
+            controller.setDialogStage(dialogStage);
+            controller.setTableView(tableView);
+
+            dialogStage.showAndWait();
+
+            return true;
         } catch (IOException e)
         {
             e.printStackTrace();
