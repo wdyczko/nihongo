@@ -3,11 +3,9 @@ package org.drvad3r.nihongo.controller;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.fxml.FXML;
-import javafx.geometry.Point2D;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextField;
-import javafx.scene.input.InputMethodRequests;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.util.Duration;
@@ -115,7 +113,7 @@ public class Pronunciation {
         }
         else if(keyEvent.getCode() == KeyCode.F1)
         {
-            statusLabel.setText(wordManager.getCurrent().getPolish());
+            statusLabel.setText(wordManager.getCurrent().getLocal());
             recoverStatus();
         }
         else if(keyEvent.getCode() == KeyCode.F2)

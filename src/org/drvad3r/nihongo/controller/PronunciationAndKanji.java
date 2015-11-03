@@ -172,7 +172,7 @@ public class PronunciationAndKanji
         }
         else if(keyEvent.getCode() == KeyCode.F1)
         {
-            statusLabel.setText(wordManager.getCurrent().getPolish());
+            statusLabel.setText(wordManager.getCurrent().getLocal());
             recoverStatus();
         }
         else if(keyEvent.getCode() == KeyCode.F3)

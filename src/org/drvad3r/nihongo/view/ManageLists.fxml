@@ -40,8 +40,8 @@
                             <Label fx:id="pronounceLabel" styleClass="label-bright" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                             <Label styleClass="label-big" text="English" GridPane.rowIndex="2" />
                             <Label fx:id="englishLabel" styleClass="label-bright" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                            <Label styleClass="label-big" text="Polish" GridPane.rowIndex="3" />
-                            <Label fx:id="polishLabel" styleClass="label-bright" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                            <Label styleClass="label-big" text="Local" GridPane.rowIndex="3" />
+                            <Label fx:id="localLabel" styleClass="label-bright" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                         </GridPane>
                         <ButtonBar layoutX="33.0" layoutY="335.0" prefHeight="40.0" prefWidth="379.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
                             <buttons>

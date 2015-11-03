@@ -20,7 +20,7 @@ public class WordEdit
     @FXML
     private TextField englishTextField;
     @FXML
-    private TextField polishTextField;
+    private TextField localTextField;
 
     private Stage dialogStage;
     private Word word;
@@ -43,7 +43,7 @@ public class WordEdit
         originalTextField.setText(word.getOriginal());
         pronounceTextField.setText(word.getPronounce());
         englishTextField.setText(word.getEnglish());
-        polishTextField.setText(word.getPolish());
+        localTextField.setText(word.getLocal());
     }
 
     public boolean isOkClicked()
@@ -59,7 +59,7 @@ public class WordEdit
             word.setOriginal(originalTextField.getText());
             word.setPronounce(pronounceTextField.getText());
             word.setEnglish(englishTextField.getText());
-            word.setPolish(polishTextField.getText());
+            word.setLocal(localTextField.getText());
             okClicked = true;
             dialogStage.close();
         }
@@ -73,7 +73,7 @@ public class WordEdit
 
     private boolean isInputValid()
     {
-        return (!originalTextField.getText().isEmpty() && !pronounceTextField.getText().isEmpty() && !englishTextField.getText().isEmpty() && !polishTextField.getText().isEmpty());
+        return (!originalTextField.getText().isEmpty() && !pronounceTextField.getText().isEmpty() && !englishTextField.getText().isEmpty() && !localTextField.getText().isEmpty());
     }
 
     @FXML

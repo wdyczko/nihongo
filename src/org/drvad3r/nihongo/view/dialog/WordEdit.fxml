@@ -22,11 +22,11 @@
             <Label text="Original" />
             <Label text="Pronounace" GridPane.rowIndex="1" />
             <Label text="English" GridPane.rowIndex="2" />
-            <Label text="Polish" GridPane.rowIndex="3" />
+            <Label text="Local" GridPane.rowIndex="3" />
             <TextField fx:id="originalTextField" GridPane.columnIndex="1" onKeyPressed="#onKeyInput" />
             <TextField fx:id="pronounceTextField" GridPane.columnIndex="1" GridPane.rowIndex="1" onKeyPressed="#onKeyInput" />
             <TextField fx:id="englishTextField" GridPane.columnIndex="1" GridPane.rowIndex="2" onKeyPressed="#onKeyInput" />
-            <TextField fx:id="polishTextField" GridPane.columnIndex="1" GridPane.rowIndex="3" onKeyPressed="#onKeyInput" >
+            <TextField fx:id="localTextField" GridPane.columnIndex="1" GridPane.rowIndex="3" onKeyPressed="#onKeyInput" >
                <GridPane.margin>
                   <Insets />
                </GridPane.margin></TextField>

@@ -3,265 +3,265 @@
     <word>
         <english>acidic</english>
         <original>酸っぱい</original>
-        <polish>kwaśny</polish>
+        <local>kwaśny</local>
         <pronounce>すっぱい</pronounce>
     </word>
     <word>
         <english>bad</english>
         <original>悪い</original>
-        <polish>zły</polish>
+        <local>zły</local>
         <pronounce>わるい</pronounce>
     </word>
     <word>
         <english>beautiful</english>
         <original>美しい</original>
-        <polish>piękny</polish>
+        <local>piękny</local>
         <pronounce>うつくしい</pronounce>
     </word>
     <word>
         <english>big</english>
         <original>大きい</original>
-        <polish>duży</polish>
+        <local>duży</local>
         <pronounce>おおきい</pronounce>
     </word>
     <word>
         <english>bitter</english>
         <original>苦い</original>
-        <polish>gorzki</polish>
+        <local>gorzki</local>
         <pronounce>にがい</pronounce>
     </word>
     <word>
         <english>boring</english>
         <original>つまらない</original>
-        <polish>nudny</polish>
+        <local>nudny</local>
         <pronounce>つまらない</pronounce>
     </word>
     <word>
         <english>cheap</english>
         <original>安い</original>
-        <polish>tani</polish>
+        <local>tani</local>
         <pronounce>やすい</pronounce>
     </word>
     <word>
         <english>cold (weather)</english>
         <original>寒い</original>
-        <polish>chłodna (pogoda)</polish>
+        <local>chłodna (pogoda)</local>
         <pronounce>さむい</pronounce>
     </word>
     <word>
         <english>cold</english>
         <original>冷たい</original>
-        <polish>chłodny</polish>
+        <local>chłodny</local>
         <pronounce>つめたい</pronounce>
     </word>
     <word>
         <english>cool</english>
         <original>涼しい</original>
-        <polish>chłodny</polish>
+        <local>chłodny</local>
         <pronounce>すずしい</pronounce>
     </word>
     <word>
         <english>correct</english>
         <original>正しい</original>
-        <polish>poprawny</polish>
+        <local>poprawny</local>
         <pronounce>ただしい</pronounce>
     </word>
     <word>
         <english>difficult</english>
         <original>難しい</original>
-        <polish>trudny</polish>
+        <local>trudny</local>
         <pronounce>むずかしい</pronounce>
     </word>
     <word>
         <english>easy</english>
         <original>易しい</original>
-        <polish>łatwy</polish>
+        <local>łatwy</local>
         <pronounce>やさしい</pronounce>
     </word>
     <word>
         <english>enjoyable</english>
         <original>楽しい</original>
-        <polish>przyjemny</polish>
+        <local>przyjemny</local>
         <pronounce>たのしい</pronounce>
     </word>
     <word>
         <english>expensive</english>
         <original>高い</original>
-        <polish>drogi</polish>
+        <local>drogi</local>
         <pronounce>たかい</pronounce>
     </word>
     <word>
         <english>far</english>
         <original>遠い</original>
-        <polish>daleki</polish>
+        <local>daleki</local>
         <pronounce>とおい</pronounce>
     </word>
     <word>
         <english>few</english>
         <original>少ない</original>
-        <polish>niewiele</polish>
+        <local>niewiele</local>
         <pronounce>すくない</pronounce>
     </word>
     <word>
         <english>funny</english>
         <original>おかしい</original>
-        <polish>zabawny</polish>
+        <local>zabawny</local>
         <pronounce>おかしい</pronounce>
     </word>
     <word>
         <english>good</english>
         <original>良い</original>
-        <polish>dobry</polish>
+        <local>dobry</local>
         <pronounce>よい</pronounce>
     </word>
     <word>
         <english>happy</english>
         <original>嬉しい</original>
-        <polish>szczęśliwy</polish>
+        <local>szczęśliwy</local>
         <pronounce>うれしい</pronounce>
     </word>
     <word>
         <english>heavy</english>
         <original>重い</original>
-        <polish>ciężki</polish>
+        <local>ciężki</local>
         <pronounce>おもい</pronounce>
     </word>
     <word>
         <english>hot</english>
         <original>熱い</original>
-        <polish>gorący</polish>
+        <local>gorący</local>
         <pronounce>あつい</pronounce>
     </word>
     <word>
         <english>interesting (amusing, entertaining)</english>
         <original>面白い</original>
-        <polish>interesujący (o czymś pociesznym)</polish>
+        <local>interesujący (o czymś pociesznym)</local>
         <pronounce>おもしろい</pronounce>
     </word>
     <word>
         <english>kind</english>
         <original>優しい</original>
-        <polish>uprzejmy</polish>
+        <local>uprzejmy</local>
         <pronounce>やさしい</pronounce>
     </word>
     <word>
         <english>long</english>
         <original>長い</original>
-        <polish>długi</polish>
+        <local>długi</local>
         <pronounce>ながい</pronounce>
     </word>
     <word>
         <english>mild (weather)</english>
         <original>暖かい</original>
-        <polish>łagodna (pogoda)</polish>
+        <local>łagodna (pogoda)</local>
         <pronounce>あたたかい</pronounce>
     </word>
     <word>
         <english>muggy</english>
         <original>蒸し暑い</original>
-        <polish>duszny</polish>
+        <local>duszny</local>
         <pronounce>むしあつい</pronounce>
     </word>
     <word>
         <english>narrow</english>
         <original>狭い</original>
-        <polish>wąski</polish>
+        <local>wąski</local>
         <pronounce>せまい</pronounce>
     </word>
     <word>
         <english>noisy</english>
         <original>うるさい</original>
-        <polish>głośny</polish>
+        <local>głośny</local>
         <pronounce>うるさい</pronounce>
     </word>
     <word>
         <english>numerous</english>
         <original>多い</original>
-        <polish>liczny</polish>
+        <local>liczny</local>
         <pronounce>おおい</pronounce>
     </word>
     <word>
         <english>sleepy (shorter)</english>
         <original>眠い</original>
-        <polish>senny</polish>
+        <local>senny</local>
         <pronounce>ねむい</pronounce>
     </word>
     <word>
         <english>sleepy (longer)</english>
         <original>眠たい</original>
-        <polish>senny</polish>
+        <local>senny</local>
         <pronounce>ねむたい</pronounce>
     </word>
     <word>
         <english>slow</english>
         <original>遅い</original>
-        <polish>wolny</polish>
+        <local>wolny</local>
         <pronounce>おそい</pronounce>
     </word>
     <word>
         <english>spacious</english>
         <original>広い</original>
-        <polish>przestronny</polish>
+        <local>przestronny</local>
         <pronounce>ひろい</pronounce>
     </word>
     <word>
         <english>strong</english>
         <original>強い</original>
-        <polish>silny</polish>
+        <local>silny</local>
         <pronounce>つよい</pronounce>
     </word>
     <word>
         <english>tasty</english>
         <original>美味しい</original>
-        <polish>smaczny</polish>
+        <local>smaczny</local>
         <pronounce>おいしい</pronounce>
     </word>
     <word>
         <english>tasty (less polite)</english>
         <original>うまい</original>
-        <polish>smaczny</polish>
+        <local>smaczny</local>
         <pronounce>うまい</pronounce>
     </word>
     <word>
         <english>terrific</english>
         <original>凄い</original>
-        <polish>przerażający, wspaniały</polish>
+        <local>przerażający, wspaniały</local>
         <pronounce>すごい</pronounce>
     </word>
     <word>
         <english>thin</english>
         <original>薄い</original>
-        <polish>szczupły</polish>
+        <local>szczupły</local>
         <pronounce>うすい</pronounce>
     </word>
     <word>
         <english>thick</english>
         <original>太い</original>
-        <polish>gruby</polish>
+        <local>gruby</local>
         <pronounce>ふとい</pronounce>
     </word>
     <word>
         <english>weak</english>
         <original>弱い</original>
-        <polish>słaby</polish>
+        <local>słaby</local>
         <pronounce>よわい</pronounce>
     </word>
     <word>
         <english>white</english>
         <original>白い</original>
-        <polish>biały</polish>
+        <local>biały</local>
         <pronounce>しろい</pronounce>
     </word>
     <word>
         <english>wonderful</english>
         <original>素晴らしい</original>
-        <polish>wspaniały</polish>
+        <local>wspaniały</local>
         <pronounce>すばらしい</pronounce>
     </word>
     <word>
         <english>young</english>
         <original>若い</original>
-        <polish>młody</polish>
+        <local>młody</local>
         <pronounce>わかい</pronounce>
     </word>
 </words>

@@ -3,13 +3,13 @@
     <word>
         <english>heart</english>
         <original>心臓</original>
-        <polish>serce</polish>
+        <local>serce</local>
         <pronounce>しんぞう</pronounce>
     </word>
     <word>
         <english>liver</english>
         <original>肝臓</original>
-        <polish>wątroba</polish>
+        <local>wątroba</local>
         <pronounce>かんぞう</pronounce>
     </word>
 </words>

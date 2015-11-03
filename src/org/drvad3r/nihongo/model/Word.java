@@ -12,7 +12,7 @@ public class Word
     private StringProperty original;
     private StringProperty pronounce;
     private StringProperty english;
-    private StringProperty polish;
+    private StringProperty local;
 
     public Word()
     {
@@ -25,7 +25,7 @@ public class Word
         this.english = new SimpleStringProperty(english);
 
         this.pronounce = new SimpleStringProperty("No pronounce");
-        this.polish = new SimpleStringProperty("No polish translation");
+        this.local = new SimpleStringProperty("No local translation");
     }
 
     public String getOriginal()
@@ -73,19 +73,19 @@ public class Word
         this.english.set(english);
     }
 
-    public String getPolish()
+    public String getLocal()
     {
-        return polish.get();
+        return local.get();
     }
 
-    public StringProperty polishProperty()
+    public StringProperty localProperty()
     {
-        return polish;
+        return local;
     }
 
-    public void setPolish(String polish)
+    public void setLocal(String local)
     {
-        this.polish.set(polish);
+        this.local.set(local);
     }
 
     public static void print(Word word)
@@ -93,6 +93,6 @@ public class Word
         System.out.println("Original: " + word.getOriginal());
         System.out.println("Pronounce: " + word.getPronounce());
         System.out.println("English: " + word.getEnglish());
-        System.out.println("Polish: " + word.getPolish());
+        System.out.println("Polish: " + word.getLocal());
     }
 }

@@ -66,7 +66,7 @@ public class StorageManagerTest
     public void testSaveWordDataToFile() throws Exception
     {
         Word word = new Word();
-        word.setEnglish("car"); word.setOriginal("車"); word.setPronounce("くるま"); word.setPolish("samochód");
+        word.setEnglish("car"); word.setOriginal("車"); word.setPronounce("くるま"); word.setLocal("samochód");
         WordList wordList = new WordList();
         wordList.getWords().add(word);
         wordList.setDescription("This is simple description for test purposes");

@@ -36,7 +36,7 @@ public class ManageLists
     @FXML
     private Label pronounceLabel;
     @FXML
-    private Label polishLabel;
+    private Label localLabel;
     @FXML
     private ChoiceBox<Module> moduleChoiceBox;
     @FXML
@@ -135,14 +135,14 @@ public class ManageLists
             originalLabel.setText(word.getOriginal());
             pronounceLabel.setText(word.getPronounce());
             englishLabel.setText(word.getEnglish());
-            polishLabel.setText(word.getPolish());
+            localLabel.setText(word.getLocal());
         }
         else
         {
             originalLabel.setText("");
             pronounceLabel.setText("");
             englishLabel.setText("");
-            polishLabel.setText("");
+            localLabel.setText("");
         }
     }
 
