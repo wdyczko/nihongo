@@ -17,7 +17,6 @@ import javafx.stage.StageStyle;
 import org.drvad3r.nihongo.controller.Pronunciation;
 import org.drvad3r.nihongo.controller.dialog.Command;
 import org.drvad3r.nihongo.define.Path;
-import org.drvad3r.nihongo.manager.SessionManager;
 import org.drvad3r.nihongo.manager.StorageManager;
 import org.drvad3r.nihongo.model.Module;
 import org.drvad3r.nihongo.model.ModuleList;
@@ -30,14 +29,12 @@ import org.drvad3r.nihongo.controller.PronunciationAndKanji;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.ArrayList;
 
 public class Nihongo extends Application
 {
     Stage primaryStage;
     static BorderPane rootLayout;
     static Module currentModule;
-    static ArrayList<Integer> partials;
 
     public static void main(String[] args)
     {
@@ -199,16 +196,6 @@ public class Nihongo extends Application
         return currentModule;
     }
 
-    public static ArrayList<Integer> getPartials()
-    {
-        return partials;
-    }
-
-    public static void setPartials(ArrayList<Integer> partials)
-    {
-        Nihongo.partials = partials;
-    }
-
     public void setCurrentModule(Module currentModule)
     {
         this.currentModule = currentModule;
@@ -237,7 +224,6 @@ public class Nihongo extends Application
     @FXML
     private void onClose()
     {
-        SessionManager.getInstance().destroySession();
         System.exit(0);
     }
 }

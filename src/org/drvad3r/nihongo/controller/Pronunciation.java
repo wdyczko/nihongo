@@ -116,20 +116,25 @@ public class Pronunciation {
         else if(keyEvent.getCode() == KeyCode.F1)
         {
             statusLabel.setText(wordManager.getCurrent().getPolish());
-            Timeline timeline = new Timeline(new KeyFrame(
-                    Duration.seconds(4),
-                    actionEvent -> updateStatus()
-            ));
-            timeline.play();
+            recoverStatus();
         }
         else if(keyEvent.getCode() == KeyCode.F2)
         {
             statusLabel.setText(wordManager.getCurrent().getEnglish());
-            Timeline timeline = new Timeline(new KeyFrame(
-                    Duration.seconds(4),
-                    actionEvent -> updateStatus()
-            ));
-            timeline.play();
+            recoverStatus();
         }
+        else if(keyEvent.getCode() == KeyCode.F3)
+        {
+            statusLabel.setText(wordManager.getCurrent().getPronounce().substring(0, 1) + "...");
+            recoverStatus();
+        }
+    }
+
+    private void recoverStatus() {
+        Timeline timeline = new Timeline(new KeyFrame(
+                Duration.seconds(4),
+                actionEvent -> updateStatus()
+        ));
+        timeline.play();
     }
 }
