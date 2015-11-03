@@ -7,6 +7,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
+import org.drvad3r.nihongo.model.Word;
+
+import java.text.StringCharacterIterator;
 
 /**
  * Created by wdyczko on 10/30/2015.
@@ -79,6 +82,20 @@ public class Command {
                 }
             }
 
+        }
+        else if(input.matches("^@[A-Za-z]*"))
+        {
+            input = input.replace("@", "");
+            tableView.getSelectionModel().clearSelection();
+            String pattern = String.format("^[%s].*", input);
+            for(int i = 0; i < tableView.getItems().size(); i++)
+            {
+                if(((Word)tableView.getItems().get(i)).getEnglish().matches(pattern))
+                {
+                    tableView.getSelectionModel().select(i);
+                    tableView.getSelectionModel().focus(i);
+                }
+            }
         }
     }
 }
