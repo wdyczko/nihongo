@@ -21,7 +21,6 @@ import org.drvad3r.nihongo.manager.StorageManager;
 import org.drvad3r.nihongo.model.Module;
 import org.drvad3r.nihongo.model.ModuleList;
 import org.drvad3r.nihongo.model.Word;
-import org.drvad3r.nihongo.model.WordList;
 import org.drvad3r.nihongo.controller.ManageLists;
 import org.drvad3r.nihongo.controller.dialog.WordEdit;
 import org.drvad3r.nihongo.controller.PronunciationAndKanji;
@@ -198,14 +197,12 @@ public class Nihongo extends Application
 
     public void setCurrentModule(Module currentModule)
     {
-        this.currentModule = currentModule;
+        Nihongo.currentModule = currentModule;
     }
 
     @FXML
     private void onWordLearn()
     {
-        StorageManager storageManager = new StorageManager();
-        WordList list = storageManager.loadWordDataFromFile(new File(System.getProperty("user.dir") + Path.MODULE_RESOURCE_PATH + currentModule.getFile()));
         showPronunciationAndKanji();
     }
 
