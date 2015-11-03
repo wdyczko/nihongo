@@ -155,3 +155,11 @@
     -fx-border-width: 4;
     -fx-border-color: green;
 }
+
+.text-field-command {
+    -fx-background-color: black;
+    -fx-text-fill: white;
+    -fx-border-color: orange;
+    -fx-border-width: 3px;
+    -fx-border-radius: 3px;
+}
