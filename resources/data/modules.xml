@@ -5,6 +5,10 @@
         <name>Human Body</name>
     </module>
     <module>
+        <file>module\human_behavior.xml</file>
+        <name>Human Behavior</name>
+    </module>
+    <module>
         <file>module\adjectives\adjective1-1.xml</file>
         <name>Adjectives I - part I</name>
     </module>
