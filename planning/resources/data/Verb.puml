@@ -1,0 +1,30 @@
+@startuml
+class Verb {
+    - negative : StringProperty
+    - conjunctive : StringProperty
+    - plain : StringProperty
+    - conditional : StringProperty
+    - volitional : StringProperty
+    --
+    - local : StringProperty
+    - kanaBase : StringProperty
+}
+
+class VerbList {
+    - verbs : ObservableList<Verb>
+    ..
+    Setters and getters for verbs
+}
+
+VerbList o-- Verb
+
+note right of Verb
+    <b>negative</b> : 書かない
+    <b>conjunctive</b> : 書きます
+    <b>plain</b> : 書く
+    <b>conditional</b> : 書けば
+    <b>volitional</b> : 書こう
+    <b>local</b> : pisać
+    <b>kanaBase</b> : か
+end note
+@enduml

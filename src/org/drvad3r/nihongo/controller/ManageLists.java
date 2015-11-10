@@ -12,6 +12,8 @@ import org.drvad3r.nihongo.define.SessionKeys;
 import org.drvad3r.nihongo.manager.SessionManager;
 import org.drvad3r.nihongo.manager.StorageManager;
 import org.drvad3r.nihongo.model.*;
+import org.drvad3r.nihongo.model.list.ModuleList;
+import org.drvad3r.nihongo.model.list.WordList;
 
 import java.awt.*;
 import java.io.File;

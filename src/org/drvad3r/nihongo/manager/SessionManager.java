@@ -5,7 +5,7 @@ import org.drvad3r.nihongo.define.Path;
 import org.drvad3r.nihongo.define.SessionKeys;
 import org.drvad3r.nihongo.model.Session;
 import org.drvad3r.nihongo.model.SessionItem;
-import org.drvad3r.nihongo.model.WordList;
+import org.drvad3r.nihongo.model.list.WordList;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;

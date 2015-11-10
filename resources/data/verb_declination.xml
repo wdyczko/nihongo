@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<verbs>
+    <verb>
+        <conditional>書けば</conditional>
+        <conjunctive>書きます</conjunctive>
+        <kanaBase>か</kanaBase>
+        <local>pisać</local>
+        <negative>書かない</negative>
+        <plain>書く</plain>
+        <volitional>書こう</volitional>
+    </verb>
+    <verb>
+        <conditional>脱げば</conditional>
+        <conjunctive>脱ぎます</conjunctive>
+        <kanaBase>ぬ</kanaBase>
+        <local>zdejmować, rozbierać się</local>
+        <negative>脱がない</negative>
+        <plain>脱ぐ</plain>
+        <volitional>脱ごう</volitional>
+    </verb>
+</verbs>

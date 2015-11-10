@@ -2,7 +2,7 @@ package org.drvad3r.test.manager;
 
 import org.drvad3r.nihongo.manager.StorageManager;
 import org.drvad3r.nihongo.model.Word;
-import org.drvad3r.nihongo.model.WordList;
+import org.drvad3r.nihongo.model.list.WordList;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

@@ -1,7 +1,8 @@
 package org.drvad3r.nihongo.manager;
 
-import org.drvad3r.nihongo.model.ModuleList;
-import org.drvad3r.nihongo.model.WordList;
+import org.drvad3r.nihongo.model.list.ModuleList;
+import org.drvad3r.nihongo.model.list.VerbList;
+import org.drvad3r.nihongo.model.list.WordList;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -34,6 +35,34 @@ public class StorageManager
         try
         {
             JAXBContext context = JAXBContext.newInstance(WordList.class);
+            Marshaller m = context.createMarshaller();
+            m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+            m.marshal(list, file);
+        } catch (JAXBException e)
+        {
+            e.printStackTrace();
+        }
+    }
+
+    public VerbList loadVerbDataFromFile(File file)
+    {
+        try
+        {
+            JAXBContext context = JAXBContext.newInstance(VerbList.class);
+            Unmarshaller um = context.createUnmarshaller();
+            return (VerbList) um.unmarshal(file);
+        } catch (JAXBException e)
+        {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public void saveVerbDataToFile(File file, VerbList list)
+    {
+        try
+        {
+            JAXBContext context = JAXBContext.newInstance(VerbList.class);
             Marshaller m = context.createMarshaller();
             m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
             m.marshal(list, file);

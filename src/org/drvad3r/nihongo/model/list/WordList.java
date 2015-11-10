@@ -1,7 +1,8 @@
-package org.drvad3r.nihongo.model;
+package org.drvad3r.nihongo.model.list;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import org.drvad3r.nihongo.model.Word;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;

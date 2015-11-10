@@ -4,6 +4,8 @@ package org.drvad3r.nihongo;/**
  */
 
 import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -19,11 +21,13 @@ import org.drvad3r.nihongo.controller.dialog.Command;
 import org.drvad3r.nihongo.define.Path;
 import org.drvad3r.nihongo.manager.StorageManager;
 import org.drvad3r.nihongo.model.Module;
-import org.drvad3r.nihongo.model.ModuleList;
+import org.drvad3r.nihongo.model.Verb;
+import org.drvad3r.nihongo.model.list.ModuleList;
 import org.drvad3r.nihongo.model.Word;
 import org.drvad3r.nihongo.controller.ManageLists;
 import org.drvad3r.nihongo.controller.dialog.WordEdit;
 import org.drvad3r.nihongo.controller.PronunciationAndKanji;
+import org.drvad3r.nihongo.model.list.VerbList;
 
 import java.io.File;
 import java.io.FileInputStream;

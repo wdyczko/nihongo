@@ -1,7 +1,7 @@
 package org.drvad3r.nihongo.manager;
 
 import org.drvad3r.nihongo.model.Word;
-import org.drvad3r.nihongo.model.WordList;
+import org.drvad3r.nihongo.model.list.WordList;
 
 import java.util.ArrayList;
 import java.util.Random;
