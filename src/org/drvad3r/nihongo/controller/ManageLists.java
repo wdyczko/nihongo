@@ -55,7 +55,7 @@ public class ManageLists
     {
         storageManager = new StorageManager();
         moduleList = storageManager.loadModulesDataFromFile(new File(System.getProperty("user.dir") + Path.MODULE_FILE));
-        if (SessionManager.getInstance().sessionExists())
+        if (SessionManager.getInstance().isSessionKeyExists(SessionKeys.CURRENT_MODULE_PATH))
         {
             String modulePath = SessionManager.getInstance().getSessionItem(SessionKeys.CURRENT_MODULE_PATH);
             filePath = System.getProperty("user.dir") + Path.MODULE_RESOURCE_PATH + modulePath;
@@ -87,7 +87,7 @@ public class ManageLists
             SessionManager.getInstance().setSessionItem(SessionKeys.CURRENT_MODULE_INDICES, wordTableView.getSelectionModel().getSelectedIndices().toString());
         }));
         wordTableView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
-        if(SessionManager.getInstance().sessionExists())
+        if(SessionManager.getInstance().isSessionKeyExists(SessionKeys.CURRENT_MODULE_INDICES))
         {
             String indicies = SessionManager.getInstance().getSessionItem(SessionKeys.CURRENT_MODULE_INDICES);
             indicies = indicies.replaceAll("\\[|\\]", "");

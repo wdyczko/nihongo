@@ -121,6 +121,11 @@ public class SessionManager {
         return null;
     }
 
+    public static boolean isSessionKeyExists(String key)
+    {
+        return sessionExists() && getSessionItem(key) != null;
+    }
+
     public static boolean removeSessionItem(String key)
     {
         ObservableList<SessionItem> items = session.getSessionItems();
