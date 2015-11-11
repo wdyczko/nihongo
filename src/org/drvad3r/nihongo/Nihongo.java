@@ -17,6 +17,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import org.drvad3r.nihongo.controller.Pronunciation;
+import org.drvad3r.nihongo.controller.VerbDeclination;
 import org.drvad3r.nihongo.controller.dialog.Command;
 import org.drvad3r.nihongo.define.Path;
 import org.drvad3r.nihongo.manager.StorageManager;
@@ -132,6 +133,22 @@ public class Nihongo extends Application
         }
     }
 
+    public void showVerbDeclination()
+    {
+        try
+        {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Nihongo.class.getResource("view/VerbDeclination.fxml"));
+            AnchorPane verbDeclinationRoot = loader.load();
+            rootLayout.setCenter(verbDeclinationRoot);
+            VerbDeclination controller = loader.getController();
+            controller.setNihongo(this);
+        } catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+    }
+
     public boolean showWordEditDialog(Word word)
     {
         try
@@ -220,6 +237,12 @@ public class Nihongo extends Application
     private void onPronunciation()
     {
         showPronunciation();
+    }
+
+    @FXML
+    private void onVerbDeclination()
+    {
+        showVerbDeclination();
     }
 
     @FXML

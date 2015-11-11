@@ -18,4 +18,67 @@
         <plain>脱ぐ</plain>
         <volitional>脱ごう</volitional>
     </verb>
+    <verb>
+        <conditional>壊せば</conditional>
+        <conjunctive>壊します</conjunctive>
+        <kanaBase>こわ</kanaBase>
+        <local>niszczyć, psuć</local>
+        <negative>壊さない</negative>
+        <plain>壊す</plain>
+        <volitional>壊そう</volitional>
+    </verb>
+    <verb>
+        <conditional>持てば</conditional>
+        <conjunctive>持ちます</conjunctive>
+        <kanaBase>も</kanaBase>
+        <local>mieć, posiadać</local>
+        <negative>持たない</negative>
+        <plain>持つ</plain>
+        <volitional>持とう</volitional>
+    </verb>
+    <verb>
+        <conditional>死ねば</conditional>
+        <conjunctive>死にます</conjunctive>
+        <kanaBase>し</kanaBase>
+        <local>umierać</local>
+        <negative>死なない</negative>
+        <plain>死ぬ</plain>
+        <volitional>死のう</volitional>
+    </verb>
+    <verb>
+        <conditional>叫べば</conditional>
+        <conjunctive>叫びます</conjunctive>
+        <kanaBase>さけ</kanaBase>
+        <local>krzyczeć, płakać</local>
+        <negative>叫ばない</negative>
+        <plain>叫ぶ</plain>
+        <volitional>叫ぼう</volitional>
+    </verb>
+    <verb>
+        <conditional>飲めば</conditional>
+        <conjunctive>飲みます</conjunctive>
+        <kanaBase>の</kanaBase>
+        <local>pić</local>
+        <negative>飲まない</negative>
+        <plain>飲む</plain>
+        <volitional>飲もう</volitional>
+    </verb>
+    <verb>
+        <conditional>座れば</conditional>
+        <conjunctive>座ります</conjunctive>
+        <kanaBase>すわ</kanaBase>
+        <local>siedzieć</local>
+        <negative>座らない</negative>
+        <plain>座る</plain>
+        <volitional>座ろう</volitional>
+    </verb>
+    <verb>
+        <conditional>買えば</conditional>
+        <conjunctive>買います</conjunctive>
+        <kanaBase>か</kanaBase>
+        <local>kupywać</local>
+        <negative>買わない</negative>
+        <plain>買う</plain>
+        <volitional>買おう</volitional>
+    </verb>
 </verbs>

@@ -30,6 +30,11 @@
                   </accelerator>
               </MenuItem>
           </Menu>
+          <Menu mnemonicParsing="false" text="Module">
+              <MenuItem mnemonicParsing="false" onAction="#onVerbDeclination" text="Verb declination">
+
+              </MenuItem>
+          </Menu>
       </MenuBar>
    </top>
 </BorderPane>
