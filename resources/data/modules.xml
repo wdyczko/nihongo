@@ -24,4 +24,8 @@
         <file>module\verbs\verbs2.xml</file>
         <name>Verbs I - part II</name>
     </module>
+    <module>
+        <file>module\verbs\own_one.xml</file>
+        <name>Verb own - part I</name>
+    </module>
 </modules>
