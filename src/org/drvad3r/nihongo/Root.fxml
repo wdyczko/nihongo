@@ -24,6 +24,11 @@
                       <KeyCodeCombination alt="UP" code="F3" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                   </accelerator>
               </MenuItem>
+              <MenuItem mnemonicParsing="false" onAction="#onConfiguration" text="Configuration">
+                  <accelerator>
+                      <KeyCodeCombination alt="UP" code="F5" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                  </accelerator>
+              </MenuItem>
               <MenuItem mnemonicParsing="false" onAction="#onClose" text="Exit">
                   <accelerator>
                       <KeyCodeCombination alt="UP" code="F4" control="DOWN" meta="UP" shift="UP" shortcut="UP" />

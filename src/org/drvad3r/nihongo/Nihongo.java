@@ -16,19 +16,17 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import org.drvad3r.nihongo.controller.Pronunciation;
-import org.drvad3r.nihongo.controller.VerbDeclination;
+import org.drvad3r.nihongo.controller.*;
 import org.drvad3r.nihongo.controller.dialog.Command;
+import org.drvad3r.nihongo.define.Option;
 import org.drvad3r.nihongo.define.Path;
 import org.drvad3r.nihongo.manager.StorageManager;
 import org.drvad3r.nihongo.model.Module;
-import org.drvad3r.nihongo.model.Verb;
+import org.drvad3r.nihongo.model.Quest;
 import org.drvad3r.nihongo.model.list.ModuleList;
 import org.drvad3r.nihongo.model.Word;
-import org.drvad3r.nihongo.controller.ManageLists;
 import org.drvad3r.nihongo.controller.dialog.WordEdit;
-import org.drvad3r.nihongo.controller.PronunciationAndKanji;
-import org.drvad3r.nihongo.model.list.VerbList;
+import org.drvad3r.nihongo.model.list.QuestList;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -149,6 +147,20 @@ public class Nihongo extends Application
         }
     }
 
+    public void showConfiguration()
+    {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Nihongo.class.getResource("view/Configuration.fxml"));
+            AnchorPane configurationRoot = loader.load();
+            rootLayout.setCenter(configurationRoot);
+            Configuration controller = loader.getController();
+            controller.setNihongo(this);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public boolean showWordEditDialog(Word word)
     {
         try
@@ -249,5 +261,11 @@ public class Nihongo extends Application
     private void onClose()
     {
         System.exit(0);
+    }
+
+    @FXML
+    public void onConfiguration()
+    {
+        showConfiguration();
     }
 }

@@ -11,4 +11,5 @@ public interface Path
     String VERB_DECLINATION_FILE = "\\resources\\data\\verb_declination.xml";
     String SESSION_FILE = "session.sess";
     String ICON = "\\resources\\icon.ico";
+    String QUEST_FILE = "\\resources\\data\\quests.xml";
 }

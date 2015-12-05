@@ -1,6 +1,8 @@
 package org.drvad3r.nihongo.manager;
 
+import org.drvad3r.nihongo.define.Path;
 import org.drvad3r.nihongo.model.list.ModuleList;
+import org.drvad3r.nihongo.model.list.QuestList;
 import org.drvad3r.nihongo.model.list.VerbList;
 import org.drvad3r.nihongo.model.list.WordList;
 
@@ -97,6 +99,36 @@ public class StorageManager
         } catch (JAXBException e)
         {
             e.printStackTrace();
+        }
+    }
+
+    public void saveQuestDataToFile(QuestList list)
+    {
+        try
+        {
+            File file = new File(System.getProperty("user.dir") + Path.QUEST_FILE);
+            JAXBContext context = JAXBContext.newInstance(QuestList.class);
+            Marshaller m = context.createMarshaller();
+            m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+            m.marshal(list, file);
+        } catch (JAXBException e)
+        {
+            e.printStackTrace();
+        }
+    }
+
+    public QuestList loadQuestsDataFromFile()
+    {
+        try
+        {
+            File file = new File(System.getProperty("user.dir") + Path.QUEST_FILE);
+            JAXBContext context = JAXBContext.newInstance(QuestList.class);
+            Unmarshaller um = context.createUnmarshaller();
+            return (QuestList) um.unmarshal(file);
+        } catch (JAXBException e)
+        {
+            e.printStackTrace();
+            return null;
         }
     }
 }

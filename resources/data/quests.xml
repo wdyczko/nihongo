@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<quests>
+    <quest>
+        <input>8</input>
+        <output>6</output>
+        <title>Local -&gt; Original &amp; Pronounce</title>
+    </quest>
+    <quest>
+        <input>2</input>
+        <output>15</output>
+        <title>Test</title>
+    </quest>
+</quests>
