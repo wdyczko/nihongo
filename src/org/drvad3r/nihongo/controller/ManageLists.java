@@ -25,6 +25,8 @@ import java.io.File;
 public class ManageLists
 {
     @FXML
+    private Label modeNameLabel;
+    @FXML
     private TableView<org.drvad3r.nihongo.model.Word> wordTableView;
     @FXML
     private TableColumn<org.drvad3r.nihongo.model.Word, String> originalColumn;
@@ -122,6 +124,7 @@ public class ManageLists
         {
             moduleChoiceBox.getSelectionModel().select(0);
         }
+        modeNameLabel.setText("Mode name: " + SessionManager.getInstance().getSessionItem(SessionKeys.CURRENT_QUEST_TITLE));
         amountLabel.setText("Words: " + wordTableView.getItems().size());
     }
 

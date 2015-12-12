@@ -4,7 +4,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane minHeight="300.0" minWidth="600.0" styleClass="background" stylesheets="@../themes/DarkTheme.css" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.drvad3r.nihongo.controller.ManageLists">
+<AnchorPane minHeight="300.0" minWidth="600.0" styleClass="background" stylesheets="@../themes/DarkTheme.css" xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.drvad3r.nihongo.controller.ManageLists">
    <SplitPane dividerPositions="1.0" orientation="VERTICAL" styleClass="background" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
      <items>
        <AnchorPane>
@@ -50,6 +50,7 @@
                                 <Button mnemonicParsing="false" onAction="#onDeleteWord" text="Delete" />
                             </buttons>
                         </ButtonBar>
+                     <Label fx:id="modeNameLabel" layoutX="14.0" layoutY="244.0" text="Mode name:" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="275.0" />
                     </AnchorPane>
                 </SplitPane>
             </children>

@@ -37,6 +37,7 @@ public class GeneralQuest {
     private Nihongo nihongo;
     private Quest quest;
     private WordManager wordManager;
+    private int returnFocusTo = -1;
 
     private boolean original;
     private boolean english;
@@ -108,6 +109,10 @@ public class GeneralQuest {
             originalTextField.setDisable(true);
             originalLabel.setDisable(true);
         }
+        else {
+            if(returnFocusTo == -1)
+                returnFocusTo = 0;
+        }
     }
 
     private void prepareEnglish()
@@ -116,6 +121,9 @@ public class GeneralQuest {
         {
             englishTextField.setDisable(true);
             englishLabel.setDisable(true);
+        } else {
+            if(returnFocusTo == -1)
+                returnFocusTo = 1;
         }
     }
 
@@ -125,6 +133,9 @@ public class GeneralQuest {
         {
             pronounceTextField.setDisable(true);
             pronounceLabel.setDisable(true);
+        } else {
+            if(returnFocusTo == -1)
+                returnFocusTo = 2;
         }
     }
 
@@ -134,6 +145,20 @@ public class GeneralQuest {
         {
             localTextField.setDisable(true);
             localLabel.setDisable(true);
+        } else {
+            if(returnFocusTo == -1)
+                returnFocusTo = 3;
+        }
+    }
+
+    private void returnFocus()
+    {
+        switch(returnFocusTo)
+        {
+            case 0: originalTextField.requestFocus(); break;
+            case 1: englishTextField.requestFocus(); break;
+            case 2: pronounceTextField.requestFocus(); break;
+            case 3: localTextField.requestFocus(); break;
         }
     }
 
@@ -174,6 +199,7 @@ public class GeneralQuest {
                 }
                 resetInputs();
                 presentWord(wordManager.randWord());
+                returnFocus();
             } else
             {
                 wordManager.unpassLastIndex();

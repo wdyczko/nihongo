@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <quests>
     <quest>
-        <input>8</input>
-        <output>6</output>
-        <title>Local -&gt; Original &amp; Pronounce</title>
+        <input>1</input>
+        <output>2</output>
+        <title>ENGLISH to ORIGINAL</title>
     </quest>
     <quest>
         <input>2</input>
-        <output>9</output>
-        <title>Test</title>
+        <output>4</output>
+        <title>ORIGINAL to PRONOUNCE</title>
     </quest>
 </quests>
