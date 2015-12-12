@@ -6,6 +6,8 @@ import org.drvad3r.nihongo.model.Quest;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 /**
  * Author: Wiktor
@@ -29,5 +31,16 @@ public class QuestList {
     public void setQuestList(ObservableList<Quest> questList)
     {
         this.questList = questList;
+    }
+
+    public Quest getQuest(String title)
+    {
+        for (Quest quest :
+                questList)
+        {
+            if(quest.getTitle().equals(title))
+                return quest;
+        }
+        return null;
     }
 }

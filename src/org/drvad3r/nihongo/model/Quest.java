@@ -26,6 +26,11 @@ public class Quest {
         this.title = new SimpleStringProperty(title);
     }
 
+    public Quest(Quest quest)
+    {
+        this("", "", "");
+    }
+
     public String getInput()
     {
         return input.get();

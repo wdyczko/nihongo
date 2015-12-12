@@ -1,5 +1,6 @@
 package org.drvad3r.nihongo.manager;
 
+import org.drvad3r.nihongo.controller.PronunciationAndKanji;
 import org.drvad3r.nihongo.model.Word;
 import org.drvad3r.nihongo.model.list.WordList;
 
@@ -50,5 +51,17 @@ public class WordManager {
     public void unpassLastIndex()
     {
         wordsPassed.remove(new Integer(index));
+    }
+
+    public boolean isEndingCondition()
+    {
+        if(getPassedSize() == getWordsListSize())
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }

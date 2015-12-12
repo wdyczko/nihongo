@@ -5,6 +5,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import org.drvad3r.nihongo.Nihongo;
 import org.drvad3r.nihongo.define.Option;
+import org.drvad3r.nihongo.define.SessionKeys;
+import org.drvad3r.nihongo.manager.SessionManager;
 import org.drvad3r.nihongo.manager.StorageManager;
 import org.drvad3r.nihongo.model.Quest;
 import org.drvad3r.nihongo.model.list.QuestList;
@@ -98,6 +100,9 @@ public class Configuration {
         {
             localCheckBox.setSelected(true);
         }
+
+        titleTextField.setText(quest.getTitle());
+        SessionManager.getInstance().setSessionItem(SessionKeys.CURRENT_QUEST_TITLE, quest.getTitle());
     }
 
     @FXML

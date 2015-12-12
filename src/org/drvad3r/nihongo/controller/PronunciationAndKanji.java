@@ -107,18 +107,6 @@ public class PronunciationAndKanji
         return false;
     }
 
-    private boolean isEndingCondition()
-    {
-        if(wordManager.getPassedSize() == wordManager.getWordsListSize())
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
-
     private void showAnswer()
     {
         pronounceLabel.setText(wordManager.getCurrent().getPronounce());
@@ -150,7 +138,7 @@ public class PronunciationAndKanji
             {
                 learnProgressBar.setProgress(( (double) wordManager.getPassedSize()/ ((double) wordManager.getWordsListSize() )));
                 statusLabel.setText(String.format(Style.STATUS_FORMATTER, wordManager.getPassedSize(), wordManager.getWordsListSize()));
-                if(isEndingCondition())
+                if(wordManager.isEndingCondition())
                 {
                     nihongo.showManageLists();
                     return;

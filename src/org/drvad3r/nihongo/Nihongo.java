@@ -6,6 +6,7 @@ package org.drvad3r.nihongo;/**
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -161,6 +162,20 @@ public class Nihongo extends Application
         }
     }
 
+    public void showGeneralQuest()
+    {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Nihongo.class.getResource("view/GeneralQuest.fxml"));
+            AnchorPane configurationRoot = loader.load();
+            rootLayout.setCenter(configurationRoot);
+            GeneralQuest controller = loader.getController();
+            controller.setNihongo(this);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public boolean showWordEditDialog(Word word)
     {
         try
@@ -267,5 +282,10 @@ public class Nihongo extends Application
     public void onConfiguration()
     {
         showConfiguration();
+    }
+
+    public void onGeneralQuest()
+    {
+        showGeneralQuest();
     }
 }

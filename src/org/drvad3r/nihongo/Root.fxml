@@ -5,39 +5,25 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="1000.0" styleClass="background" stylesheets="@themes/DarkTheme.css" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.drvad3r.nihongo.Nihongo">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" styleClass="background" stylesheets="@themes/DarkTheme.css" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.drvad3r.nihongo.Nihongo">
    <top>
       <MenuBar BorderPane.alignment="CENTER">
           <Menu mnemonicParsing="false" text="File">
               <MenuItem mnemonicParsing="false" onAction="#onWordView" text="Manage lists">
-                   <accelerator>
-                      <KeyCodeCombination alt="UP" code="F1" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
-                   </accelerator>
               </MenuItem>
               <MenuItem mnemonicParsing="false" onAction="#onWordLearn" text="Pronunciation &amp; Kanji" >
-                  <accelerator>
-                      <KeyCodeCombination alt="UP" code="F2" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
-                  </accelerator>
               </MenuItem>
               <MenuItem mnemonicParsing="false" onAction="#onPronunciation" text="Pronunciation">
-                  <accelerator>
-                      <KeyCodeCombination alt="UP" code="F3" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
-                  </accelerator>
               </MenuItem>
               <MenuItem mnemonicParsing="false" onAction="#onConfiguration" text="Configuration">
-                  <accelerator>
-                      <KeyCodeCombination alt="UP" code="F5" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
-                  </accelerator>
+              </MenuItem>
+              <MenuItem mnemonicParsing="false" onAction="#onGeneralQuest" text="General Quest">
               </MenuItem>
               <MenuItem mnemonicParsing="false" onAction="#onClose" text="Exit">
-                  <accelerator>
-                      <KeyCodeCombination alt="UP" code="F4" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
-                  </accelerator>
               </MenuItem>
           </Menu>
           <Menu mnemonicParsing="false" text="Module">
               <MenuItem mnemonicParsing="false" onAction="#onVerbDeclination" text="Verb declination">
-
               </MenuItem>
           </Menu>
       </MenuBar>
