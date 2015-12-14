@@ -4,9 +4,6 @@ package org.drvad3r.nihongo;/**
  */
 
 import javafx.application.Application;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -17,44 +14,39 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import org.drvad3r.nihongo.controller.*;
+import org.drvad3r.nihongo.controller.Configuration;
+import org.drvad3r.nihongo.controller.GeneralQuest;
+import org.drvad3r.nihongo.controller.ManageLists;
+import org.drvad3r.nihongo.controller.VerbDeclination;
 import org.drvad3r.nihongo.controller.dialog.Command;
-import org.drvad3r.nihongo.define.Option;
+import org.drvad3r.nihongo.controller.dialog.WordEdit;
 import org.drvad3r.nihongo.define.Path;
 import org.drvad3r.nihongo.manager.StorageManager;
 import org.drvad3r.nihongo.model.Module;
-import org.drvad3r.nihongo.model.Quest;
-import org.drvad3r.nihongo.model.list.ModuleList;
 import org.drvad3r.nihongo.model.Word;
-import org.drvad3r.nihongo.controller.dialog.WordEdit;
-import org.drvad3r.nihongo.model.list.QuestList;
+import org.drvad3r.nihongo.model.list.ModuleList;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
-public class Nihongo extends Application
-{
+public class Nihongo extends Application {
     Stage primaryStage;
     static BorderPane rootLayout;
     static Module currentModule;
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         launch(args);
     }
 
     @Override
-    public void start(Stage primaryStage)
-    {
+    public void start(Stage primaryStage) {
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("Nihongo");
-        try
-        {
+        try {
             Image image = new Image(new FileInputStream(new File(System.getProperty("user.dir") + Path.ICON)));
             this.primaryStage.getIcons().add(image);
-        } catch (IOException e)
-        {
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
@@ -66,90 +58,46 @@ public class Nihongo extends Application
         showManageLists();
     }
 
-    private void initializeRootLayout()
-    {
-        try
-        {
+    private void initializeRootLayout() {
+        try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Nihongo.class.getResource("Root.fxml"));
             rootLayout = loader.load();
             Scene scene = new Scene(rootLayout);
             primaryStage.setScene(scene);
             primaryStage.show();
-        } catch (IOException e)
-        {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public void showManageLists()
-    {
-        try
-        {
+    public void showManageLists() {
+        try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Nihongo.class.getResource("view/ManageLists.fxml"));
             AnchorPane manageListsRoot = loader.load();
             rootLayout.setCenter(manageListsRoot);
             ManageLists controller = loader.getController();
             controller.setNihongo(this);
-        } catch (IOException e)
-        {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public void showPronunciationAndKanji()
-    {
-        try
-        {
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Nihongo.class.getResource("view/PronunciationAndKanji.fxml"));
-            AnchorPane pronunciationAndKanjiRoot = loader.load();
-            rootLayout.setCenter(pronunciationAndKanjiRoot);
-            PronunciationAndKanji controller = loader.getController();
-            controller.setNihongo(this);
-            controller.init();
-        } catch (IOException e)
-        {
-            e.printStackTrace();
-        }
-    }
-
-    public void showPronunciation()
-    {
-        try
-        {
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Nihongo.class.getResource("view/Pronunciation.fxml"));
-            AnchorPane pronunciationRoot = loader.load();
-            rootLayout.setCenter(pronunciationRoot);
-            Pronunciation controller = loader.getController();
-            controller.setNihongo(this);
-            controller.init();
-        } catch (IOException e)
-        {
-            e.printStackTrace();
-        }
-    }
-
-    public void showVerbDeclination()
-    {
-        try
-        {
+    public void showVerbDeclination() {
+        try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Nihongo.class.getResource("view/VerbDeclination.fxml"));
             AnchorPane verbDeclinationRoot = loader.load();
             rootLayout.setCenter(verbDeclinationRoot);
             VerbDeclination controller = loader.getController();
             controller.setNihongo(this);
-        } catch (IOException e)
-        {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public void showConfiguration()
-    {
+    public void showConfiguration() {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Nihongo.class.getResource("view/Configuration.fxml"));
@@ -162,8 +110,7 @@ public class Nihongo extends Application
         }
     }
 
-    public void showGeneralQuest()
-    {
+    public void showGeneralQuest() {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Nihongo.class.getResource("view/GeneralQuest.fxml"));
@@ -176,10 +123,8 @@ public class Nihongo extends Application
         }
     }
 
-    public boolean showWordEditDialog(Word word)
-    {
-        try
-        {
+    public boolean showWordEditDialog(Word word) {
+        try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Nihongo.class.getResource("view/dialog/WordEdit.fxml"));
             AnchorPane page = loader.load();
@@ -198,17 +143,14 @@ public class Nihongo extends Application
             dialogStage.showAndWait();
 
             return controller.isOkClicked();
-        } catch (IOException e)
-        {
+        } catch (IOException e) {
             e.printStackTrace();
             return false;
         }
     }
 
-    public boolean showCommandDialog(TableView tableView)
-    {
-        try
-        {
+    public boolean showCommandDialog(TableView tableView) {
+        try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Nihongo.class.getResource("view/dialog/Command.fxml"));
             AnchorPane page = loader.load();
@@ -231,61 +173,41 @@ public class Nihongo extends Application
             dialogStage.showAndWait();
 
             return true;
-        } catch (IOException e)
-        {
+        } catch (IOException e) {
             e.printStackTrace();
             return false;
         }
     }
 
-    public Module getCurrentModule()
-    {
+    public Module getCurrentModule() {
         return currentModule;
     }
 
-    public void setCurrentModule(Module currentModule)
-    {
+    public void setCurrentModule(Module currentModule) {
         Nihongo.currentModule = currentModule;
     }
 
     @FXML
-    private void onWordLearn()
-    {
-        showPronunciationAndKanji();
-    }
-
-    @FXML
-    private void onWordView()
-    {
+    private void onWordView() {
         showManageLists();
     }
 
     @FXML
-    private void onPronunciation()
-    {
-        showPronunciation();
-    }
-
-    @FXML
-    private void onVerbDeclination()
-    {
+    private void onVerbDeclination() {
         showVerbDeclination();
     }
 
     @FXML
-    private void onClose()
-    {
+    private void onClose() {
         System.exit(0);
     }
 
     @FXML
-    public void onConfiguration()
-    {
+    public void onConfiguration() {
         showConfiguration();
     }
 
-    public void onGeneralQuest()
-    {
+    public void onGeneralQuest() {
         showGeneralQuest();
     }
 }

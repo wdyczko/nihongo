@@ -18,25 +18,21 @@ public class Session {
     private ObservableList<SessionItem> sessionItems;
     private String timestamp;
 
-    public Session()
-    {
+    public Session() {
         sessionItems = FXCollections.observableArrayList();
     }
 
     @XmlElement(name = "timestamp")
-    public String getTimestamp()
-    {
+    public String getTimestamp() {
         return Long.toString(LocalTime.now().toNanoOfDay());
     }
 
     @XmlElement(name = "items")
-    public ObservableList<SessionItem> getSessionItems()
-    {
+    public ObservableList<SessionItem> getSessionItems() {
         return sessionItems;
     }
 
-    public void setSessionItems(ObservableList<SessionItem> sessionItems)
-    {
+    public void setSessionItems(ObservableList<SessionItem> sessionItems) {
         this.sessionItems = sessionItems;
     }
 }

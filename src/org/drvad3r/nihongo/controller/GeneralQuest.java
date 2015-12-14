@@ -44,8 +44,7 @@ public class GeneralQuest {
     private boolean pronounce;
     private boolean local;
 
-    public void initialize()
-    {
+    public void initialize() {
         wordManager = new WordManager(SessionManager.getInstance().loadWordList());
         String questTitle = SessionManager.getInstance().getSessionItem(SessionKeys.CURRENT_QUEST_TITLE);
 
@@ -65,35 +64,30 @@ public class GeneralQuest {
         presentWord(wordManager.randWord());
     }
 
-    private void resetTextFieldStyle(TextField textField)
-    {
+    private void resetTextFieldStyle(TextField textField) {
         textField.getStyleClass().removeAll(Style.Class.TextField.INCORRECT);
         textField.getStyleClass().removeAll(Style.Class.TextField.CORRECT);
         textField.requestLayout();
     }
 
-    private void correctTextFieldStyle(TextField textField)
-    {
+    private void correctTextFieldStyle(TextField textField) {
         textField.getStyleClass().add(Style.Class.TextField.CORRECT);
         textField.requestLayout();
     }
 
-    private void incorrectTextFieldStyle(TextField textField)
-    {
+    private void incorrectTextFieldStyle(TextField textField) {
         textField.getStyleClass().add(Style.Class.TextField.INCORRECT);
         textField.requestLayout();
     }
 
-    private void recognizeQuestParameters(Quest quest)
-    {
+    private void recognizeQuestParameters(Quest quest) {
         original = Option.isOriginal(Integer.parseInt(quest.getOutput()));
         english = Option.isEnglish(Integer.parseInt(quest.getOutput()));
         pronounce = Option.isPronounce(Integer.parseInt(quest.getOutput()));
         local = Option.isLocal(Integer.parseInt(quest.getOutput()));
     }
 
-    private void prepareUserInterface()
-    {
+    private void prepareUserInterface() {
         inputTextArea.setFocusTraversable(false);
 
         prepareOriginal();
@@ -102,117 +96,111 @@ public class GeneralQuest {
         prepareLocal();
     }
 
-    private void prepareOriginal()
-    {
-        if (!original)
-        {
+    private void prepareOriginal() {
+        if (!original) {
             originalTextField.setDisable(true);
             originalLabel.setDisable(true);
-        }
-        else {
-            if(returnFocusTo == -1)
+        } else {
+            if (returnFocusTo == -1)
                 returnFocusTo = 0;
         }
     }
 
-    private void prepareEnglish()
-    {
-        if (!english)
-        {
+    private void prepareEnglish() {
+        if (!english) {
             englishTextField.setDisable(true);
             englishLabel.setDisable(true);
         } else {
-            if(returnFocusTo == -1)
+            if (returnFocusTo == -1)
                 returnFocusTo = 1;
         }
     }
 
-    private void preparePronounce()
-    {
-        if (!pronounce)
-        {
+    private void preparePronounce() {
+        if (!pronounce) {
             pronounceTextField.setDisable(true);
             pronounceLabel.setDisable(true);
         } else {
-            if(returnFocusTo == -1)
+            if (returnFocusTo == -1)
                 returnFocusTo = 2;
         }
     }
 
-    private void prepareLocal()
-    {
-        if (!local)
-        {
+    private void prepareLocal() {
+        if (!local) {
             localTextField.setDisable(true);
             localLabel.setDisable(true);
         } else {
-            if(returnFocusTo == -1)
+            if (returnFocusTo == -1)
                 returnFocusTo = 3;
         }
     }
 
-    private void returnFocus()
-    {
-        switch(returnFocusTo)
-        {
-            case 0: originalTextField.requestFocus(); break;
-            case 1: englishTextField.requestFocus(); break;
-            case 2: pronounceTextField.requestFocus(); break;
-            case 3: localTextField.requestFocus(); break;
+    private void returnFocus() {
+        switch (returnFocusTo) {
+            case 0:
+                originalTextField.requestFocus();
+                break;
+            case 1:
+                englishTextField.requestFocus();
+                break;
+            case 2:
+                pronounceTextField.requestFocus();
+                break;
+            case 3:
+                localTextField.requestFocus();
+                break;
         }
     }
 
-    private void presentWord(Word word)
-    {
+    private void presentWord(Word word) {
         Option option = Option.toOption(Integer.parseInt(quest.getInput()));
-        switch (option)
-        {
-            case ORIGINAL: inputTextArea.setText(word.getOriginal()); break;
-            case ENGLISH: inputTextArea.setText(word.getEnglish()); break;
-            case LOCAL: inputTextArea.setText(word.getLocal()); break;
-            case PRONOUNCE: inputTextArea.setText(word.getPronounce()); break;
+        switch (option) {
+            case ORIGINAL:
+                inputTextArea.setText(word.getOriginal());
+                break;
+            case ENGLISH:
+                inputTextArea.setText(word.getEnglish());
+                break;
+            case LOCAL:
+                inputTextArea.setText(word.getLocal());
+                break;
+            case PRONOUNCE:
+                inputTextArea.setText(word.getPronounce());
+                break;
         }
     }
 
-    public Nihongo getNihongo()
-    {
+    public Nihongo getNihongo() {
         return nihongo;
     }
 
-    public void setNihongo(Nihongo nihongo)
-    {
+    public void setNihongo(Nihongo nihongo) {
         this.nihongo = nihongo;
     }
 
-    public void onKeyPressed(KeyEvent keyEvent)
-    {
-        if (keyEvent.getCode() == KeyCode.ENTER)
-        {
-            if (isPassCondition())
-            {
-                progressBar.setProgress(( (double) wordManager.getPassedSize()/ ((double) wordManager.getWordsListSize() )));
+    public void onKeyPressed(KeyEvent keyEvent) {
+        if (keyEvent.getCode() == KeyCode.ENTER) {
+            if (isPassCondition()) {
+                progressBar.setProgress(((double) wordManager.getPassedSize() / ((double) wordManager.getWordsListSize())));
                 statusLabel.setText(String.format(Style.STATUS_FORMATTER, wordManager.getPassedSize(), wordManager.getWordsListSize()));
-                if(wordManager.isEndingCondition())
-                {
+                if (wordManager.isEndingCondition()) {
                     nihongo.showManageLists();
                     return;
                 }
                 resetInputs();
                 presentWord(wordManager.randWord());
                 returnFocus();
-            } else
-            {
+            } else {
                 wordManager.unpassLastIndex();
             }
         }
-        if (keyEvent.getCode() == KeyCode.ALT)
-        {
+        if (keyEvent.getCode() == KeyCode.ALT) {
             keyEvent.consume();
         }
     }
 
-    private void resetInputs()
-    {
+    private void resetInputs() {
         englishLabel.setText("");
         englishTextField.setText("");
         originalLabel.setText("");
@@ -227,8 +215,7 @@ public class GeneralQuest {
         resetTextFieldStyle(localTextField);
     }
 
-    private boolean isPassCondition()
-    {
+    private boolean isPassCondition() {
         boolean passCondition = true;
         passCondition = isOriginalPassCondition() && passCondition;
         passCondition = isEnglishPassCondition() && passCondition;
@@ -237,16 +224,12 @@ public class GeneralQuest {
         return passCondition;
     }
 
-    private boolean isOriginalPassCondition()
-    {
-        if (original)
-        {
-            if (!originalTextField.getText().trim().equals(wordManager.getCurrent().getOriginal()))
-            {
+    private boolean isOriginalPassCondition() {
+        if (original) {
+            if (!originalTextField.getText().trim().equals(wordManager.getCurrent().getOriginal())) {
                 incorrectOriginal();
                 return false;
-            } else
-            {
+            } else {
                 correctTextFieldStyle(originalTextField);
                 return true;
             }
@@ -254,22 +237,17 @@ public class GeneralQuest {
             return true;
     }
 
-    private void incorrectOriginal()
-    {
+    private void incorrectOriginal() {
         incorrectTextFieldStyle(originalTextField);
         originalLabel.setText(wordManager.getCurrent().getOriginal());
     }
 
-    private boolean isEnglishPassCondition()
-    {
-        if (english)
-        {
-            if (!englishTextField.getText().trim().equals(wordManager.getCurrent().getEnglish()))
-            {
+    private boolean isEnglishPassCondition() {
+        if (english) {
+            if (!englishTextField.getText().trim().equals(wordManager.getCurrent().getEnglish())) {
                 incorrectEnglish();
                 return false;
-            } else
-            {
+            } else {
                 correctTextFieldStyle(englishTextField);
                 return true;
             }
@@ -277,22 +255,17 @@ public class GeneralQuest {
             return true;
     }
 
-    private void incorrectEnglish()
-    {
+    private void incorrectEnglish() {
         incorrectTextFieldStyle(englishTextField);
         englishLabel.setText(wordManager.getCurrent().getEnglish());
     }
 
-    private boolean isPronouncePassCondition()
-    {
-        if (pronounce)
-        {
-            if (!pronounceTextField.getText().trim().equals(wordManager.getCurrent().getPronounce()))
-            {
+    private boolean isPronouncePassCondition() {
+        if (pronounce) {
+            if (!pronounceTextField.getText().trim().equals(wordManager.getCurrent().getPronounce())) {
                 incorrectPronounce();
                 return false;
-            } else
-            {
+            } else {
                 correctTextFieldStyle(pronounceTextField);
                 return true;
             }
@@ -300,21 +273,17 @@ public class GeneralQuest {
             return true;
     }
 
-    private void incorrectPronounce()
-    {
+    private void incorrectPronounce() {
         incorrectTextFieldStyle(pronounceTextField);
         pronounceLabel.setText(wordManager.getCurrent().getPronounce());
     }
 
-    private boolean isLocalPassCodition()
-    {
+    private boolean isLocalPassCodition() {
         if (local)
-            if(!localTextField.getText().trim().equals(wordManager.getCurrent().getLocal()))
-            {
+            if (!localTextField.getText().trim().equals(wordManager.getCurrent().getLocal())) {
                 incorrectLocal();
                 return false;
-            }
-            else {
+            } else {
                 correctTextFieldStyle(localTextField);
                 return true;
             }
@@ -322,8 +291,7 @@ public class GeneralQuest {
             return true;
     }
 
-    private void incorrectLocal()
-    {
+    private void incorrectLocal() {
         incorrectTextFieldStyle(localTextField);
         localLabel.setText(wordManager.getCurrent().getLocal());
     }

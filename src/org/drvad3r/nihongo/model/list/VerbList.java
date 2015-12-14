@@ -13,12 +13,10 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 
 @XmlRootElement(name = "verbs")
-public class VerbList
-{
+public class VerbList {
     private ObservableList<Verb> verbs;
 
-    public VerbList()
-    {
+    public VerbList() {
         verbs = FXCollections.observableArrayList();
     }
 

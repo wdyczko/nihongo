@@ -11,13 +11,11 @@ public class SessionItem {
     private StringProperty key;
     private StringProperty value;
 
-    public SessionItem()
-    {
+    public SessionItem() {
         this(null, null);
     }
 
-    public SessionItem(String key, String value)
-    {
+    public SessionItem(String key, String value) {
         this.key = new SimpleStringProperty(key);
         this.value = new SimpleStringProperty(value);
     }

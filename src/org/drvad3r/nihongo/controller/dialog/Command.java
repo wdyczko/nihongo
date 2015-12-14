@@ -25,73 +25,54 @@ public class Command {
         this.dialogStage = dialogStage;
     }
 
-    public void setTableView(TableView tableView)
-    {
+    public void setTableView(TableView tableView) {
         this.tableView = tableView;
     }
 
     @FXML
-    private void onKeyEvent(KeyEvent keyEvent)
-    {
-        if(keyEvent.getCode() == KeyCode.ESCAPE)
-        {
+    private void onKeyEvent(KeyEvent keyEvent) {
+        if (keyEvent.getCode() == KeyCode.ESCAPE) {
             dialogStage.close();
-        }
-        else if(keyEvent.getCode() == KeyCode.ENTER)
-        {
+        } else if (keyEvent.getCode() == KeyCode.ENTER) {
             processInput();
             dialogStage.close();
         }
     }
 
-    private void processInput()
-    {
+    private void processInput() {
         String input = commandTextField.getText().trim();
-        if(input.equals("*"))
-        {
+        if (input.equals("*")) {
             tableView.getSelectionModel().selectAll();
-        }
-        else if(input.matches("\\+\\d*"))
-        {
+        } else if (input.matches("\\+\\d*")) {
             input = input.replace("+", "");
             int value = Integer.parseInt(input);
             int start = tableView.getSelectionModel().getSelectedIndex();
-            if(start >= 0)
-            {
-                for(int i = start; i <= start + value; i++)
-                {
-                    if(i > tableView.getItems().size())
+            if (start >= 0) {
+                for (int i = start; i <= start + value; i++) {
+                    if (i > tableView.getItems().size())
                         break;
                     tableView.getSelectionModel().select(i);
                 }
             }
-        }
-        else if(input.matches("-\\d*"))
-        {
+        } else if (input.matches("-\\d*")) {
             input = input.replace("-", "");
             int value = Integer.parseInt(input);
             int start = tableView.getSelectionModel().getSelectedIndex();
-            if(start >= 0)
-            {
-                for(int i = start; i > start - value; i--)
-                {
-                    if(i < 0)
+            if (start >= 0) {
+                for (int i = start; i > start - value; i--) {
+                    if (i < 0)
                         break;
                     tableView.getSelectionModel().clearSelection(i);
-                    tableView.getSelectionModel().focus( ( i - 1 > 0 ) ? i - 1 : 0);
+                    tableView.getSelectionModel().focus((i - 1 > 0) ? i - 1 : 0);
                 }
             }
 
-        }
-        else if(input.matches("^@[A-Za-z]*"))
-        {
+        } else if (input.matches("^@[A-Za-z]*")) {
             input = input.replace("@", "");
             tableView.getSelectionModel().clearSelection();
             String pattern = String.format("^[%s].*", input);
-            for(int i = 0; i < tableView.getItems().size(); i++)
-            {
-                if(((Word)tableView.getItems().get(i)).getEnglish().matches(pattern))
-                {
+            for (int i = 0; i < tableView.getItems().size(); i++) {
+                if (((Word) tableView.getItems().get(i)).getEnglish().matches(pattern)) {
                     tableView.getSelectionModel().select(i);
                     tableView.getSelectionModel().focus(i);
                 }

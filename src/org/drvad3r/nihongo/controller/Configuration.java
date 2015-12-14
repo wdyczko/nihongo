@@ -46,37 +46,39 @@ public class Configuration {
     @FXML
     private ComboBox<Quest> questComboBox;
 
-    public Configuration()
-    {
+    public Configuration() {
         storageManager = new StorageManager();
         questList = storageManager.loadQuestsDataFromFile();
     }
 
-    public Nihongo getNihongo()
-    {
+    public Nihongo getNihongo() {
         return nihongo;
     }
 
-    public void setNihongo(Nihongo nihongo)
-    {
+    public void setNihongo(Nihongo nihongo) {
         this.nihongo = nihongo;
     }
 
-    public void initialize()
-    {
+    public void initialize() {
         questComboBox.setItems(questList.getQuestList());
     }
 
-    private void load(Quest quest)
-    {
+    private void load(Quest quest) {
         Option input = Option.toOption(Integer.parseInt(quest.getInput()));
         int output = Integer.parseInt(quest.getOutput());
-        switch(input)
-        {
-            case ENGLISH: englishRadioButton.setSelected(true); break;
-            case ORIGINAL: originalRadioButton.setSelected(true); break;
-            case PRONOUNCE: pronounceRadioButton.setSelected(true); break;
-            case LOCAL: localRadioButton.setSelected(true); break;
+        switch (input) {
+            case ENGLISH:
+                englishRadioButton.setSelected(true);
+                break;
+            case ORIGINAL:
+                originalRadioButton.setSelected(true);
+                break;
+            case PRONOUNCE:
+                pronounceRadioButton.setSelected(true);
+                break;
+            case LOCAL:
+                localRadioButton.setSelected(true);
+                break;
         }
 
         englishCheckBox.setSelected(false);
@@ -84,20 +86,16 @@ public class Configuration {
         pronounceCheckBox.setSelected(false);
         localCheckBox.setSelected(false);
 
-        if(Option.isEnglish(output))
-        {
+        if (Option.isEnglish(output)) {
             englishCheckBox.setSelected(true);
         }
-        if(Option.isOriginal(output))
-        {
+        if (Option.isOriginal(output)) {
             originalCheckBox.setSelected(true);
         }
-        if(Option.isPronounce(output))
-        {
+        if (Option.isPronounce(output)) {
             pronounceCheckBox.setSelected(true);
         }
-        if(Option.isLocal(output))
-        {
+        if (Option.isLocal(output)) {
             localCheckBox.setSelected(true);
         }
 
@@ -106,51 +104,44 @@ public class Configuration {
     }
 
     @FXML
-    private void onLoad(ActionEvent event)
-    {
+    private void onLoad(ActionEvent event) {
         Quest quest = questComboBox.getSelectionModel().getSelectedItem();
-        if (quest != null)
-        {
+        if (quest != null) {
             load(quest);
         }
     }
 
     @FXML
-    private void onAdd(ActionEvent event)
-    {
+    private void onAdd(ActionEvent event) {
         Quest quest = new Quest();
-        if(englishRadioButton.isSelected()) quest.setInput(Option.ENGLISH.toString());
-        else if(originalRadioButton.isSelected()) quest.setInput(Option.ORIGINAL.toString());
-        else if(pronounceRadioButton.isSelected()) quest.setInput(Option.PRONOUNCE.toString());
-        else if(localRadioButton.isSelected()) quest.setInput(Option.LOCAL.toString());
+        if (englishRadioButton.isSelected()) quest.setInput(Option.ENGLISH.toString());
+        else if (originalRadioButton.isSelected()) quest.setInput(Option.ORIGINAL.toString());
+        else if (pronounceRadioButton.isSelected()) quest.setInput(Option.PRONOUNCE.toString());
+        else if (localRadioButton.isSelected()) quest.setInput(Option.LOCAL.toString());
         else quest.setInput(Option.ENGLISH.toString());
         int output = 0;
-        if(englishCheckBox.isSelected())
+        if (englishCheckBox.isSelected())
             output |= 1;
-        if(originalCheckBox.isSelected())
+        if (originalCheckBox.isSelected())
             output |= 2;
-        if(pronounceCheckBox.isSelected())
+        if (pronounceCheckBox.isSelected())
             output |= 4;
-        if(localCheckBox.isSelected())
+        if (localCheckBox.isSelected())
             output |= 8;
         quest.setOutput(Integer.toString(output));
         String title = titleTextField.getText().trim();
         quest.setTitle(title);
         boolean exists = false;
         for (Quest q :
-                questList.getQuestList())
-        {
-            if (q.getTitle().equals(quest.getTitle()))
-            {
+                questList.getQuestList()) {
+            if (q.getTitle().equals(quest.getTitle())) {
                 exists = true;
             }
         }
 
-        if(exists)
-        {
+        if (exists) {
             questList.getQuestList().forEach(element -> {
-                if (element.getTitle().equals(title))
-                {
+                if (element.getTitle().equals(title)) {
                     element.setInput(quest.getInput());
                     element.setOutput(quest.getOutput());
                     questComboBox.getSelectionModel().select(element);

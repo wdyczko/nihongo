@@ -22,8 +22,7 @@ import java.io.File;
  * Author: Wiktor
  * Creation: 2015-10-17
  */
-public class ManageLists
-{
+public class ManageLists {
     @FXML
     private Label modeNameLabel;
     @FXML
@@ -53,16 +52,13 @@ public class ManageLists
     private ModuleList moduleList;
     private static Robot robot;
 
-    public ManageLists()
-    {
+    public ManageLists() {
         storageManager = new StorageManager();
         moduleList = storageManager.loadModulesDataFromFile(new File(System.getProperty("user.dir") + Path.MODULE_FILE));
-        if (SessionManager.getInstance().isSessionKeyExists(SessionKeys.CURRENT_MODULE_PATH))
-        {
+        if (SessionManager.getInstance().isSessionKeyExists(SessionKeys.CURRENT_MODULE_PATH)) {
             String modulePath = SessionManager.getInstance().getSessionItem(SessionKeys.CURRENT_MODULE_PATH);
             filePath = System.getProperty("user.dir") + Path.MODULE_RESOURCE_PATH + modulePath;
-        } else
-        {
+        } else {
             Module module = moduleList.getModuleList().get(0);
             SessionManager.getInstance().setSessionItem(SessionKeys.CURRENT_MODULE_NAME, module.getName());
             SessionManager.getInstance().setSessionItem(SessionKeys.CURRENT_MODULE_PATH, module.getFile());
@@ -76,8 +72,7 @@ public class ManageLists
     }
 
     @FXML
-    private void initialize()
-    {
+    private void initialize() {
         originalColumn.setCellValueFactory(cellData -> cellData.getValue().originalProperty());
         englishColumn.setCellValueFactory(cellData -> cellData.getValue().englishProperty());
         storageManager = new StorageManager();
@@ -89,61 +84,46 @@ public class ManageLists
             SessionManager.getInstance().setSessionItem(SessionKeys.CURRENT_MODULE_INDICES, wordTableView.getSelectionModel().getSelectedIndices().toString());
         }));
         wordTableView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
-        if(SessionManager.getInstance().isSessionKeyExists(SessionKeys.CURRENT_MODULE_INDICES))
-        {
+        if (SessionManager.getInstance().isSessionKeyExists(SessionKeys.CURRENT_MODULE_INDICES)) {
             String indicies = SessionManager.getInstance().getSessionItem(SessionKeys.CURRENT_MODULE_INDICES);
             indicies = indicies.replaceAll("\\[|\\]", "");
             String[] splitted = indicies.split(", ");
-            if(splitted != null && splitted.length > 1)
-            {
-                for(String s : splitted)
-                {
+            if (splitted != null && splitted.length > 1) {
+                for (String s : splitted) {
                     wordTableView.getSelectionModel().select(Integer.parseInt(s));
                 }
-            }
-            else
-            {
+            } else {
                 wordTableView.getSelectionModel().select(0);
             }
-        }
-        else
-        {
+        } else {
             wordTableView.getSelectionModel().select(0);
         }
         moduleChoiceBox.setItems(moduleList.getModuleList());
         moduleChoiceBox.selectionModelProperty();
-        if (SessionManager.getInstance().sessionExists())
-        {
+        if (SessionManager.getInstance().sessionExists()) {
             String modulePath = SessionManager.getInstance().getSessionItem(SessionKeys.CURRENT_MODULE_PATH);
             String moduleName = SessionManager.getInstance().getSessionItem(SessionKeys.CURRENT_MODULE_NAME);
             moduleList.getModuleList().stream().filter(m -> m.getName().equals(moduleName) && m.getFile().equals(modulePath)).forEach(m -> {
                 moduleChoiceBox.getSelectionModel().select(moduleList.getModuleList().indexOf(m));
             });
-        }
-        else
-        {
+        } else {
             moduleChoiceBox.getSelectionModel().select(0);
         }
         modeNameLabel.setText("Mode name: " + SessionManager.getInstance().getSessionItem(SessionKeys.CURRENT_QUEST_TITLE));
         amountLabel.setText("Words: " + wordTableView.getItems().size());
     }
 
-    public void setNihongo(Nihongo nihongo)
-    {
+    public void setNihongo(Nihongo nihongo) {
         this.nihongo = nihongo;
     }
 
-    public void showWordDetails(org.drvad3r.nihongo.model.Word word)
-    {
-        if (word != null)
-        {
+    public void showWordDetails(org.drvad3r.nihongo.model.Word word) {
+        if (word != null) {
             originalLabel.setText(word.getOriginal());
             pronounceLabel.setText(word.getPronounce());
             englishLabel.setText(word.getEnglish());
             localLabel.setText(word.getLocal());
-        }
-        else
-        {
+        } else {
             originalLabel.setText("");
             pronounceLabel.setText("");
             englishLabel.setText("");
@@ -151,53 +131,44 @@ public class ManageLists
         }
     }
 
-    private void save()
-    {
+    private void save() {
         WordList wordList = new WordList();
         wordList.setWords(wordTableView.getItems());
         storageManager.saveWordDataToFile(file, wordList);
         amountLabel.setText("Words: " + wordTableView.getItems().size());
     }
 
-    private void load()
-    {
+    private void load() {
         file = new File(System.getProperty("user.dir") + Path.MODULE_RESOURCE_PATH + nihongo.getCurrentModule().getFile());
         wordTableView.setItems(storageManager.loadWordDataFromFile(file).getWords());
         amountLabel.setText("Words: " + wordTableView.getItems().size());
     }
 
     @FXML
-    private void onDeleteWord()
-    {
+    private void onDeleteWord() {
         int selectedIndex = wordTableView.getSelectionModel().getSelectedIndex();
-        if(selectedIndex >= 0)
-        {
+        if (selectedIndex >= 0) {
             wordTableView.getItems().remove(selectedIndex);
             save();
         }
     }
 
     @FXML
-    private void onNewWord()
-    {
+    private void onNewWord() {
         org.drvad3r.nihongo.model.Word word = new org.drvad3r.nihongo.model.Word();
         boolean okClicked = nihongo.showWordEditDialog(word);
-        if (okClicked)
-        {
+        if (okClicked) {
             wordTableView.getItems().add(word);
             save();
         }
     }
 
     @FXML
-    private void onEditWord()
-    {
+    private void onEditWord() {
         org.drvad3r.nihongo.model.Word word = wordTableView.getSelectionModel().getSelectedItem();
-        if (word != null)
-        {
+        if (word != null) {
             boolean okClicked = nihongo.showWordEditDialog(word);
-            if(okClicked)
-            {
+            if (okClicked) {
                 showWordDetails(word);
                 save();
             }
@@ -205,12 +176,10 @@ public class ManageLists
     }
 
     @FXML
-    private void onModuleSelect(ActionEvent actionEvent)
-    {
+    private void onModuleSelect(ActionEvent actionEvent) {
         ChoiceBox<Module> choice = (ChoiceBox<Module>) actionEvent.getSource();
         Module module = choice.getSelectionModel().getSelectedItem();
-        if(nihongo != null && module != null)
-        {
+        if (nihongo != null && module != null) {
             nihongo.setCurrentModule(module);
             SessionManager.getInstance().setSessionItem(SessionKeys.CURRENT_MODULE_NAME, module.getName());
             SessionManager.getInstance().setSessionItem(SessionKeys.CURRENT_MODULE_PATH, module.getFile());
@@ -219,56 +188,30 @@ public class ManageLists
     }
 
     @FXML
-    private void onTableViewKeyEvent(KeyEvent keyEvent)
-    {
-        if(keyEvent.getCode() == KeyCode.E)
-        {
+    private void onTableViewKeyEvent(KeyEvent keyEvent) {
+        if (keyEvent.getCode() == KeyCode.E) {
             onEditWord();
-        }
-        else if (keyEvent.getCode() == KeyCode.A)
-        {
+        } else if (keyEvent.getCode() == KeyCode.A) {
             onNewWord();
-        }
-        else if (keyEvent.getCode() == KeyCode.D || keyEvent.getCode() == KeyCode.DELETE)
-        {
+        } else if (keyEvent.getCode() == KeyCode.D || keyEvent.getCode() == KeyCode.DELETE) {
             onDeleteWord();
-        }
-        else if (keyEvent.getCode() == KeyCode.J && keyEvent.isControlDown())
-        {
+        } else if (keyEvent.getCode() == KeyCode.J && keyEvent.isControlDown()) {
             int index = moduleChoiceBox.getSelectionModel().getSelectedIndex();
-            if( index < moduleChoiceBox.getItems().size() - 1 )
-            {
+            if (index < moduleChoiceBox.getItems().size() - 1) {
                 moduleChoiceBox.getSelectionModel().clearSelection(index);
                 moduleChoiceBox.getSelectionModel().select(index + 1);
             }
-        }
-        else if (keyEvent.getCode() == KeyCode.J)
-        {
+        } else if (keyEvent.getCode() == KeyCode.J) {
             robot.keyPress(java.awt.event.KeyEvent.VK_DOWN);
-        }
-        else if (keyEvent.getCode() == KeyCode.DIGIT1 && keyEvent.isShiftDown())
-        {
-            nihongo.showPronunciationAndKanji();
-        }
-        else if (keyEvent.getCode() == KeyCode.DIGIT2 && keyEvent.isShiftDown())
-        {
-            nihongo.showPronunciation();
-        }
-        else if (keyEvent.getCode() == KeyCode.K && keyEvent.isControlDown())
-        {
+        } else if (keyEvent.getCode() == KeyCode.K && keyEvent.isControlDown()) {
             int index = moduleChoiceBox.getSelectionModel().getSelectedIndex();
-            if( index > 0 )
-            {
+            if (index > 0) {
                 moduleChoiceBox.getSelectionModel().clearSelection(index);
                 moduleChoiceBox.getSelectionModel().select(index - 1);
             }
-        }
-        else if (keyEvent.getCode() == KeyCode.K)
-        {
+        } else if (keyEvent.getCode() == KeyCode.K) {
             robot.keyPress(java.awt.event.KeyEvent.VK_UP);
-        }
-        else if (keyEvent.getCode() == KeyCode.R)
-        {
+        } else if (keyEvent.getCode() == KeyCode.R) {
             nihongo.showCommandDialog(wordTableView);
         }
     }

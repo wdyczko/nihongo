@@ -15,23 +15,19 @@ import java.util.ArrayList;
  */
 
 @XmlRootElement(name = "modules")
-public class ModuleList
-{
+public class ModuleList {
     private ObservableList<Module> moduleList;
 
-    public ModuleList()
-    {
+    public ModuleList() {
         this.moduleList = FXCollections.observableArrayList();
     }
 
     @XmlElement(name = "module")
-    public ObservableList<Module> getModuleList()
-    {
+    public ObservableList<Module> getModuleList() {
         return moduleList;
     }
 
-    public void setModuleList(ObservableList<Module> moduleList)
-    {
+    public void setModuleList(ObservableList<Module> moduleList) {
         this.moduleList = moduleList;
     }
 }

@@ -1,6 +1,5 @@
 package org.drvad3r.nihongo.manager;
 
-import org.drvad3r.nihongo.controller.PronunciationAndKanji;
 import org.drvad3r.nihongo.model.Word;
 import org.drvad3r.nihongo.model.list.WordList;
 
@@ -38,29 +37,22 @@ public class WordManager {
         return this.current;
     }
 
-    public int getPassedSize()
-    {
+    public int getPassedSize() {
         return (wordsPassed != null) ? wordsPassed.size() : 0;
     }
 
-    public int getWordsListSize()
-    {
+    public int getWordsListSize() {
         return (wordList != null) ? wordList.getWords().size() : 0;
     }
 
-    public void unpassLastIndex()
-    {
+    public void unpassLastIndex() {
         wordsPassed.remove(new Integer(index));
     }
 
-    public boolean isEndingCondition()
-    {
-        if(getPassedSize() == getWordsListSize())
-        {
+    public boolean isEndingCondition() {
+        if (getPassedSize() == getWordsListSize()) {
             return true;
-        }
-        else
-        {
+        } else {
             return false;
         }
     }

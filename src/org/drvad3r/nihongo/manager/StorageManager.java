@@ -16,117 +16,92 @@ import java.io.File;
  * Author: Wiktor
  * Creation: 2015-10-17
  */
-public class StorageManager
-{
-    public WordList loadWordDataFromFile(File file)
-    {
-        try
-        {
+public class StorageManager {
+    public WordList loadWordDataFromFile(File file) {
+        try {
             JAXBContext context = JAXBContext.newInstance(WordList.class);
             Unmarshaller um = context.createUnmarshaller();
             return (WordList) um.unmarshal(file);
-        } catch (JAXBException e)
-        {
+        } catch (JAXBException e) {
             e.printStackTrace();
             return null;
         }
     }
 
-    public void saveWordDataToFile(File file, WordList list)
-    {
-        try
-        {
+    public void saveWordDataToFile(File file, WordList list) {
+        try {
             JAXBContext context = JAXBContext.newInstance(WordList.class);
             Marshaller m = context.createMarshaller();
             m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
             m.marshal(list, file);
-        } catch (JAXBException e)
-        {
+        } catch (JAXBException e) {
             e.printStackTrace();
         }
     }
 
-    public VerbList loadVerbDataFromFile(File file)
-    {
-        try
-        {
+    public VerbList loadVerbDataFromFile(File file) {
+        try {
             JAXBContext context = JAXBContext.newInstance(VerbList.class);
             Unmarshaller um = context.createUnmarshaller();
             return (VerbList) um.unmarshal(file);
-        } catch (JAXBException e)
-        {
+        } catch (JAXBException e) {
             e.printStackTrace();
             return null;
         }
     }
 
-    public void saveVerbDataToFile(File file, VerbList list)
-    {
-        try
-        {
+    public void saveVerbDataToFile(File file, VerbList list) {
+        try {
             JAXBContext context = JAXBContext.newInstance(VerbList.class);
             Marshaller m = context.createMarshaller();
             m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
             m.marshal(list, file);
-        } catch (JAXBException e)
-        {
+        } catch (JAXBException e) {
             e.printStackTrace();
         }
     }
 
-    public ModuleList loadModulesDataFromFile(File file)
-    {
-        try
-        {
+    public ModuleList loadModulesDataFromFile(File file) {
+        try {
             JAXBContext context = JAXBContext.newInstance(ModuleList.class);
             Unmarshaller um = context.createUnmarshaller();
             return (ModuleList) um.unmarshal(file);
-        } catch (JAXBException e)
-        {
+        } catch (JAXBException e) {
             e.printStackTrace();
             return null;
         }
     }
 
-    public void saveModulesDataToFile(File file, ModuleList moduleList)
-    {
-        try
-        {
+    public void saveModulesDataToFile(File file, ModuleList moduleList) {
+        try {
             JAXBContext context = JAXBContext.newInstance(ModuleList.class);
             Marshaller m = context.createMarshaller();
             m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
             m.marshal(moduleList, file);
-        } catch (JAXBException e)
-        {
+        } catch (JAXBException e) {
             e.printStackTrace();
         }
     }
 
-    public void saveQuestDataToFile(QuestList list)
-    {
-        try
-        {
+    public void saveQuestDataToFile(QuestList list) {
+        try {
             File file = new File(System.getProperty("user.dir") + Path.QUEST_FILE);
             JAXBContext context = JAXBContext.newInstance(QuestList.class);
             Marshaller m = context.createMarshaller();
             m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
             m.marshal(list, file);
-        } catch (JAXBException e)
-        {
+        } catch (JAXBException e) {
             e.printStackTrace();
         }
     }
 
-    public QuestList loadQuestsDataFromFile()
-    {
-        try
-        {
+    public QuestList loadQuestsDataFromFile() {
+        try {
             File file = new File(System.getProperty("user.dir") + Path.QUEST_FILE);
             JAXBContext context = JAXBContext.newInstance(QuestList.class);
             Unmarshaller um = context.createUnmarshaller();
             return (QuestList) um.unmarshal(file);
-        } catch (JAXBException e)
-        {
+        } catch (JAXBException e) {
             e.printStackTrace();
             return null;
         }

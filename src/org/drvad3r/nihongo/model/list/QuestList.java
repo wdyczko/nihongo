@@ -17,28 +17,23 @@ import java.util.stream.Collectors;
 public class QuestList {
     private ObservableList<Quest> questList;
 
-    public QuestList()
-    {
+    public QuestList() {
         this.questList = FXCollections.observableArrayList();
     }
 
     @XmlElement(name = "quest")
-    public ObservableList<Quest> getQuestList()
-    {
+    public ObservableList<Quest> getQuestList() {
         return questList;
     }
 
-    public void setQuestList(ObservableList<Quest> questList)
-    {
+    public void setQuestList(ObservableList<Quest> questList) {
         this.questList = questList;
     }
 
-    public Quest getQuest(String title)
-    {
+    public Quest getQuest(String title) {
         for (Quest quest :
-                questList)
-        {
-            if(quest.getTitle().equals(title))
+                questList) {
+            if (quest.getTitle().equals(title))
                 return quest;
         }
         return null;

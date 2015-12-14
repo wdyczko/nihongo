@@ -16,8 +16,7 @@ public class Verb {
     private StringProperty local;
     private StringProperty kanaBase;
 
-    public Verb()
-    {
+    public Verb() {
         negative = new SimpleStringProperty("");
         conjunctive = new SimpleStringProperty("");
         plain = new SimpleStringProperty("");
@@ -111,8 +110,7 @@ public class Verb {
         this.kanaBase.set(kanaBase);
     }
 
-    public static void printVerb(Verb verb)
-    {
+    public static void printVerb(Verb verb) {
         System.out.println(String.format("Negative: %s, Conjunctive: %s, Plain: %s, Conditional: %s, Volitional: %s, Local: %s, KanaBase: %s",
                 verb.getNegative(), verb.getConjunctive(), verb.getPlain(), verb.getConditional(), verb.getVolitional(), verb.getLocal(), verb.getKanaBase()));
     }

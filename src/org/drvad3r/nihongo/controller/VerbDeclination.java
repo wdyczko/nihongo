@@ -23,8 +23,7 @@ import java.util.Random;
  * Author: Wiktor
  * Creation: 2015-11-11
  */
-public class VerbDeclination
-{
+public class VerbDeclination {
     @FXML
     private Label verbLabel;
     @FXML
@@ -36,7 +35,7 @@ public class VerbDeclination
     @FXML
     private Label statusLabel;
 
-    interface QUESTION{
+    interface QUESTION {
         int COUNT = 5;
         String NEGATIVE = "Decline verb to negative form";
         String CONJUNCTIVE = "Decline verb to conjunctive form";
@@ -52,29 +51,25 @@ public class VerbDeclination
     private Verb current;
     private int questionIndicator;
 
-    public VerbDeclination()
-    {
+    public VerbDeclination() {
         StorageManager storageManager = new StorageManager();
         verbs = storageManager.loadVerbDataFromFile(new File(System.getProperty("user.dir") + Path.VERB_DECLINATION_FILE));
         verbsPassed = new ArrayList<>();
         randVerb();
     }
 
-    public void setNihongo(Nihongo nihongo)
-    {
+    public void setNihongo(Nihongo nihongo) {
         this.nihongo = nihongo;
     }
 
     @FXML
-    private void initialize()
-    {
+    private void initialize() {
         presentCurrentVerb();
         answerLabel.setText("");
         updateStatus();
     }
 
-    private void presentCurrentVerb()
-    {
+    private void presentCurrentVerb() {
         verbLabel.setText(current.getPlain());
         questionLabel.setText(getQuestion());
     }
@@ -91,10 +86,8 @@ public class VerbDeclination
         return current;
     }
 
-    private String getQuestion()
-    {
-        switch (questionIndicator)
-        {
+    private String getQuestion() {
+        switch (questionIndicator) {
             case 0:
                 return QUESTION.NEGATIVE;
             case 1:
@@ -110,10 +103,8 @@ public class VerbDeclination
         }
     }
 
-    private String getRightAnswer()
-    {
-        switch(questionIndicator)
-        {
+    private String getRightAnswer() {
+        switch (questionIndicator) {
             case 0:
                 return current.getNegative();
             case 1:
@@ -129,30 +120,23 @@ public class VerbDeclination
         }
     }
 
-    private int getVerbsListSize()
-    {
-        if(verbs != null)
-        {
+    private int getVerbsListSize() {
+        if (verbs != null) {
             return verbs.getVerbs().size() * QUESTION.COUNT;
-        }
-        else
-        {
+        } else {
             return 0;
         }
     }
 
-    private void showAnswer()
-    {
+    private void showAnswer() {
         answerLabel.setText(getRightAnswer());
     }
 
-    private boolean isPassCondition()
-    {
+    private boolean isPassCondition() {
         return getRightAnswer().equals(answerTextField.getText().trim());
     }
 
-    private void updateStatus()
-    {
+    private void updateStatus() {
         statusLabel.setText(String.format(Style.STATUS_FORMATTER, (verbsPassed.size() - 1 < 0) ? 0 : verbsPassed.size() - 1, getVerbsListSize()));
     }
 
@@ -164,28 +148,22 @@ public class VerbDeclination
         timeline.play();
     }
 
-    private boolean isEndingCondition()
-    {
+    private boolean isEndingCondition() {
         return this.getVerbsListSize() == this.verbsPassed.size();
     }
 
-    public void unpassLastIndex()
-    {
+    public void unpassLastIndex() {
         verbsPassed.remove(new Integer(index));
     }
 
     @FXML
-    private void onAnswerKeyInput(KeyEvent keyEvent)
-    {
-        if(keyEvent.getCode() == KeyCode.ENTER)
-        {
-            if(isPassCondition())
-            {
+    private void onAnswerKeyInput(KeyEvent keyEvent) {
+        if (keyEvent.getCode() == KeyCode.ENTER) {
+            if (isPassCondition()) {
                 answerTextField.getStyleClass().removeAll(Style.Class.TextField.INCORRECT);
                 answerTextField.requestLayout();
                 updateStatus();
-                if(isEndingCondition())
-                {
+                if (isEndingCondition()) {
                     nihongo.showManageLists();
                     return;
                 }
@@ -196,23 +174,17 @@ public class VerbDeclination
                 answerTextField.requestFocus();
                 statusLabel.setText("Good!");
                 recoverStatus();
-            }
-            else
-            {
+            } else {
                 answerTextField.getStyleClass().add(Style.Class.TextField.INCORRECT);
                 answerTextField.requestLayout();
                 unpassLastIndex();
                 showAnswer();
             }
 
-        }
-        else if(keyEvent.getCode() == KeyCode.F1)
-        {
+        } else if (keyEvent.getCode() == KeyCode.F1) {
             statusLabel.setText(current.getLocal());
             recoverStatus();
-        }
-        else if(keyEvent.getCode() == KeyCode.F2)
-        {
+        } else if (keyEvent.getCode() == KeyCode.F2) {
             statusLabel.setText(current.getKanaBase());
             recoverStatus();
         }

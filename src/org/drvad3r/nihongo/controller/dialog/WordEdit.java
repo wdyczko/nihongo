@@ -11,8 +11,7 @@ import org.drvad3r.nihongo.model.Word;
  * Author: Wiktor
  * Creation: 2015-10-17
  */
-public class WordEdit
-{
+public class WordEdit {
     @FXML
     private TextField originalTextField;
     @FXML
@@ -27,18 +26,15 @@ public class WordEdit
     private boolean okClicked = false;
 
     @FXML
-    private void initialize()
-    {
+    private void initialize() {
 
     }
 
-    public void setDialogStage(Stage dialogStage)
-    {
+    public void setDialogStage(Stage dialogStage) {
         this.dialogStage = dialogStage;
     }
 
-    public void setWord(Word word)
-    {
+    public void setWord(Word word) {
         this.word = word;
         originalTextField.setText(word.getOriginal());
         pronounceTextField.setText(word.getPronounce());
@@ -46,16 +42,13 @@ public class WordEdit
         localTextField.setText(word.getLocal());
     }
 
-    public boolean isOkClicked()
-    {
+    public boolean isOkClicked() {
         return okClicked;
     }
 
     @FXML
-    private void onOk()
-    {
-        if (isInputValid())
-        {
+    private void onOk() {
+        if (isInputValid()) {
             word.setOriginal(originalTextField.getText());
             word.setPronounce(pronounceTextField.getText());
             word.setEnglish(englishTextField.getText());
@@ -66,25 +59,19 @@ public class WordEdit
     }
 
     @FXML
-    private void onCancel()
-    {
+    private void onCancel() {
         dialogStage.close();
     }
 
-    private boolean isInputValid()
-    {
+    private boolean isInputValid() {
         return (!originalTextField.getText().isEmpty() && !pronounceTextField.getText().isEmpty() && !englishTextField.getText().isEmpty() && !localTextField.getText().isEmpty());
     }
 
     @FXML
-    private void onKeyInput(KeyEvent keyEvent)
-    {
-        if(keyEvent.getCode() == KeyCode.ENTER)
-        {
+    private void onKeyInput(KeyEvent keyEvent) {
+        if (keyEvent.getCode() == KeyCode.ENTER) {
             onOk();
-        }
-        else if (keyEvent.getCode() == KeyCode.ESCAPE)
-        {
+        } else if (keyEvent.getCode() == KeyCode.ESCAPE) {
             onCancel();
         }
     }

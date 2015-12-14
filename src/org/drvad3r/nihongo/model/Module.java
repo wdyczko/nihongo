@@ -7,55 +7,45 @@ import javafx.beans.property.StringProperty;
  * Author: Wiktor
  * Creation: 2015-10-21
  */
-public class Module
-{
+public class Module {
     private StringProperty name;
     private StringProperty file;
 
-    public Module()
-    {
+    public Module() {
         this(null, null);
     }
 
-    public Module(String name, String file)
-    {
+    public Module(String name, String file) {
         this.name = new SimpleStringProperty(name);
         this.file = new SimpleStringProperty(file);
     }
 
-    public String getName()
-    {
+    public String getName() {
         return name.get();
     }
 
-    public StringProperty nameProperty()
-    {
+    public StringProperty nameProperty() {
         return name;
     }
 
-    public void setName(String name)
-    {
+    public void setName(String name) {
         this.name.set(name);
     }
 
-    public String getFile()
-    {
+    public String getFile() {
         return file.get();
     }
 
-    public StringProperty fileProperty()
-    {
+    public StringProperty fileProperty() {
         return file;
     }
 
-    public void setFile(String file)
-    {
+    public void setFile(String file) {
         this.file.set(file);
     }
 
     @Override
-    public String toString()
-    {
+    public String toString() {
         return getName();
     }
 }

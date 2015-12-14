@@ -14,70 +14,57 @@ public class Quest {
     private StringProperty output;
     private StringProperty title;
 
-    public Quest()
-    {
+    public Quest() {
         this(null, null, null);
     }
 
-    public Quest(String input, String output, String title)
-    {
+    public Quest(String input, String output, String title) {
         this.input = new SimpleStringProperty(input);
         this.output = new SimpleStringProperty(output);
         this.title = new SimpleStringProperty(title);
     }
 
-    public Quest(Quest quest)
-    {
+    public Quest(Quest quest) {
         this("", "", "");
     }
 
-    public String getInput()
-    {
+    public String getInput() {
         return input.get();
     }
 
-    public StringProperty inputProperty()
-    {
+    public StringProperty inputProperty() {
         return input;
     }
 
-    public void setInput(String input)
-    {
+    public void setInput(String input) {
         this.input.set(input);
     }
 
-    public String getOutput()
-    {
+    public String getOutput() {
         return output.get();
     }
 
-    public StringProperty outputProperty()
-    {
+    public StringProperty outputProperty() {
         return output;
     }
 
-    public void setOutput(String output)
-    {
+    public void setOutput(String output) {
         this.output.set(output);
     }
 
-    public String getTitle()
-    {
+    public String getTitle() {
         return title.get();
     }
 
-    public StringProperty titleProperty()
-    {
+    public StringProperty titleProperty() {
         return title;
     }
 
-    public void setTitle(String title)
-    {
+    public void setTitle(String title) {
         this.title.set(title);
     }
 
-    public String toString()
-    {
+    public String toString() {
         return getTitle();
     }
 }

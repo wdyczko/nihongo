@@ -5,8 +5,9 @@ package org.drvad3r.nihongo.define;
  */
 public interface Style {
     String STATUS_FORMATTER = "%d/%d";
-    interface Class{
-        interface TextField{
+
+    interface Class {
+        interface TextField {
             String CORRECT = "text-field-correct";
             String INCORRECT = "text-field-incorrect";
         }

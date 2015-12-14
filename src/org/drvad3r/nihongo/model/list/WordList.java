@@ -15,32 +15,29 @@ import java.util.List;
  */
 
 @XmlRootElement(name = "words")
-public class WordList
-{
+public class WordList {
     private ObservableList<Word> words;
     private String description;
 
-    public WordList()
-    {
+    public WordList() {
         words = FXCollections.observableArrayList();
     }
 
     @XmlElement(name = "description")
-    public String getDescription() { return description; }
+    public String getDescription() {
+        return description;
+    }
 
-    public void setDescription(String description)
-    {
+    public void setDescription(String description) {
         this.description = description;
     }
 
     @XmlElement(name = "word")
-    public ObservableList<Word> getWords()
-    {
+    public ObservableList<Word> getWords() {
         return words;
     }
 
-    public void setWords(ObservableList<Word> words)
-    {
+    public void setWords(ObservableList<Word> words) {
         this.words = words;
     }
 }
