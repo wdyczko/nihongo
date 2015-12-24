@@ -214,5 +214,10 @@ public class ManageLists {
         } else if (keyEvent.getCode() == KeyCode.R) {
             nihongo.showCommandDialog(wordTableView);
         }
+        else if(keyEvent.getCode() == KeyCode.N && keyEvent.isShiftDown())
+        {
+            nihongo.showCreateList(moduleList);
+        }
     }
+
 }

@@ -19,6 +19,7 @@ import org.drvad3r.nihongo.controller.GeneralQuest;
 import org.drvad3r.nihongo.controller.ManageLists;
 import org.drvad3r.nihongo.controller.VerbDeclination;
 import org.drvad3r.nihongo.controller.dialog.Command;
+import org.drvad3r.nihongo.controller.dialog.CreateList;
 import org.drvad3r.nihongo.controller.dialog.WordEdit;
 import org.drvad3r.nihongo.define.Path;
 import org.drvad3r.nihongo.manager.StorageManager;
@@ -179,7 +180,37 @@ public class Nihongo extends Application {
         }
     }
 
-    public Module getCurrentModule() {
+    public boolean showCreateList(ModuleList moduleList)
+    {
+        try
+        {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Nihongo.class.getResource("view/dialog/CreateList.fxml"));
+            AnchorPane page = loader.load();
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("Name");
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.initOwner(primaryStage);
+            dialogStage.initStyle(StageStyle.UNDECORATED);
+            Scene scene = new Scene(page);
+            dialogStage.setScene(scene);
+
+            CreateList controller = loader.getController();
+            controller.setDialogStage(dialogStage);
+            controller.setModuleList(moduleList);
+
+            dialogStage.showAndWait();
+
+            return true;
+        } catch (IOException e)
+        {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public Module getCurrentModule()
+    {
         return currentModule;
     }
 
