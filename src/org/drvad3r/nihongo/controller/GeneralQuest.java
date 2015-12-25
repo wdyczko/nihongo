@@ -195,6 +195,10 @@ public class GeneralQuest {
                 wordManager.unpassLastIndex();
             }
         }
+        if(keyEvent.getCode() == KeyCode.F4)
+        {
+            localLabel.setText(wordManager.getCurrent().getLocal());
+        }
         if (keyEvent.getCode() == KeyCode.ALT) {
             keyEvent.consume();
         }

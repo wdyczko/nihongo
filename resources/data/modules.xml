@@ -28,4 +28,8 @@
         <file>module\verbs\own_one.xml</file>
         <name>Verb own - part I</name>
     </module>
+    <module>
+        <file>generic_module\elementary\elementary 1st year.xml</file>
+        <name>elementary 1st year</name>
+    </module>
 </modules>
