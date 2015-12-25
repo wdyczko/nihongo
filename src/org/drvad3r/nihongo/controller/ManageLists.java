@@ -251,7 +251,7 @@ public class ManageLists {
             robot.keyPress(java.awt.event.KeyEvent.VK_UP);
         } else if (keyEvent.getCode() == KeyCode.R)
         {
-            nihongo.showCommandDialog(wordTableView);
+            nihongo.showCommandDialog(wordTableView, modeNameLabel );
         } else if (keyEvent.getCode() == KeyCode.N && keyEvent.isShiftDown())
         {
             nihongo.showCreateList(moduleList);

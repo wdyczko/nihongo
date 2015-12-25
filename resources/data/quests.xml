@@ -2,6 +2,11 @@
 <quests>
     <quest>
         <input>1</input>
+        <output>6</output>
+        <title>ENGLISH to PRONOUNCE, ORIGINAL</title>
+    </quest>
+    <quest>
+        <input>1</input>
         <output>2</output>
         <title>ENGLISH to ORIGINAL</title>
     </quest>
@@ -19,11 +24,6 @@
         <input>1</input>
         <output>14</output>
         <title>ENGLISH to PRONOUNCE, ORIGINAL, LOCAL</title>
-    </quest>
-    <quest>
-        <input>1</input>
-        <output>6</output>
-        <title>ENGLISH to PRONOUNCE, ORIGINAL</title>
     </quest>
     <quest>
         <input>8</input>

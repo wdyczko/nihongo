@@ -7,6 +7,7 @@ import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
@@ -32,7 +33,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 
 public class Nihongo extends Application {
-    Stage primaryStage;
+    static Stage primaryStage;
     static BorderPane rootLayout;
     static Module currentModule;
 
@@ -42,11 +43,11 @@ public class Nihongo extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        this.primaryStage = primaryStage;
-        this.primaryStage.setTitle("Nihongo");
+        Nihongo.primaryStage = primaryStage;
+        Nihongo.primaryStage.setTitle("Nihongo");
         try {
             Image image = new Image(new FileInputStream(new File(System.getProperty("user.dir") + Path.ICON)));
-            this.primaryStage.getIcons().add(image);
+            Nihongo.primaryStage.getIcons().add(image);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -150,7 +151,7 @@ public class Nihongo extends Application {
         }
     }
 
-    public boolean showCommandDialog(TableView tableView) {
+    public boolean showCommandDialog(TableView tableView, Label modeNameLabel) {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Nihongo.class.getResource("view/dialog/Command.fxml"));
@@ -170,6 +171,7 @@ public class Nihongo extends Application {
             Command controller = loader.getController();
             controller.setDialogStage(dialogStage);
             controller.setTableView(tableView);
+            controller.setModuleNameLabel(modeNameLabel);
 
             dialogStage.showAndWait();
 
