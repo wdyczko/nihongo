@@ -550,7 +550,7 @@
         <english>Friday</english>
         <local>piątek</local>
         <original>金曜日</original>
-        <pronounce>きにょうび</pronounce>
+        <pronounce>きんようび</pronounce>
     </word>
     <word>
         <english>garage</english>
@@ -1093,8 +1093,8 @@
         <pronounce>あかしんごう</pronounce>
     </word>
     <word>
-        <english>right</english>
-        <local>prawo</local>
+        <english>right (direction)</english>
+        <local>prawo (kierunek)</local>
         <original>右</original>
         <pronounce>みぎ</pronounce>
     </word>

@@ -17,6 +17,8 @@ import org.drvad3r.nihongo.manager.WordManager;
 import org.drvad3r.nihongo.model.Quest;
 import org.drvad3r.nihongo.model.Word;
 
+import java.security.Key;
+
 /**
  * Author: Wiktor
  * Creation date: 2015-12-12.
@@ -194,6 +196,23 @@ public class GeneralQuest {
             } else {
                 wordManager.unpassLastIndex();
             }
+        }
+        if(keyEvent.getCode() == KeyCode.ESCAPE)
+        {
+            nihongo.showManageLists();
+            return;
+        }
+        if(keyEvent.getCode() == KeyCode.F1)
+        {
+            originalLabel.setText(wordManager.getCurrent().getOriginal());
+        }
+        if(keyEvent.getCode() == KeyCode.F2)
+        {
+            pronounceLabel.setText(wordManager.getCurrent().getPronounce());
+        }
+        if(keyEvent.getCode() == KeyCode.F3)
+        {
+            englishLabel.setText(wordManager.getCurrent().getEnglish());
         }
         if(keyEvent.getCode() == KeyCode.F4)
         {

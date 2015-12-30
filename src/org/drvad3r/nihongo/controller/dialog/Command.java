@@ -57,7 +57,7 @@ public class Command {
     private void processInput()
     {
         String input = commandTextField.getText().trim();
-        if (input.equals("*"))
+        if (input.equals("sel *"))
         {
             tableView.getSelectionModel().selectAll();
         } else if (input.matches("sel \\+\\d*"))
