@@ -1,208 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <words>
     <word>
-        <english>to write</english>
-        <local>pisać</local>
-        <original>書く</original>
-        <pronounce>かく</pronounce>
-    </word>
-    <word>
-        <english>to remove (clothes)</english>
-        <local>zdejmować</local>
-        <original>脱ぐ</original>
-        <pronounce>ぬぐ</pronounce>
-    </word>
-    <word>
-        <english>to break</english>
-        <local>psuć</local>
-        <original>壊す</original>
-        <pronounce>こわす</pronounce>
-    </word>
-    <word>
-        <english>to have got</english>
-        <local>posiadać</local>
-        <original>持つ</original>
-        <pronounce>もつ</pronounce>
-    </word>
-    <word>
-        <english>to die</english>
-        <local>umierać</local>
-        <original>死ぬ</original>
-        <pronounce>しぬ</pronounce>
-    </word>
-    <word>
-        <english>to shout</english>
-        <local>krzyczeć</local>
-        <original>叫ぶ</original>
-        <pronounce>さけぶ</pronounce>
-    </word>
-    <word>
-        <english>to drink</english>
-        <local>pić</local>
-        <original>飲む</original>
-        <pronounce>のむ</pronounce>
-    </word>
-    <word>
-        <english>to sit</english>
-        <local>siedzieć</local>
-        <original>座る</original>
-        <pronounce>すわる</pronounce>
-    </word>
-    <word>
-        <english>to buy</english>
-        <local>kupować</local>
-        <original>買う</original>
-        <pronounce>かう</pronounce>
-    </word>
-    <word>
-        <english>to eat</english>
-        <local>jeść</local>
-        <original>食べる</original>
-        <pronounce>たべる</pronounce>
-    </word>
-    <word>
-        <english>to see</english>
-        <local>patrzeć</local>
-        <original>見る</original>
-        <pronounce>みる</pronounce>
-    </word>
-    <word>
-        <english>to go back</english>
-        <local>wracać</local>
-        <original>帰る</original>
-        <pronounce>かえる</pronounce>
-    </word>
-    <word>
-        <english>to cut</english>
-        <local>ciąć</local>
-        <original>切る</original>
-        <pronounce>きる</pronounce>
-    </word>
-    <word>
-        <english>to run</english>
-        <local>biec</local>
-        <original>走る</original>
-        <pronounce>はしる</pronounce>
-    </word>
-    <word>
-        <english>to enter</english>
-        <local>wchodzić</local>
-        <original>入る</original>
-        <pronounce>はいる</pronounce>
-    </word>
-    <word>
-        <english>to come</english>
-        <local>przybywać</local>
-        <original>来る</original>
-        <pronounce>くる</pronounce>
-    </word>
-    <word>
-        <english>to do</english>
-        <local>robić</local>
-        <original>する</original>
-        <pronounce>する</pronounce>
-    </word>
-    <word>
-        <english>to meet</english>
-        <local>spotykać</local>
-        <original>出会う</original>
-        <pronounce>であう</pronounce>
-    </word>
-    <word>
-        <english>to leave</english>
-        <local>wychodzić</local>
-        <original>出る・去る</original>
-        <pronounce>でる・さる</pronounce>
-    </word>
-    <word>
-        <english>to stand</english>
-        <local>stać</local>
-        <original>立つ</original>
-        <pronounce>たつ</pronounce>
-    </word>
-    <word>
-        <english>to rest</english>
-        <local>odpoczywać</local>
-        <original>休む</original>
-        <pronounce>やすむ</pronounce>
-    </word>
-    <word>
-        <english>to find</english>
-        <local>znajdować</local>
-        <original>見付ける</original>
-        <pronounce>みつける</pronounce>
-    </word>
-    <word>
-        <english>to show</english>
-        <local>pokazywać</local>
-        <original>見せる</original>
-        <pronounce>みせる</pronounce>
-    </word>
-    <word>
-        <english>to pull</english>
-        <local>ciągnąć</local>
-        <original>引く</original>
-        <pronounce>ひく</pronounce>
-    </word>
-    <word>
-        <english>to stop</english>
-        <local>zatrzymać</local>
-        <original>止まる</original>
-        <pronounce>とまる</pronounce>
-    </word>
-    <word>
-        <english>to think</english>
-        <local>myśleć</local>
-        <original>考える・思う</original>
-        <pronounce>かんがえる・おもう</pronounce>
-    </word>
-    <word>
-        <english>to go</english>
-        <local>iść, jechać</local>
-        <original>行く</original>
-        <pronounce>いく</pronounce>
-    </word>
-    <word>
-        <english>to say</english>
-        <local>powiedzieć</local>
-        <original>言う</original>
-        <pronounce>いう</pronounce>
-    </word>
-    <word>
-        <english>to make</english>
-        <local>tworzyć</local>
-        <original>作る</original>
-        <pronounce>つくる</pronounce>
-    </word>
-    <word>
-        <english>to bring</english>
-        <local>przynosić</local>
-        <original>持って来る</original>
-        <pronounce>もってくる</pronounce>
-    </word>
-    <word>
-        <english>to know</english>
-        <local>wiedzieć</local>
-        <original>知っている</original>
-        <pronounce>しっている</pronounce>
-    </word>
-    <word>
-        <english>to walk</english>
-        <local>chodzić</local>
-        <original>歩く</original>
-        <pronounce>あるく</pronounce>
-    </word>
-    <word>
-        <english>to learn</english>
-        <local>uczyć się</local>
-        <original>勉強する</original>
-        <pronounce>べんきょうする</pronounce>
-    </word>
-    <word>
-        <english>to teach</english>
-        <local>uczyć</local>
-        <original>教える</original>
-        <pronounce>おしえる</pronounce>
+        <english>to add</english>
+        <local>dodać</local>
+        <original>加える</original>
+        <pronounce>くわえる</pronounce>
     </word>
     <word>
         <english>to answer</english>
@@ -211,82 +13,10 @@
         <pronounce>こたえる</pronounce>
     </word>
     <word>
-        <english>to talk</english>
-        <local>rozmawiać</local>
-        <original>話す</original>
-        <pronounce>はなす</pronounce>
-    </word>
-    <word>
-        <english>to sing</english>
-        <local>śpiewać</local>
-        <original>歌う</original>
-        <pronounce>うたう</pronounce>
-    </word>
-    <word>
-        <english>to read</english>
-        <local>czytać</local>
-        <original>読む</original>
-        <pronounce>よむ</pronounce>
-    </word>
-    <word>
         <english>to ask, to listen</english>
         <local>pytać, słuchać</local>
         <original>聞く</original>
         <pronounce>きく</pronounce>
-    </word>
-    <word>
-        <english>to hear</english>
-        <local>słyszeć</local>
-        <original>聞こえる</original>
-        <pronounce>きこえる</pronounce>
-    </word>
-    <word>
-        <english>to sing, to bark</english>
-        <local>śpiewać, szczekać</local>
-        <original>鳴く</original>
-        <pronounce>なく</pronounce>
-    </word>
-    <word>
-        <english>to hit</english>
-        <local>uderzyć</local>
-        <original>打つ</original>
-        <pronounce>うつ</pronounce>
-    </word>
-    <word>
-        <english>to live</english>
-        <local>mieszkać</local>
-        <original>住む</original>
-        <pronounce>すむ</pronounce>
-    </word>
-    <word>
-        <english>to help</english>
-        <local>pomagać</local>
-        <original>助ける・手伝う</original>
-        <pronounce>たすける・てつだう</pronounce>
-    </word>
-    <word>
-        <english>to throw</english>
-        <local>rzucić</local>
-        <original>投げる</original>
-        <pronounce>なげる</pronounce>
-    </word>
-    <word>
-        <english>to bring up</english>
-        <local>poruszać</local>
-        <original>育てる</original>
-        <pronounce>そだてる</pronounce>
-    </word>
-    <word>
-        <english>to swim</english>
-        <local>pływać</local>
-        <original>泳ぐ</original>
-        <pronounce>およぐ</pronounce>
-    </word>
-    <word>
-        <english>to use</english>
-        <local>używać</local>
-        <original>使う</original>
-        <pronounce>つかう</pronounce>
     </word>
     <word>
         <english>to begin</english>
@@ -295,16 +25,250 @@
         <pronounce>はじまる・はじめる</pronounce>
     </word>
     <word>
-        <english>to take</english>
-        <local>brać</local>
-        <original>取る</original>
-        <pronounce>とる</pronounce>
+        <english>to borrow</english>
+        <local>pożyczać</local>
+        <original>借りる</original>
+        <pronounce>かりる</pronounce>
     </word>
     <word>
-        <english>to receive</english>
-        <local>otrzymać</local>
-        <original>受け取る</original>
-        <pronounce>うけとる</pronounce>
+        <english>to break</english>
+        <local>psuć</local>
+        <original>壊す</original>
+        <pronounce>こわす</pronounce>
+    </word>
+    <word>
+        <english>to bring</english>
+        <local>przynosić</local>
+        <original>持って来る</original>
+        <pronounce>もってくる</pronounce>
+    </word>
+    <word>
+        <english>to bring up</english>
+        <local>poruszać</local>
+        <original>育てる</original>
+        <pronounce>そだてる</pronounce>
+    </word>
+    <word>
+        <english>to buy</english>
+        <local>kupować</local>
+        <original>買う</original>
+        <pronounce>かう</pronounce>
+    </word>
+    <word>
+        <english>to close</english>
+        <local>zamykać</local>
+        <original>閉める</original>
+        <pronounce>しめる</pronounce>
+    </word>
+    <word>
+        <english>to collect</english>
+        <local>zbierać</local>
+        <original>集める</original>
+        <pronounce>あつめる</pronounce>
+    </word>
+    <word>
+        <english>to come</english>
+        <local>przybywać</local>
+        <original>来る</original>
+        <pronounce>くる</pronounce>
+    </word>
+    <word>
+        <english>to cook</english>
+        <local>gotować</local>
+        <original>料理する</original>
+        <pronounce>りょうりする</pronounce>
+    </word>
+    <word>
+        <english>to cut</english>
+        <local>ciąć</local>
+        <original>切る</original>
+        <pronounce>きる</pronounce>
+    </word>
+    <word>
+        <english>to dance</english>
+        <local>tańczyć</local>
+        <original>踊る</original>
+        <pronounce>おどる</pronounce>
+    </word>
+    <word>
+        <english>to delay</english>
+        <local>opóźniać</local>
+        <original>延期する</original>
+        <pronounce>えんきする</pronounce>
+    </word>
+    <word>
+        <english>to deliver</english>
+        <local>dostarczać</local>
+        <original>配る</original>
+        <pronounce>くばる</pronounce>
+    </word>
+    <word>
+        <english>to die</english>
+        <local>umierać</local>
+        <original>死ぬ</original>
+        <pronounce>しぬ</pronounce>
+    </word>
+    <word>
+        <english>to do</english>
+        <local>robić</local>
+        <original>する</original>
+        <pronounce>する</pronounce>
+    </word>
+    <word>
+        <english>to drink</english>
+        <local>pić</local>
+        <original>飲む</original>
+        <pronounce>のむ</pronounce>
+    </word>
+    <word>
+        <english>to earse, to turn off</english>
+        <local>usunąć, wyłączyć</local>
+        <original>消す</original>
+        <pronounce>けす</pronounce>
+    </word>
+    <word>
+        <english>to eat</english>
+        <local>jeść</local>
+        <original>食べる</original>
+        <pronounce>たべる</pronounce>
+    </word>
+    <word>
+        <english>to end</english>
+        <local>kończyć się</local>
+        <original>終わる</original>
+        <pronounce>おわる</pronounce>
+    </word>
+    <word>
+        <english>to enter</english>
+        <local>wchodzić</local>
+        <original>入る</original>
+        <pronounce>はいる</pronounce>
+    </word>
+    <word>
+        <english>to feel</english>
+        <local>czuć</local>
+        <original>感じる</original>
+        <pronounce>かんじる</pronounce>
+    </word>
+    <word>
+        <english>to find</english>
+        <local>znajdować</local>
+        <original>見付ける</original>
+        <pronounce>みつける</pronounce>
+    </word>
+    <word>
+        <english>to go</english>
+        <local>iść, jechać</local>
+        <original>行く</original>
+        <pronounce>いく</pronounce>
+    </word>
+    <word>
+        <english>to go back</english>
+        <local>wracać</local>
+        <original>帰る</original>
+        <pronounce>かえる</pronounce>
+    </word>
+    <word>
+        <english>to guide</english>
+        <local>prowadzić, przewodzić</local>
+        <original>案内する</original>
+        <pronounce>あんないする</pronounce>
+    </word>
+    <word>
+        <english>to have got</english>
+        <local>posiadać</local>
+        <original>持つ</original>
+        <pronounce>もつ</pronounce>
+    </word>
+    <word>
+        <english>to hear</english>
+        <local>słyszeć</local>
+        <original>聞こえる</original>
+        <pronounce>きこえる</pronounce>
+    </word>
+    <word>
+        <english>to help</english>
+        <local>pomagać</local>
+        <original>助ける・手伝う</original>
+        <pronounce>たすける・てつだう</pronounce>
+    </word>
+    <word>
+        <english>to hit</english>
+        <local>uderzyć</local>
+        <original>打つ</original>
+        <pronounce>うつ</pronounce>
+    </word>
+    <word>
+        <english>to hope</english>
+        <local>mieć nadzieje</local>
+        <original>期待する・望む</original>
+        <pronounce>きたいする・のぞむ</pronounce>
+    </word>
+    <word>
+        <english>to joke</english>
+        <local>żartować</local>
+        <original>巫山戯る</original>
+        <pronounce>ふざける</pronounce>
+    </word>
+    <word>
+        <english>to kill</english>
+        <local>zabijać</local>
+        <original>殺す</original>
+        <pronounce>ころす</pronounce>
+    </word>
+    <word>
+        <english>to know</english>
+        <local>wiedzieć</local>
+        <original>知っている</original>
+        <pronounce>しっている</pronounce>
+    </word>
+    <word>
+        <english>to laugh</english>
+        <local>śmiać się</local>
+        <original>笑う</original>
+        <pronounce>わらう</pronounce>
+    </word>
+    <word>
+        <english>to learn</english>
+        <local>uczyć się</local>
+        <original>勉強する</original>
+        <pronounce>べんきょうする</pronounce>
+    </word>
+    <word>
+        <english>to leave</english>
+        <local>wychodzić</local>
+        <original>出る・去る</original>
+        <pronounce>でる・さる</pronounce>
+    </word>
+    <word>
+        <english>to like</english>
+        <local>lubić</local>
+        <original>好きである</original>
+        <pronounce>すきである</pronounce>
+    </word>
+    <word>
+        <english>to live</english>
+        <local>mieszkać</local>
+        <original>住む</original>
+        <pronounce>すむ</pronounce>
+    </word>
+    <word>
+        <english>to make</english>
+        <local>tworzyć</local>
+        <original>作る</original>
+        <pronounce>つくる</pronounce>
+    </word>
+    <word>
+        <english>to meet</english>
+        <local>spotykać</local>
+        <original>出会う</original>
+        <pronounce>であう</pronounce>
+    </word>
+    <word>
+        <english>to open</english>
+        <local>otwierać</local>
+        <original>開ける</original>
+        <pronounce>あける</pronounce>
     </word>
     <word>
         <english>to order</english>
@@ -313,16 +277,10 @@
         <pronounce>ちゅうもんする</pronounce>
     </word>
     <word>
-        <english>to taste</english>
-        <local>posmakować</local>
-        <original>味見する</original>
-        <pronounce>あじみする</pronounce>
-    </word>
-    <word>
-        <english>to add</english>
-        <local>dodać</local>
-        <original>加える</original>
-        <pronounce>くわえる</pronounce>
+        <english>to play</english>
+        <local>bawić się, grać</local>
+        <original>遊ぶ</original>
+        <pronounce>あそぶ</pronounce>
     </word>
     <word>
         <english>to print</english>
@@ -331,9 +289,201 @@
         <pronounce>いんさつする</pronounce>
     </word>
     <word>
-        <english>to like</english>
-        <local>lubić</local>
-        <original>好きである</original>
-        <pronounce>すきである</pronounce>
+        <english>to pull</english>
+        <local>ciągnąć</local>
+        <original>引く</original>
+        <pronounce>ひく</pronounce>
+    </word>
+    <word>
+        <english>to read</english>
+        <local>czytać</local>
+        <original>読む</original>
+        <pronounce>よむ</pronounce>
+    </word>
+    <word>
+        <english>to receive</english>
+        <local>otrzymać</local>
+        <original>受け取る</original>
+        <pronounce>うけとる</pronounce>
+    </word>
+    <word>
+        <english>to remove (clothes)</english>
+        <local>zdejmować</local>
+        <original>脱ぐ</original>
+        <pronounce>ぬぐ</pronounce>
+    </word>
+    <word>
+        <english>to rest</english>
+        <local>odpoczywać</local>
+        <original>休む</original>
+        <pronounce>やすむ</pronounce>
+    </word>
+    <word>
+        <english>to run</english>
+        <local>biec</local>
+        <original>走る</original>
+        <pronounce>はしる</pronounce>
+    </word>
+    <word>
+        <english>to say</english>
+        <local>powiedzieć</local>
+        <original>言う</original>
+        <pronounce>いう</pronounce>
+    </word>
+    <word>
+        <english>to see</english>
+        <local>patrzeć</local>
+        <original>見る</original>
+        <pronounce>みる</pronounce>
+    </word>
+    <word>
+        <english>to send</english>
+        <local>wysyłać</local>
+        <original>送る</original>
+        <pronounce>おくる</pronounce>
+    </word>
+    <word>
+        <english>to shout</english>
+        <local>krzyczeć</local>
+        <original>叫ぶ</original>
+        <pronounce>さけぶ</pronounce>
+    </word>
+    <word>
+        <english>to show</english>
+        <local>pokazywać</local>
+        <original>見せる</original>
+        <pronounce>みせる</pronounce>
+    </word>
+    <word>
+        <english>to sing</english>
+        <local>śpiewać</local>
+        <original>歌う</original>
+        <pronounce>うたう</pronounce>
+    </word>
+    <word>
+        <english>to sing, to bark</english>
+        <local>śpiewać, szczekać</local>
+        <original>鳴く</original>
+        <pronounce>なく</pronounce>
+    </word>
+    <word>
+        <english>to sit</english>
+        <local>siedzieć</local>
+        <original>座る</original>
+        <pronounce>すわる</pronounce>
+    </word>
+    <word>
+        <english>to smile</english>
+        <local>uśmiechać się</local>
+        <original>微笑む</original>
+        <pronounce>ほほえむ</pronounce>
+    </word>
+    <word>
+        <english>to stand</english>
+        <local>stać</local>
+        <original>立つ</original>
+        <pronounce>たつ</pronounce>
+    </word>
+    <word>
+        <english>to stop</english>
+        <local>zatrzymać</local>
+        <original>止まる</original>
+        <pronounce>とまる</pronounce>
+    </word>
+    <word>
+        <english>to succeed</english>
+        <local>odnosić sukces</local>
+        <original>成功する</original>
+        <pronounce>せいこうする</pronounce>
+    </word>
+    <word>
+        <english>to swim</english>
+        <local>pływać</local>
+        <original>泳ぐ</original>
+        <pronounce>およぐ</pronounce>
+    </word>
+    <word>
+        <english>to take</english>
+        <local>brać</local>
+        <original>取る</original>
+        <pronounce>とる</pronounce>
+    </word>
+    <word>
+        <english>to talk</english>
+        <local>rozmawiać</local>
+        <original>話す</original>
+        <pronounce>はなす</pronounce>
+    </word>
+    <word>
+        <english>to taste</english>
+        <local>posmakować</local>
+        <original>味見する</original>
+        <pronounce>あじみする</pronounce>
+    </word>
+    <word>
+        <english>to teach</english>
+        <local>uczyć</local>
+        <original>教える</original>
+        <pronounce>おしえる</pronounce>
+    </word>
+    <word>
+        <english>to think</english>
+        <local>myśleć</local>
+        <original>考える・思う</original>
+        <pronounce>かんがえる・おもう</pronounce>
+    </word>
+    <word>
+        <english>to throw</english>
+        <local>rzucić</local>
+        <original>投げる</original>
+        <pronounce>なげる</pronounce>
+    </word>
+    <word>
+        <english>to understand</english>
+        <local>rozumieć</local>
+        <original>分かる</original>
+        <pronounce>わかる</pronounce>
+    </word>
+    <word>
+        <english>to use</english>
+        <local>używać</local>
+        <original>使う</original>
+        <pronounce>つかう</pronounce>
+    </word>
+    <word>
+        <english>to walk</english>
+        <local>chodzić</local>
+        <original>歩く</original>
+        <pronounce>あるく</pronounce>
+    </word>
+    <word>
+        <english>to work</english>
+        <local>pracować</local>
+        <original>働く</original>
+        <pronounce>はたらく</pronounce>
+    </word>
+    <word>
+        <english>to write</english>
+        <local>pisać</local>
+        <original>書く</original>
+        <pronounce>かく</pronounce>
+    </word>
+    <word>
+        <english>to love</english>
+        <local>kochać</local>
+        <original>愛する</original>
+        <pronounce>あいする</pronounce>
+    </word>
+    <word>
+        <english>to memorize</english>
+        <local>zapamiętywać</local>
+        <original>覚える</original>
+        <pronounce>おぼえる</pronounce>
+    </word>
+    <word>
+        <english>to move</english>
+        <local>poruszać się</local>
+        <original>動く</original>
+        <pronounce>うごく</pronounce>
     </word>
 </words>
