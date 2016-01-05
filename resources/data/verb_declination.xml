@@ -8,6 +8,11 @@
         <negative>書かない</negative>
         <plain>書く</plain>
         <volitional>書こう</volitional>
+        <te>書いて</te>
+        <ta>書いた</ta>
+        <tara>書いたら</tara>
+        <tari>書いたり</tari>
+        <imperative>書け</imperative>
     </verb>
     <verb>
         <conditional>脱げば</conditional>
@@ -17,6 +22,11 @@
         <negative>脱がない</negative>
         <plain>脱ぐ</plain>
         <volitional>脱ごう</volitional>
+        <te>脱いで</te>
+        <ta>脱いだ</ta>
+        <tara>脱いだら</tara>
+        <tari>脱いだり</tari>
+        <imperative>脱げ</imperative>
     </verb>
     <verb>
         <conditional>壊せば</conditional>
@@ -26,6 +36,11 @@
         <negative>壊さない</negative>
         <plain>壊す</plain>
         <volitional>壊そう</volitional>
+        <te>壊して</te>
+        <ta>壊した</ta>
+        <tara>壊したら</tara>
+        <tari>壊したり</tari>
+        <imperative>壊せ</imperative>
     </verb>
     <verb>
         <conditional>持てば</conditional>
@@ -35,6 +50,11 @@
         <negative>持たない</negative>
         <plain>持つ</plain>
         <volitional>持とう</volitional>
+        <te>持って</te>
+        <ta>持った</ta>
+        <tara>持ったら</tara>
+        <tari>持ったり</tari>
+        <imperative>持て</imperative>
     </verb>
     <verb>
         <conditional>死ねば</conditional>
@@ -44,6 +64,11 @@
         <negative>死なない</negative>
         <plain>死ぬ</plain>
         <volitional>死のう</volitional>
+        <te>死んで</te>
+        <ta>死んだ</ta>
+        <tara>死んだら</tara>
+        <tari>死んだり</tari>
+        <imperative>死ね</imperative>
     </verb>
     <verb>
         <conditional>叫べば</conditional>
@@ -53,6 +78,11 @@
         <negative>叫ばない</negative>
         <plain>叫ぶ</plain>
         <volitional>叫ぼう</volitional>
+        <te>叫んで</te>
+        <ta>叫んだ</ta>
+        <tara>叫んだら</tara>
+        <tari>叫んだり</tari>
+        <imperative>叫べ</imperative>
     </verb>
     <verb>
         <conditional>飲めば</conditional>
@@ -62,6 +92,11 @@
         <negative>飲まない</negative>
         <plain>飲む</plain>
         <volitional>飲もう</volitional>
+        <te>飲んで</te>
+        <ta>飲んだ</ta>
+        <tara>飲んだら</tara>
+        <tari>飲んだり</tari>
+        <imperative>飲め</imperative>
     </verb>
     <verb>
         <conditional>座れば</conditional>
@@ -71,6 +106,11 @@
         <negative>座らない</negative>
         <plain>座る</plain>
         <volitional>座ろう</volitional>
+        <te>座って</te>
+        <ta>座った</ta>
+        <tara>座ったら</tara>
+        <tari>座ったり</tari>
+        <imperative>座れ</imperative>
     </verb>
     <verb>
         <conditional>買えば</conditional>
@@ -80,5 +120,66 @@
         <negative>買わない</negative>
         <plain>買う</plain>
         <volitional>買おう</volitional>
+        <te>買って</te>
+        <ta>買った</ta>
+        <tara>買ったら</tara>
+        <tari>買ったり</tari>
+        <imperative>買え</imperative>
+    </verb>
+    <verb>
+        <conditional>見れば</conditional>
+        <conjunctive>見ます</conjunctive>
+        <kanaBase>み</kanaBase>
+        <local>patrzeć</local>
+        <negative>見ない</negative>
+        <plain>見る</plain>
+        <volitional>見よう</volitional>
+        <te>見て</te>
+        <ta>見た</ta>
+        <tara>見たら</tara>
+        <tari>見たり</tari>
+        <imperative>見ろ・見よ</imperative>
+    </verb>
+    <verb>
+        <conditional>食べれば</conditional>
+        <conjunctive>食べます</conjunctive>
+        <kanaBase>た</kanaBase>
+        <local>jeść</local>
+        <negative>食べない</negative>
+        <plain>食べる</plain>
+        <volitional>食べよう</volitional>
+        <te>食べて</te>
+        <ta>食べた</ta>
+        <tara>食べたら</tara>
+        <tari>食べたり</tari>
+        <imperative>食べろ・食べよ</imperative>
+    </verb>
+    <verb>
+        <conditional>くれば</conditional>
+        <conjunctive>きます</conjunctive>
+        <kanaBase>く</kanaBase>
+        <local>przychodzić, przybywać</local>
+        <negative>こない</negative>
+        <plain>くる</plain>
+        <volitional>こよう</volitional>
+        <te>きて</te>
+        <ta>きた</ta>
+        <tara>きたら</tara>
+        <tari>きたり</tari>
+        <imperative>こい</imperative>
+    </verb>
+    <verb>
+        <conditional>すれば</conditional>
+        <conjunctive>します</conjunctive>
+        <kanaBase>する</kanaBase>
+        <local></local>
+        <negative>しない</negative>
+        <plain>する</plain>
+        <volitional>しよう</volitional>
+        <te>して</te>
+        <ta>した</ta>
+        <tara>したら</tara>
+        <tari>したり</tari>
+        <imperative>せよ・しろ</imperative>
     </verb>
 </verbs>

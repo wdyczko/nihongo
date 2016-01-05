@@ -15,6 +15,11 @@ public class Verb {
     private StringProperty volitional;
     private StringProperty local;
     private StringProperty kanaBase;
+    private StringProperty te;
+    private StringProperty ta;
+    private StringProperty tara;
+    private StringProperty tari;
+    private StringProperty imperative;
 
     public Verb() {
         negative = new SimpleStringProperty("");
@@ -108,6 +113,66 @@ public class Verb {
 
     public void setKanaBase(String kanaBase) {
         this.kanaBase.set(kanaBase);
+    }
+
+    public String getTe() {
+        return te.get();
+    }
+
+    public StringProperty teProperty() {
+        return te;
+    }
+
+    public void setTe(String te) {
+        this.te.set(te);
+    }
+
+    public String getTa() {
+        return ta.get();
+    }
+
+    public StringProperty taProperty() {
+        return ta;
+    }
+
+    public void setTa(String ta) {
+        this.ta.set(ta);
+    }
+
+    public String getTara() {
+        return tara.get();
+    }
+
+    public StringProperty taraProperty() {
+        return tara;
+    }
+
+    public void setTara(String tara) {
+        this.tara.set(tara);
+    }
+
+    public String getTari() {
+        return tari.get();
+    }
+
+    public StringProperty tariProperty() {
+        return tari;
+    }
+
+    public void setTari(String tari) {
+        this.tari.set(tari);
+    }
+
+    public String getImperative() {
+        return imperative.get();
+    }
+
+    public StringProperty imperativeProperty() {
+        return imperative;
+    }
+
+    public void setImperative(String imperative) {
+        this.imperative.set(imperative);
     }
 
     public static void printVerb(Verb verb) {

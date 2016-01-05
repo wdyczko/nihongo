@@ -36,12 +36,17 @@ public class VerbDeclination {
     private Label statusLabel;
 
     interface QUESTION {
-        int COUNT = 5;
-        String NEGATIVE = "Decline verb to negative form";
-        String CONJUNCTIVE = "Decline verb to conjunctive form";
-        String PLAIN = "Decline verb to plain form";
-        String CONDITIONAL = "Decline verb to conditional form";
-        String VOLITIONAL = "Decline verb to volitional form";
+        int COUNT = 9;
+        String NEGATIVE = "Decline verb to NEGATIVE form";
+        String CONJUNCTIVE = "Decline verb to CONJUNCTIVE form";
+        String PLAIN = "Decline verb to PLAIN form";
+        String CONDITIONAL = "Decline verb to CONDITIONAL form";
+        String VOLITIONAL = "Decline verb to VOLITIONAL form";
+        String TE = "Decline verb to -TE form";
+        String TA = "Decline verb to -TA form";
+        String TARA = "Decline verb to -TARA form";
+        String TARI = "Decline verb to -TARI form";
+        String IMPERATIVE = "Decline verb to IMPERATIVE form";
     }
 
     private Nihongo nihongo;
@@ -98,6 +103,16 @@ public class VerbDeclination {
                 return QUESTION.CONDITIONAL;
             case 4:
                 return QUESTION.VOLITIONAL;
+            case 5:
+                return QUESTION.TE;
+            case 6:
+                return QUESTION.TA;
+            case 7:
+                return QUESTION.TARA;
+            case 8:
+                return QUESTION.TARI;
+            case 9:
+                return QUESTION.IMPERATIVE;
             default:
                 return "ERROR";
         }
@@ -115,6 +130,16 @@ public class VerbDeclination {
                 return current.getConditional();
             case 4:
                 return current.getVolitional();
+            case 5:
+                return current.getTe();
+            case 6:
+                return current.getTa();
+            case 7:
+                return current.getTara();
+            case 8:
+                return current.getTari();
+            case 9:
+                return current.getImperative();
             default:
                 return "ERROR";
         }
