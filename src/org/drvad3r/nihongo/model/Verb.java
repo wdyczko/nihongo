@@ -29,6 +29,11 @@ public class Verb {
         volitional = new SimpleStringProperty("");
         local = new SimpleStringProperty("");
         kanaBase = new SimpleStringProperty("");
+        te = new SimpleStringProperty("");
+        ta = new SimpleStringProperty("");
+        tara = new SimpleStringProperty("");
+        tari = new SimpleStringProperty("");
+        imperative = new SimpleStringProperty("");
     }
 
     public String getNegative() {
