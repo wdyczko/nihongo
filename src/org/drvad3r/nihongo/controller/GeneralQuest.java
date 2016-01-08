@@ -1,6 +1,5 @@
 package org.drvad3r.nihongo.controller;
 
-import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextArea;
@@ -16,8 +15,6 @@ import org.drvad3r.nihongo.manager.StorageManager;
 import org.drvad3r.nihongo.manager.WordManager;
 import org.drvad3r.nihongo.model.Quest;
 import org.drvad3r.nihongo.model.Word;
-
-import java.security.Key;
 
 /**
  * Author: Wiktor
@@ -251,7 +248,7 @@ public class GeneralQuest {
         passCondition = isOriginalPassCondition() && passCondition;
         passCondition = isEnglishPassCondition() && passCondition;
         passCondition = isPronouncePassCondition() && passCondition;
-        passCondition = isLocalPassCodition() && passCondition;
+        passCondition = isLocalPassCondition() && passCondition;
         return passCondition;
     }
 
@@ -309,7 +306,7 @@ public class GeneralQuest {
         pronounceLabel.setText(wordManager.getCurrent().getPronounce());
     }
 
-    private boolean isLocalPassCodition() {
+    private boolean isLocalPassCondition() {
         if (local)
             if (!localTextField.getText().trim().equals(wordManager.getCurrent().getLocal())) {
                 incorrectLocal();
