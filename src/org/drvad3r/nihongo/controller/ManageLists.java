@@ -124,6 +124,7 @@ public class ManageLists {
         }
         modeNameLabel.setText("Mode name: " + SessionManager.getInstance().getSessionItem(SessionKeys.CURRENT_QUEST_TITLE));
         amountLabel.setText("Words: " + wordTableView.getItems().size());
+        wordTableView.scrollTo(wordTableView.getSelectionModel().getSelectedItems().get(0));
     }
 
     public void setNihongo(Nihongo nihongo)

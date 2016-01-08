@@ -106,6 +106,7 @@ public class Command {
                     tableView.getSelectionModel().focus(i);
                 }
             }
+            tableView.scrollTo(tableView.getSelectionModel().getSelectedItems().get(0));
         } else if (input.matches("sel \\d+-\\d+"))
         {
             input = input.substring("sel ".length());
@@ -122,6 +123,7 @@ public class Command {
                 tableView.getSelectionModel().select(i);
                 tableView.getSelectionModel().focus(i);
             }
+            tableView.scrollTo(tableView.getSelectionModel().getSelectedItems().get(0));
         } else if (input.matches("load quest \\d+"))
         {
             Integer questId = Integer.valueOf(input.substring("load quest ".length()));
