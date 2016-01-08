@@ -33,7 +33,8 @@ import java.io.FileInputStream;
 import java.io.IOException;
 
 public class Nihongo extends Application {
-    static Stage primaryStage;
+    public static final String APP_NAME = "Nihongo";
+    public static Stage primaryStage;
     static BorderPane rootLayout;
     static Module currentModule;
 
@@ -242,5 +243,13 @@ public class Nihongo extends Application {
 
     public void onGeneralQuest() {
         showGeneralQuest();
+    }
+
+    public void extendWindowTitle(String extension) {
+        primaryStage.setTitle(String.format("%s - %s", APP_NAME, extension));
+    }
+
+    public void recoverWindowTitle() {
+        primaryStage.setTitle(APP_NAME);
     }
 }

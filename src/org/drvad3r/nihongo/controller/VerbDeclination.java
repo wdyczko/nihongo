@@ -188,8 +188,10 @@ public class VerbDeclination {
                 answerTextField.getStyleClass().removeAll(Style.Class.TextField.INCORRECT);
                 answerTextField.requestLayout();
                 updateStatus();
+                nihongo.extendWindowTitle(String.format("%d %%", (int)( 100.00 * (double)verbsPassed.size() / (double)getVerbsListSize())));
                 if (isEndingCondition()) {
                     nihongo.showManageLists();
+                    nihongo.recoverWindowTitle();
                     return;
                 }
                 randVerb();
@@ -212,6 +214,10 @@ public class VerbDeclination {
         } else if (keyEvent.getCode() == KeyCode.F2) {
             statusLabel.setText(current.getKanaBase());
             recoverStatus();
+        } else if (keyEvent.getCode() == KeyCode.ESCAPE)
+        {
+            nihongo.showManageLists();
+            nihongo.recoverWindowTitle();
         }
     }
 }

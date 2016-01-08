@@ -185,6 +185,7 @@ public class GeneralQuest {
         if (keyEvent.getCode() == KeyCode.ENTER) {
             if (isPassCondition()) {
                 progressBar.setProgress(((double) wordManager.getPassedSize() / ((double) wordManager.getWordsListSize())));
+                nihongo.extendWindowTitle(getPercentString());
                 statusLabel.setText(String.format(Style.STATUS_FORMATTER, wordManager.getPassedSize(), wordManager.getWordsListSize()));
                 if (wordManager.isEndingCondition()) {
                     nihongo.showManageLists();
@@ -200,6 +201,7 @@ public class GeneralQuest {
         if(keyEvent.getCode() == KeyCode.ESCAPE)
         {
             nihongo.showManageLists();
+            nihongo.recoverWindowTitle();
             return;
         }
         if(keyEvent.getCode() == KeyCode.F1)
@@ -221,6 +223,11 @@ public class GeneralQuest {
         if (keyEvent.getCode() == KeyCode.ALT) {
             keyEvent.consume();
         }
+    }
+
+    private String getPercentString() {
+        double percent = 100.00 * (double) wordManager.getPassedSize() / ((double) wordManager.getWordsListSize());
+        return String.format("%d %%", (int) percent);
     }
 
     private void resetInputs() {
