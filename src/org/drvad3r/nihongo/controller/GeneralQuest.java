@@ -189,6 +189,7 @@ public class GeneralQuest {
                 statusLabel.setText(String.format(Style.STATUS_FORMATTER, wordManager.getPassedSize(), wordManager.getWordsListSize()));
                 if (wordManager.isEndingCondition()) {
                     nihongo.showManageLists();
+                    nihongo.recoverWindowTitle();
                     return;
                 }
                 resetInputs();
