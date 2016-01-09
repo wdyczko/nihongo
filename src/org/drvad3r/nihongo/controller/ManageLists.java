@@ -167,11 +167,16 @@ public class ManageLists {
     @FXML
     private void onDeleteWord()
     {
-        int selectedIndex = wordTableView.getSelectionModel().getSelectedIndex();
-        if (selectedIndex >= 0)
-        {
-            wordTableView.getItems().remove(selectedIndex);
-            save();
+        Word currentWord = wordTableView.getSelectionModel().getSelectedItem();
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Do you really want to delete \"" + currentWord.getOriginal() + " - " + currentWord.getEnglish() + "\" ?", ButtonType.YES, ButtonType.NO);
+        alert.showAndWait();
+        if (alert.getResult() == ButtonType.YES) {
+            int selectedIndex = wordTableView.getSelectionModel().getSelectedIndex();
+            if (selectedIndex >= 0)
+            {
+                wordTableView.getItems().remove(selectedIndex);
+                save();
+            }
         }
     }
 
