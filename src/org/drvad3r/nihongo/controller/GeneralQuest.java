@@ -66,6 +66,7 @@ public class GeneralQuest {
     private void resetTextFieldStyle(TextField textField) {
         textField.getStyleClass().removeAll(Style.Class.TextField.INCORRECT);
         textField.getStyleClass().removeAll(Style.Class.TextField.CORRECT);
+        textField.getStyleClass().removeAll(Style.Class.TextField.HIGHLIGHT);
         textField.requestLayout();
     }
 
@@ -205,22 +206,32 @@ public class GeneralQuest {
         if(keyEvent.getCode() == KeyCode.F1)
         {
             originalLabel.setText(wordManager.getCurrent().getOriginal());
+            highlightDisabledTextField(originalTextField);
         }
         if(keyEvent.getCode() == KeyCode.F2)
         {
             pronounceLabel.setText(wordManager.getCurrent().getPronounce());
+            highlightDisabledTextField(pronounceTextField);
         }
         if(keyEvent.getCode() == KeyCode.F3)
         {
             englishLabel.setText(wordManager.getCurrent().getEnglish());
+            highlightDisabledTextField(englishTextField);
         }
         if(keyEvent.getCode() == KeyCode.F4)
         {
             localLabel.setText(wordManager.getCurrent().getLocal());
+            highlightDisabledTextField(localTextField);
         }
         if (keyEvent.getCode() == KeyCode.ALT) {
             keyEvent.consume();
         }
+    }
+
+    private void highlightDisabledTextField(TextField textField)
+    {
+        textField.getStyleClass().add(Style.Class.TextField.HIGHLIGHT);
+        textField.requestLayout();
     }
 
     private String getPercentString() {

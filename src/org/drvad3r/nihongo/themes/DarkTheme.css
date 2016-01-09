@@ -40,6 +40,18 @@
     -fx-background-color: transparent;
 }
 
+.not-used-text-field:disabled{
+    -fx-opacity: 1.0;
+    -fx-background-color: #1d1d1d;
+    -fx-prompt-text-fill: #313131;
+}
+
+.highlight-not-used-text-field:disabled{
+    -fx-opacity: 1.0;
+    -fx-background-color: #ffd500;
+    -fx-prompt-text-fill: #00735c;
+}
+
 .table-view .column-header, .table-view .filler {
     -fx-size: 35;
     -fx-border-width: 0 0 1 0;

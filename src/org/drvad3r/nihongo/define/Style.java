@@ -10,6 +10,7 @@ public interface Style {
         interface TextField {
             String CORRECT = "text-field-correct";
             String INCORRECT = "text-field-incorrect";
+            String HIGHLIGHT = "highlight-not-used-text-field";
         }
     }
 }
