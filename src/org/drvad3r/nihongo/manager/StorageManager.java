@@ -1,10 +1,7 @@
 package org.drvad3r.nihongo.manager;
 
 import org.drvad3r.nihongo.define.Path;
-import org.drvad3r.nihongo.model.list.ModuleList;
-import org.drvad3r.nihongo.model.list.QuestList;
-import org.drvad3r.nihongo.model.list.VerbList;
-import org.drvad3r.nihongo.model.list.WordList;
+import org.drvad3r.nihongo.model.list.*;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -58,6 +55,17 @@ public class StorageManager {
             m.marshal(list, file);
         } catch (JAXBException e) {
             e.printStackTrace();
+        }
+    }
+
+    public AdjectiveList loadAdjectiveDataFromFile(File file) {
+        try {
+            JAXBContext context = JAXBContext.newInstance(AdjectiveList.class);
+            Unmarshaller um = context.createUnmarshaller();
+            return (AdjectiveList) um.unmarshal(file);
+        } catch (JAXBException e) {
+            e.printStackTrace();
+            return null;
         }
     }
 

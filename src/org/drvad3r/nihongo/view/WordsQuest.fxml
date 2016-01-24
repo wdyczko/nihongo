@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane styleClass="background" stylesheets="@../themes/DarkTheme.css" xmlns="http://javafx.com/javafx/null"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.drvad3r.nihongo.controller.GeneralQuest">
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.drvad3r.nihongo.controller.WordsQuest">
     <children>
         <GridPane layoutX="100.0" layoutY="192.0" styleClass="background" AnchorPane.bottomAnchor="5.0"
                   AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">

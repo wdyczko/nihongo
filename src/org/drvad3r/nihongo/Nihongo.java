@@ -4,7 +4,6 @@ package org.drvad3r.nihongo;/**
  */
 
 import javafx.application.Application;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -15,10 +14,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import org.drvad3r.nihongo.controller.Configuration;
-import org.drvad3r.nihongo.controller.GeneralQuest;
-import org.drvad3r.nihongo.controller.ManageLists;
-import org.drvad3r.nihongo.controller.VerbDeclination;
+import org.drvad3r.nihongo.controller.*;
 import org.drvad3r.nihongo.controller.dialog.Command;
 import org.drvad3r.nihongo.controller.dialog.CreateList;
 import org.drvad3r.nihongo.controller.dialog.WordEdit;
@@ -100,6 +96,19 @@ public class Nihongo extends Application {
         }
     }
 
+    public void showAdjectivesDeclination() {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Nihongo.class.getResource("view/AdjectivesDeclination.fxml"));
+            AnchorPane adjectivesDeclination = loader.load();
+            rootLayout.setCenter(adjectivesDeclination);
+            AdjectivesDeclination controller = loader.getController();
+            controller.setNihongo(this);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void showConfiguration() {
         try {
             FXMLLoader loader = new FXMLLoader();
@@ -116,10 +125,10 @@ public class Nihongo extends Application {
     public void showGeneralQuest() {
         try {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Nihongo.class.getResource("view/GeneralQuest.fxml"));
+            loader.setLocation(Nihongo.class.getResource("view/WordsQuest.fxml"));
             AnchorPane configurationRoot = loader.load();
             rootLayout.setCenter(configurationRoot);
-            GeneralQuest controller = loader.getController();
+            WordsQuest controller = loader.getController();
             controller.setNihongo(this);
         } catch (IOException e) {
             e.printStackTrace();
@@ -183,10 +192,8 @@ public class Nihongo extends Application {
         }
     }
 
-    public boolean showCreateList(ModuleList moduleList)
-    {
-        try
-        {
+    public boolean showCreateList(ModuleList moduleList) {
+        try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Nihongo.class.getResource("view/dialog/CreateList.fxml"));
             AnchorPane page = loader.load();
@@ -205,15 +212,13 @@ public class Nihongo extends Application {
             dialogStage.showAndWait();
 
             return true;
-        } catch (IOException e)
-        {
+        } catch (IOException e) {
             e.printStackTrace();
             return false;
         }
     }
 
-    public Module getCurrentModule()
-    {
+    public Module getCurrentModule() {
         return currentModule;
     }
 
@@ -221,22 +226,22 @@ public class Nihongo extends Application {
         Nihongo.currentModule = currentModule;
     }
 
-    @FXML
-    private void onWordView() {
+    public void onWordView() {
         showManageLists();
     }
 
-    @FXML
-    private void onVerbDeclination() {
+    public void onVerbDeclination() {
         showVerbDeclination();
     }
 
-    @FXML
-    private void onClose() {
+    public void onAdjectiveDeclination() {
+        showAdjectivesDeclination();
+    }
+
+    public void onClose() {
         System.exit(0);
     }
 
-    @FXML
     public void onConfiguration() {
         showConfiguration();
     }

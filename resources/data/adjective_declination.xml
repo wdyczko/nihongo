@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<adjectives>
+    <adjective>
+        <affirmative>美味しい</affirmative>
+        <affirmativePolite>美味しいです</affirmativePolite>
+        <negative>美味しくない</negative>
+        <negativePolite>美味しくないです</negativePolite>
+        <past>美味しかった</past>
+        <pastPolite>美味しかったです</pastPolite>
+        <negativePast>美味しくなかった</negativePast>
+        <negativePastPolite>美味しくなかったです</negativePastPolite>
+        <local>tasty</local>
+        <furagana>おいしい</furagana>
+    </adjective>
+    <adjective>
+        <affirmative>大変だ</affirmative>
+        <affirmativePolite>大変です</affirmativePolite>
+        <negative>大変ではない・大変じゃない</negative>
+        <negativePolite>大変ではありません・大変じゃありません</negativePolite>
+        <past>大変だった</past>
+        <pastPolite>大変でした</pastPolite>
+        <negativePast>大変ではなかった・大変じゃなかった</negativePast>
+        <negativePastPolite>大変ではありませんでした・大変じゃありませんでした</negativePastPolite>
+        <local>difficult</local>
+        <furagana>たいへんな</furagana>
+    </adjective>
+</adjectives>

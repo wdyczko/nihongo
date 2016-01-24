@@ -20,7 +20,7 @@ import org.drvad3r.nihongo.model.Word;
  * Author: Wiktor
  * Creation date: 2015-12-12.
  */
-public class GeneralQuest {
+public class WordsQuest {
     public TextArea inputTextArea;
     public TextField originalTextField;
     public Label originalLabel;

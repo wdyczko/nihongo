@@ -4,7 +4,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <AnchorPane styleClass="background" stylesheets="@../themes/DarkTheme.css" xmlns="http://javafx.com/javafx/8.0.40"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.drvad3r.nihongo.controller.VerbDeclination">
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.drvad3r.nihongo.controller.AdjectivesDeclination">
     <children>
         <GridPane alignment="CENTER" layoutX="133.0" layoutY="110.0" stylesheets="@../themes/DarkTheme.css"
                   AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
@@ -20,11 +20,11 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
             </rowConstraints>
             <children>
-                <Label fx:id="verbLabel" alignment="TOP_LEFT" contentDisplay="TOP" styleClass="label-bright" text="Verb"
+                <Label fx:id="adjectiveLabel" alignment="TOP_LEFT" contentDisplay="TOP" styleClass="label-bright" text="Verb"
                        textAlignment="CENTER" GridPane.halignment="CENTER"/>
                 <Label fx:id="questionLabel" text="Question" GridPane.halignment="CENTER" GridPane.rowIndex="1"/>
                 <TextField fx:id="answerTextField" alignment="CENTER" onKeyPressed="#onAnswerKeyInput"
-                           promptText="Verb declination" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                           promptText="Adjective declination" GridPane.halignment="CENTER" GridPane.rowIndex="2">
                     <opaqueInsets>
                         <Insets/>
                     </opaqueInsets>
