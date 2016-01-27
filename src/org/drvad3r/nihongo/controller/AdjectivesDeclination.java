@@ -37,14 +37,14 @@ public class AdjectivesDeclination {
 
     interface QUESTION {
         int COUNT = 8;
-        String AFFIRMATIVE = "Decline adjective to AFFIRMATIVE form";
-        String AFFIRMATIVE_POLITE = "Decline adjective to AFFIRMATIVE POLITE form";
-        String NEGATIVE = "Decline adjective to NEGATIVE form";
-        String NEGATIVE_POLITE = "Decline adjective to NEGATIVE POLITE form";
-        String PAST = "Decline adjective to PAST form";
-        String PAST_POLITE = "Decline adjective to PAST POLITE form";
-        String NEGATIVE_PAST = "Decline adjective to NEGATIVE PAST form";
-        String NEGATIVE_PAST_POLITE = "Decline adjective to NEGATIVE PAST POLITE form";
+        String AFFIRMATIVE = "Adjective ending in AFFIRMATIVE form";
+        String AFFIRMATIVE_POLITE = "Adjective ending in AFFIRMATIVE POLITE form";
+        String NEGATIVE = "Adjective ending in NEGATIVE form";
+        String NEGATIVE_POLITE = "Adjective ending in NEGATIVE POLITE form";
+        String PAST = "Adjective ending in PAST form";
+        String PAST_POLITE = "Adjective ending in PAST POLITE form";
+        String NEGATIVE_PAST = "Adjective ending in NEGATIVE PAST form";
+        String NEGATIVE_PAST_POLITE = "Adjective ending in NEGATIVE PAST POLITE form";
     }
 
     private Nihongo nihongo;
@@ -56,7 +56,7 @@ public class AdjectivesDeclination {
 
     public AdjectivesDeclination() {
         StorageManager storageManager = new StorageManager();
-        adjectives = storageManager.loadAdjectiveDataFromFile(new File(System.getProperty("user.dir") + Path.ADJECTIVE_DECLINATION_FILE));
+        adjectives = storageManager.loadAdjectiveDataFromFile(new File(System.getProperty("user.dir") + Path.ADJECTIVE_DECLINATION_DEFINITION_FILE));
         adjectivesPassed = new ArrayList<>();
         randAdjective();
     }
@@ -73,7 +73,7 @@ public class AdjectivesDeclination {
     }
 
     private void presentCurrentAdjective() {
-        adjectiveLabel.setText(current.getAffirmative());
+        adjectiveLabel.setText(current.getLocal());
         questionLabel.setText(getQuestion());
     }
 

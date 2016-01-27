@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<adjectives>
+    <adjective>
+        <affirmative>ーい</affirmative>
+        <affirmativePolite>ーいです</affirmativePolite>
+        <negative>ーくない</negative>
+        <negativePolite>ーくないです</negativePolite>
+        <past>ーかった</past>
+        <pastPolite>ーかったです</pastPolite>
+        <negativePast>ーくなかった</negativePast>
+        <negativePastPolite>ーくなかったです</negativePastPolite>
+        <local>い　adjective</local>
+        <furagana>ーい</furagana>
+    </adjective>
+    <adjective>
+        <affirmative>ーだ</affirmative>
+        <affirmativePolite>ーです</affirmativePolite>
+        <negative>ーではない・ーじゃない</negative>
+        <negativePolite>ーではありません・ーじゃありません</negativePolite>
+        <past>ーだった</past>
+        <pastPolite>ーでした</pastPolite>
+        <negativePast>ーではなかった・ーじゃなかった</negativePast>
+        <negativePastPolite>ーではありませんでした・ーじゃありませんでした</negativePastPolite>
+        <local>な　adjective</local>
+        <furagana>ーな</furagana>
+    </adjective>
+</adjectives>

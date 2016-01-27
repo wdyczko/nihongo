@@ -10,7 +10,8 @@ public interface Path {
     String MODULE_GENERIC_PATH = "\\resources\\data\\generic_module\\";
     String MODULE_TEMPLATE_FILE ="\\resources\\data\\template\\module_template.xml";
     String VERB_DECLINATION_FILE = "\\resources\\data\\verb_declination.xml";
-    String ADJECTIVE_DECLINATION_FILE = "\\resources\\data\\adjective_declination.xml";
+//    String ADJECTIVE_DECLINATION_FILE = "\\resources\\data\\adjective_declination.xml";
+    String ADJECTIVE_DECLINATION_DEFINITION_FILE = "\\\\resources\\\\data\\\\adjective_declination_definition.xml";
     String SESSION_FILE = "session.sess";
     String ICON = "\\resources\\icon.ico";
     String QUEST_FILE = "\\resources\\data\\quests.xml";
