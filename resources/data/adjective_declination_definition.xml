@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <adjectives>
     <adjective>
-        <affirmative>ーい</affirmative>
-        <affirmativePolite>ーいです</affirmativePolite>
-        <negative>ーくない</negative>
-        <negativePolite>ーくないです</negativePolite>
-        <past>ーかった</past>
-        <pastPolite>ーかったです</pastPolite>
-        <negativePast>ーくなかった</negativePast>
-        <negativePastPolite>ーくなかったです</negativePastPolite>
+        <affirmative>い</affirmative>
+        <affirmativePolite>いです</affirmativePolite>
+        <negative>くない</negative>
+        <negativePolite>くないです</negativePolite>
+        <past>かった</past>
+        <pastPolite>かったです</pastPolite>
+        <negativePast>くなかった</negativePast>
+        <negativePastPolite>くなかったです</negativePastPolite>
         <local>い　adjective</local>
-        <furagana>ーい</furagana>
+        <furagana>い</furagana>
     </adjective>
     <adjective>
-        <affirmative>ーだ</affirmative>
-        <affirmativePolite>ーです</affirmativePolite>
-        <negative>ーではない・ーじゃない</negative>
-        <negativePolite>ーではありません・ーじゃありません</negativePolite>
-        <past>ーだった</past>
-        <pastPolite>ーでした</pastPolite>
-        <negativePast>ーではなかった・ーじゃなかった</negativePast>
-        <negativePastPolite>ーではありませんでした・ーじゃありませんでした</negativePastPolite>
+        <affirmative>だ</affirmative>
+        <affirmativePolite>です</affirmativePolite>
+        <negative>ではない・じゃない</negative>
+        <negativePolite>ではありません・じゃありません</negativePolite>
+        <past>だった</past>
+        <pastPolite>でした</pastPolite>
+        <negativePast>ではなかった・じゃなかった</negativePast>
+        <negativePastPolite>ではありませんでした・じゃありませんでした</negativePastPolite>
         <local>な　adjective</local>
-        <furagana>ーな</furagana>
+        <furagana>な</furagana>
     </adjective>
 </adjectives>
