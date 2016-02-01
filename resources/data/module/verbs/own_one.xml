@@ -492,4 +492,40 @@
         <original>願う</original>
         <pronounce>ねがう</pronounce>
     </word>
+    <word>
+        <english>to forget</english>
+        <local>zapominać</local>
+        <original>忘れる</original>
+        <pronounce>わすれる</pronounce>
+    </word>
+    <word>
+        <english>to sell</english>
+        <local>sprzedawać</local>
+        <original>売る</original>
+        <pronounce>うる</pronounce>
+    </word>
+    <word>
+        <english>to push</english>
+        <local>pchać</local>
+        <original>押す</original>
+        <pronounce>おす</pronounce>
+    </word>
+    <word>
+        <english>to wash</english>
+        <local>myć</local>
+        <original>洗う</original>
+        <pronounce>あらう</pronounce>
+    </word>
+    <word>
+        <english>to put</english>
+        <local>położyć</local>
+        <original>置く</original>
+        <pronounce>おく</pronounce>
+    </word>
+    <word>
+        <english>to get</english>
+        <local>wziąć, zdobyć</local>
+        <original>得る</original>
+        <pronounce>える</pronounce>
+    </word>
 </words>
